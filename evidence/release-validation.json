@@ -1,0 +1,63 @@
+{
+  "date": "2026-09-25",
+  "release": "v0.1.0-preview.1",
+  "platform": "Windows 11",
+  "python": "3.14.2",
+  "codex": "0.155.0-alpha.16.4",
+  "model": "gpt-6-astra",
+  "reasoning": "low",
+  "memories": false,
+  "global_and_local_instructions_observed": true,
+  "deterministic_release_tests": {
+    "transaction": 5,
+    "guard": 6,
+    "failures": 0,
+    "skips": 0
+  },
+  "installed_runtime_files_hash_matched": 8,
+  "model_tasks": [
+    {
+      "task": "source",
+      "accepted": true,
+      "elapsed_seconds": 203.77,
+      "usage": {
+        "input_tokens": 352171,
+        "cached_input_tokens": 281216,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3534,
+        "reasoning_output_tokens": 53
+      },
+      "tool_calls": 7
+    },
+    {
+      "task": "handoff",
+      "accepted": true,
+      "elapsed_seconds": 214.95,
+      "usage": {
+        "input_tokens": 269754,
+        "cached_input_tokens": 204672,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3968,
+        "reasoning_output_tokens": 25
+      },
+      "tool_calls": 6
+    },
+    {
+      "task": "writeback",
+      "accepted": true,
+      "elapsed_seconds": 80.54,
+      "usage": {
+        "input_tokens": 109244,
+        "cached_input_tokens": 82944,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 840,
+        "reasoning_output_tokens": 29
+      },
+      "tool_calls": 4
+    }
+  ],
+  "interpretation": "Three distinct controlled publication tasks, one run each; not repeated validation of arbitrary business tasks, long-term stability, live manual hook activation or comparative efficiency.",
+  "collector_issue": "writeback summary stdout encoding failed after valid result/receipt saved; no transaction rerun",
+  "concurrency_limit": "Displaced edit preserved and conflict reported; target may already contain proposed bytes. No multi-file atomic reader guarantee.",
+  "gate_limit": "Optional experimental host integration; repair scope advisory; live manual activation not measured."
+}

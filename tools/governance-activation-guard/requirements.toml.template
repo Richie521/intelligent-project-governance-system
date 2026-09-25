@@ -1,0 +1,55 @@
+# BEGIN managed governance activation guard
+[features]
+hooks = true
+
+[hooks]
+windows_managed_dir = '__INSTALL_DIR__'
+
+[[hooks.SessionStart]]
+matcher = 'startup|resume|clear|compact'
+
+[[hooks.SessionStart.hooks]]
+type = 'command'
+command = 'python3 /opt/openai/codex/governance-activation-guard/hook_entry.py'
+command_windows = '__PYTHON_EXE__ __INSTALL_DIR__\hook_entry.py'
+timeout = 15
+statusMessage = '恢复治理门禁状态'
+
+[[hooks.PostCompact]]
+matcher = 'manual|auto'
+
+[[hooks.PostCompact.hooks]]
+type = 'command'
+command = 'python3 /opt/openai/codex/governance-activation-guard/hook_entry.py'
+command_windows = '__PYTHON_EXE__ __INSTALL_DIR__\hook_entry.py'
+timeout = 15
+statusMessage = '恢复压缩后的治理门禁'
+
+[[hooks.UserPromptSubmit]]
+
+[[hooks.UserPromptSubmit.hooks]]
+type = 'command'
+command = 'python3 /opt/openai/codex/governance-activation-guard/hook_entry.py'
+command_windows = '__PYTHON_EXE__ __INSTALL_DIR__\hook_entry.py'
+timeout = 15
+statusMessage = '检查治理激活信号'
+
+[[hooks.PreToolUse]]
+matcher = '*'
+
+[[hooks.PreToolUse.hooks]]
+type = 'command'
+command = 'python3 /opt/openai/codex/governance-activation-guard/hook_entry.py'
+command_windows = '__PYTHON_EXE__ __INSTALL_DIR__\hook_entry.py'
+timeout = 15
+statusMessage = '检查治理写入门禁'
+
+[[hooks.Stop]]
+
+[[hooks.Stop.hooks]]
+type = 'command'
+command = 'python3 /opt/openai/codex/governance-activation-guard/hook_entry.py'
+command_windows = '__PYTHON_EXE__ __INSTALL_DIR__\hook_entry.py'
+timeout = 15
+statusMessage = '核对治理诊断闭环'
+# END managed governance activation guard

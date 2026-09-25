@@ -1,0 +1,111 @@
+digraph CrossProjectLearningAndSync {
+  graph [
+    rankdir=TB,
+    splines=ortho,
+    newrank=true,
+    ordering=out,
+    outputorder=edgesfirst,
+    bgcolor="#FFFFFF",
+    pad=0.38,
+    nodesep=0.58,
+    ranksep=0.62,
+    fontname="Microsoft YaHei",
+    fontcolor="#111111",
+    fontsize=18,
+    label="跨项目学习与同步闭环",
+    labelloc=t,
+    labeljust=c,
+    audit_purpose="说明来源项目中验证过的治理经验怎样进入中央方法，再逐项目讨论、验证并准确回写同步状态",
+    audit_reader_question="项目经验何时留在本地，何时进入中央方法，其他项目怎样逐个适配、验证和回写状态",
+    audit_direction="top_to_bottom"
+  ];
+
+  node [
+    shape=box,
+    style="rounded,filled",
+    color="#333333",
+    fillcolor="#FFFFFF",
+    fontcolor="#111111",
+    fontname="Microsoft YaHei",
+    fontsize=10.8,
+    margin="0.25,0.15",
+    penwidth=1.2
+  ];
+  edge [color="#444444", arrowsize=0.74, penwidth=1.2];
+
+  discover [shape=oval, style="filled", label="来源项目发现有效的治理做法", group=main, width=4.6, height=0.72, fixedsize=true, penwidth=1.5, audit_stage="source", audit_order="01", audit_role="start", audit_size_group="none"];
+  source_verify [label="在来源项目的真实工作中验证", group=main, width=4.6, height=0.74, fixedsize=true, fillcolor="#F2F2F2", audit_stage="source", audit_order="02", audit_role="verify", audit_size_group="main_actions"];
+  reusable [shape=diamond, style="filled", label="能够跨项目复用？", group=main, width=4.6, height=1.10, fixedsize=true, audit_stage="source", audit_order="03", audit_role="decision", audit_size_group="none"];
+  local_only [shape=oval, style="filled", label="只适用来源项目：留在项目本地", group=local_only_side, width=3.7, height=0.76, fixedsize=true, fillcolor="#F7F7F7", audit_stage="source", audit_order="end", audit_role="local_end", audit_size_group="none"];
+
+  central_confirm [label="可以复用：说明依据并取得中央收录确认", group=main, width=4.6, height=0.74, fixedsize=true, fillcolor="#F2F2F2", audit_stage="central", audit_order="04", audit_role="confirm", audit_size_group="main_actions"];
+  central_library [label="写入中央模式库", group=main, width=4.6, height=0.74, fixedsize=true, audit_stage="central", audit_order="05", audit_role="central_write", audit_size_group="main_actions"];
+  affected_projects [label="找出可能受影响的登记项目", group=main, width=4.6, height=0.74, fixedsize=true, audit_stage="central", audit_order="06", audit_role="registry_scan", audit_size_group="main_actions"];
+  mark_pending [label="标记待讨论，只在治理相关对话提醒", group=main, width=4.6, height=0.74, fixedsize=true, fillcolor="#F2F2F2", audit_stage="central", audit_order="07", audit_role="pending", audit_size_group="main_actions"];
+
+  enter_project [label="进入一个目标项目的治理相关对话", group=main, width=4.6, height=0.74, fixedsize=true, penwidth=1.4, audit_stage="local", audit_order="08", audit_role="project_entry", audit_size_group="main_actions"];
+  analyze_local [label="分析本地现实、已有优点和适用边界", group=main, width=4.6, height=0.74, fixedsize=true, audit_stage="local", audit_order="09", audit_role="local_analysis", audit_size_group="main_actions"];
+  local_conclusion [label="讨论并确认本地结论：采用、本地例外、\n不适用或继续待讨论", group=main, width=4.6, height=0.74, fixedsize=true, fillcolor="#F2F2F2", audit_stage="local", audit_order="10", audit_role="local_conclusion", audit_size_group="main_actions"];
+  change_needed [shape=diamond, style="filled", label="需要实施或验证本地变化？", group=main, width=4.6, height=1.10, fixedsize=true, audit_stage="local", audit_order="11", audit_role="decision", audit_size_group="none"];
+
+  no_change [label="无需修改或验证：登记本地结论", group=main, width=4.6, height=0.74, fixedsize=true, audit_stage="local", audit_order="12", audit_role="register_only", audit_size_group="main_actions"];
+  apply_local [label="需要修改或验证：按确认方案实施", group=change_side, width=3.8, height=0.74, fixedsize=true, fillcolor="#F2F2F2", audit_stage="local", audit_order="side", audit_role="local_apply", audit_size_group="side_actions"];
+  probe [label="在目标项目运行真实对话探针", group=change_side, width=3.8, height=0.74, fixedsize=true, penwidth=1.4, audit_stage="probe", audit_order="side", audit_role="probe", audit_size_group="side_actions"];
+  hard_fail [shape=diamond, style="filled", label="存在硬失败？", group=change_side, width=3.8, height=1.06, fixedsize=true, audit_stage="probe", audit_order="side", audit_role="decision", audit_size_group="none"];
+  repair [label="有硬失败：修正本地最小责任面", group=repair_side, width=3.8, height=0.74, fixedsize=true, fillcolor="#F2F2F2", audit_stage="probe", audit_order="side", audit_role="repair", audit_size_group="side_actions"];
+  passed [label="无硬失败：形成准确的本地状态", group=change_side, width=3.8, height=0.74, fixedsize=true, audit_stage="probe", audit_order="side", audit_role="passed", audit_size_group="side_actions"];
+
+  registry [label="回写中央登记状态", group=main, width=4.6, height=0.74, fixedsize=true, fillcolor="#F2F2F2", penwidth=1.4, audit_stage="registry", audit_order="13", audit_role="registry_write", audit_size_group="main_actions"];
+  more_projects [shape=diamond, style="filled", label="还有受影响项目待处理？", group=main, width=4.6, height=1.10, fixedsize=true, audit_stage="registry", audit_order="14", audit_role="decision", audit_size_group="none"];
+  next_project [label="还有项目：处理下一个项目", group=main, width=4.6, height=0.74, fixedsize=true, audit_stage="registry", audit_order="15", audit_role="next_project", audit_size_group="main_actions"];
+  done [shape=oval, style="filled", label="没有项目：所有状态准确，\n本轮同步结束", group=done_side, width=3.8, height=0.82, fixedsize=true, fillcolor="#E8E8E8", penwidth=1.5, audit_stage="completion", audit_order="end", audit_role="end", audit_size_group="none"];
+  boundaries [shape=note, label="同步边界：中央变化不能批量改写项目；无关业务任务不被待同步事项打断；\n业务事实、私有数据和领域任务不进入中央方法", group=done_side, style="filled,dashed", fillcolor="#F7F7F7", color="#777777", fontsize=9.5, audit_stage="note", audit_order="note", audit_role="boundary_note", audit_size_group="none"];
+
+  node [shape=point, width=0.02, height=0.02, fixedsize=true, label="", style=invis];
+  repair_top [group=repair_side, audit_anchor="turn", audit_corridor="outer_right_retry"];
+  next_bottom [group=main, audit_anchor="turn", audit_corridor="next_project_bottom"];
+  next_outer_bottom [group=next_outer, audit_anchor="turn", audit_corridor="outer_left_next_project"];
+  next_outer_top [group=next_outer, audit_anchor="turn", audit_corridor="outer_left_next_project"];
+
+  discover -> source_verify [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  source_verify -> reusable [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  reusable -> local_only [xlabel="不能", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, weight=1000, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="local_only_branch"];
+  reusable -> central_confirm [xlabel="能", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  central_confirm -> central_library [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  central_library -> affected_projects [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  affected_projects -> mark_pending [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  mark_pending -> enter_project [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  enter_project -> analyze_local [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  analyze_local -> local_conclusion [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  local_conclusion -> change_needed [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+
+  change_needed -> no_change [xlabel="不需要", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  change_needed -> apply_local [xlabel="需要", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, weight=1000, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="local_change_branch"];
+  apply_local -> probe [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="local_change"];
+  probe -> hard_fail [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="local_change"];
+  hard_fail -> repair [xlabel="有", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, weight=1000, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="hard_failure_branch"];
+  hard_fail -> passed [xlabel="无", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="local_change"];
+
+  repair_top -> repair [style=dashed, weight=1000, arrowhead=none, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="return", audit_corridor="outer_right_retry", audit_reason="无箭头线路段把修正框的上边中点固定为重试入口"];
+  repair_top -> probe [style=dashed, constraint=false, weight=1000, audit_tail_side="left", audit_head_side="right", audit_route_kind="return", audit_corridor="outer_right_retry", audit_reason="修正后沿右侧外圈返回同一个真实对话探针"];
+
+  no_change -> registry [weight=100, minlen=4, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  passed -> registry [constraint=false, weight=1000, audit_tail_side="left", audit_head_side="right", audit_route_kind="branch", audit_corridor="registry_merge", audit_reason="探针无硬失败后从右侧中点汇入中央登记"];
+  registry -> more_projects [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  more_projects -> next_project [xlabel="有", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  more_projects -> done [xlabel="没有", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, weight=1000, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="completion_branch"];
+  next_project -> next_bottom [style=dashed, weight=1000, arrowhead=none, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="return", audit_corridor="outer_left_next_project", audit_reason="从下边中点离开下一个项目步骤并进入左侧外圈"];
+  next_outer_bottom -> next_bottom [style=dashed, weight=1000, arrowhead=none, audit_tail_side="right", audit_head_side="left", audit_route_kind="return", audit_corridor="outer_left_next_project", audit_reason="在底部转入左侧外圈"];
+  next_outer_top -> next_outer_bottom [style=dashed, weight=1000, arrowhead=none, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="return", audit_corridor="outer_left_next_project", audit_reason="沿左侧外圈返回项目入口高度"];
+  next_outer_top -> enter_project [style=dashed, weight=1000, audit_tail_side="right", audit_head_side="left", audit_route_kind="return", audit_corridor="outer_left_next_project", audit_reason="沿左侧外圈返回目标项目治理对话入口"];
+  done -> boundaries [style=invis, weight=100];
+
+  { rank=same; reusable; local_only; }
+  { rank=same; change_needed; apply_local; }
+  { rank=same; no_change; probe; repair_top; }
+  { rank=same; hard_fail; repair; }
+  { rank=same; registry; passed; }
+  { rank=same; next_outer_top; enter_project; }
+  { rank=same; more_projects; done; }
+  { rank=same; next_outer_bottom; next_bottom; }
+}

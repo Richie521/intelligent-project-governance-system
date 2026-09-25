@@ -1,0 +1,411 @@
+digraph LayeredDiagnosisAndFeedbackCompany {
+  graph [
+    rankdir=TB,
+    bgcolor="#FFFFFF",
+    pad="0.36",
+    nodesep="0.54",
+    ranksep="0.68",
+    splines=ortho,
+    newrank=true,
+    ordering=out,
+    outputorder=edgesfirst,
+    compound=true,
+    fontname="Microsoft YaHei",
+    fontcolor="#111111",
+    fontsize=18,
+    label="自我反思与分层诊断（集团版）",
+    labelloc=t,
+    labeljust=c,
+    audit_purpose="说明董事长下令后怎样暂停生产、逐层调查、升级、验证和反馈",
+    audit_reader_question="怎样人工启动集团调查，按什么顺序检查，修复后怎样验证和结束",
+    audit_direction="top_to_bottom",
+    audit_route_continuity="strict"
+  ];
+
+  node [
+    shape=box,
+    style="rounded,filled",
+    color="#333333",
+    fillcolor="#FFFFFF",
+    fontcolor="#111111",
+    fontname="Microsoft YaHei",
+    fontsize=10.8,
+    margin="0.24,0.14",
+    penwidth=1.2
+  ];
+
+  edge [color="#444444", arrowsize=0.72, penwidth=1.15];
+
+  rule_order [
+    shape=note,
+    style="filled,dashed",
+    fillcolor="#F7F7F7",
+    color="#777777",
+    fontsize=10,
+    label="制度平时自上而下生效：总部制度 → 车间机制 → 当前生产任务\n董事长下令后从现场向上调查：当前生产任务 → 车间机制 → 必要时检查总部层",
+    audit_stage="context",
+    audit_order="note",
+    audit_role="rule_order",
+    audit_size_group="none"
+  ];
+
+  subgraph cluster_activation {
+    label="阶段一：人工下令并启动";
+    color="#999999";
+    fontcolor="#333333";
+    fontname="Microsoft YaHei";
+    fontsize=11;
+    style="rounded,dashed";
+    margin=20;
+
+    trigger [
+      shape=oval,
+      style="filled",
+      label="董事长下令：启动集团调查",
+      group=main,
+      width=5.5,
+      height=0.82,
+      fixedsize=true,
+      fillcolor="#F7F7F7",
+      audit_stage="activation",
+      audit_order="01",
+      audit_role="trigger",
+      audit_size_group="none"
+    ];
+    activate [
+      label="启动集团调查，暂停继续生产",
+      group=main,
+      width=4.8,
+      height=0.72,
+      fixedsize=true,
+      fillcolor="#E8E8E8",
+      penwidth=1.5,
+      audit_stage="activation",
+      audit_order="02",
+      audit_role="activate",
+      audit_size_group="none"
+    ];
+  }
+
+  subgraph cluster_diagnosis {
+    label="阶段二：分层诊断与升级";
+    color="#999999";
+    fontcolor="#333333";
+    fontname="Microsoft YaHei";
+    fontsize=11;
+    style="rounded,dashed";
+    margin=20;
+
+    check_task [
+      label="先检查当前生产任务",
+      group=main,
+      width=3.6,
+      height=0.66,
+      fixedsize=true,
+      audit_stage="diagnosis",
+      audit_order="03",
+      audit_role="inspect_task",
+      audit_size_group="none"
+    ];
+    task_sufficient [
+      shape=diamond,
+      style="filled",
+      label="当前生产任务足以解释并可验证，\n而且不是重复纠正？",
+      group=main,
+      width=4.5,
+      height=1.08,
+      fixedsize=true,
+      audit_stage="diagnosis",
+      audit_order="04",
+      audit_role="task_decision",
+      audit_size_group="none"
+    ];
+    escalate_task [
+      label="继续向上；若同类问题在声称修复后再次出现，\n先重建失败序列，当前生产任务不得单独结案",
+      group=main,
+      width=5.4,
+      height=0.86,
+      fixedsize=true,
+      fillcolor="#E8E8E8",
+      penwidth=1.5,
+      audit_stage="escalation",
+      audit_order="05",
+      audit_role="repeat_gate",
+      audit_size_group="none"
+    ];
+    fix_task [
+      label="当前生产任务能解释：\n澄清董事长指示、顺序、授权或计划",
+      group=repair,
+      width=3.8,
+      height=0.82,
+      fixedsize=true,
+      fillcolor="#F2F2F2",
+      audit_stage="repair",
+      audit_order="side",
+      audit_role="repair_task",
+      audit_size_group="repair_peer"
+    ];
+
+    node [shape=point, width=0.02, height=0.02, fixedsize=true, label="", style=invis];
+    repair_task_bus [group=repair_bus, audit_anchor="turn", audit_corridor="outer_right_repair"];
+    repair_project_bus [group=repair_bus, audit_anchor="turn", audit_corridor="outer_right_repair"];
+    repair_scope_bus [group=repair_bus, audit_anchor="turn", audit_corridor="outer_right_repair"];
+    repair_global_bus [group=repair_bus, audit_anchor="turn", audit_corridor="outer_right_repair"];
+    repair_exit_bus [group=repair_bus, audit_anchor="turn", audit_corridor="outer_right_repair"];
+
+    node [shape=box, fixedsize=true, style="rounded,filled", color="#333333", fillcolor="#FFFFFF"];
+    check_project [
+      label="再检查车间机制",
+      group=main,
+      width=3.6,
+      height=0.66,
+      audit_stage="diagnosis",
+      audit_order="06",
+      audit_role="inspect_project",
+      audit_size_group="none"
+    ];
+    project_sufficient [
+      shape=diamond,
+      style="filled",
+      label="车间机制足以解释问题？",
+      group=main,
+      width=4.2,
+      height=1.04,
+      audit_stage="diagnosis",
+      audit_order="07",
+      audit_role="project_decision",
+      audit_size_group="none"
+    ];
+    fix_project [
+      label="车间机制能解释：\n修正规章、机床、计划或质检",
+      group=repair,
+      width=3.8,
+      height=0.82,
+      fillcolor="#F2F2F2",
+      audit_stage="repair",
+      audit_order="side",
+      audit_role="repair_project",
+      audit_size_group="repair_peer"
+    ];
+    recurrence [
+      shape=diamond,
+      style="filled",
+      label="车间机制不能解释：问题可能\n跨无关车间复发？",
+      group=main,
+      width=4.5,
+      height=1.10,
+      audit_stage="diagnosis",
+      audit_order="08",
+      audit_role="recurrence_decision",
+      audit_size_group="none"
+    ];
+    local_scope [
+      label="不需要检查总部层：\n补充车间材料，不扩大调查范围",
+      group=repair,
+      width=3.8,
+      height=0.82,
+      style="rounded,dashed",
+      audit_stage="diagnosis",
+      audit_order="side",
+      audit_role="local_evidence",
+      audit_size_group="repair_peer"
+    ];
+    check_global [
+      label="可能跨车间复发：再检查总部制度、\n治理工作队或工具",
+      group=main,
+      width=4.3,
+      height=0.82,
+      audit_stage="diagnosis",
+      audit_order="09",
+      audit_role="inspect_global",
+      audit_size_group="none"
+    ];
+    global_found [
+      shape=diamond,
+      style="filled",
+      label="找到可修复的总部原因？",
+      group=main,
+      width=4.0,
+      height=1.04,
+      audit_stage="diagnosis",
+      audit_order="10",
+      audit_role="global_decision",
+      audit_size_group="none"
+    ];
+    fix_global [
+      label="找到总部原因：\n修正制度、治理工作队或工具",
+      group=repair,
+      width=3.8,
+      height=0.82,
+      fillcolor="#F2F2F2",
+      audit_stage="repair",
+      audit_order="side",
+      audit_role="repair_global",
+      audit_size_group="repair_peer"
+    ];
+    prevention_plan [
+      label="找出为什么还会再犯；\n定下改法和复查办法",
+      group=main,
+      width=4.8,
+      height=0.82,
+      fillcolor="#E8E8E8",
+      penwidth=1.5,
+      audit_stage="prevention",
+      audit_order="11",
+      audit_role="recurrence_prevention",
+      audit_size_group="none"
+    ];
+    plan_decision [
+      label="处理生产计划影响和需要记录的事项；\n材料不足时不得继续",
+      group=main,
+      width=4.4,
+      height=0.82,
+      fillcolor="#F2F2F2",
+      audit_stage="decision",
+      audit_order="12",
+      audit_role="plan_and_writeback",
+      audit_size_group="none"
+    ];
+    continue_decision [
+      shape=diamond,
+      style="filled",
+      label="材料充分并决定继续？",
+      group=main,
+      width=3.2,
+      height=0.92,
+      audit_stage="decision",
+      audit_order="13",
+      audit_role="continue_decision",
+      audit_size_group="none"
+    ];
+    stop [
+      shape=oval,
+      style="filled",
+      label="停止：报告处理和记录结果",
+      group=stop_col,
+      width=3.2,
+      height=0.66,
+      fillcolor="#E8E8E8",
+      audit_stage="end",
+      audit_order="end",
+      audit_role="stop",
+      audit_size_group="none"
+    ];
+    reverify [
+      label="继续：回车间重做，并跑同类复查",
+      group=main,
+      width=4.5,
+      height=0.72,
+      fillcolor="#E8E8E8",
+      penwidth=1.5,
+      audit_stage="verification",
+      audit_order="14",
+      audit_role="reverify",
+      audit_size_group="none"
+    ];
+    verify_passed [
+      shape=diamond,
+      style="filled",
+      label="当前结果和复查都通过？",
+      group=main,
+      width=4.3,
+      height=1.04,
+      audit_stage="verification",
+      audit_order="15",
+      audit_role="verification_decision",
+      audit_size_group="none"
+    ];
+    reusable [
+      shape=diamond,
+      style="filled",
+      label="验证通过：改进能用于其他车间？",
+      group=main,
+      width=4.5,
+      height=1.08,
+      audit_stage="feedback",
+      audit_order="16",
+      audit_role="reuse_decision",
+      audit_size_group="none"
+    ];
+    local [
+      shape=oval,
+      style="filled",
+      label="只适用当前车间：\n留在车间本地",
+      group=local_col,
+      width=3.6,
+      height=0.76,
+      audit_stage="feedback",
+      audit_order="end",
+      audit_role="local_feedback",
+      audit_size_group="reuse_peer"
+    ];
+    central [
+      shape=oval,
+      style="filled",
+      label="可以供各车间复用：进入机床研发中心，\n再逐车间讨论",
+      group=main,
+      width=3.6,
+      height=0.76,
+      fillcolor="#F2F2F2",
+      audit_stage="feedback",
+      audit_order="end",
+      audit_role="central_feedback",
+      audit_size_group="reuse_peer"
+    ];
+  }
+
+  node [shape=point, width=0.02, height=0.02, fixedsize=true, label="", style=invis];
+  verify_return_top [group=verify_return, audit_anchor="turn", audit_corridor="outer_right_recheck"];
+  verify_return_bottom [group=verify_return, audit_anchor="turn", audit_corridor="outer_right_recheck"];
+
+  rule_order -> trigger [style=invis, weight=100];
+  trigger -> activate [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  activate -> check_task [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  check_task -> task_sufficient [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  task_sufficient -> fix_task [xlabel="是", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, weight=1000, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="task_repair"];
+  task_sufficient -> escalate_task [xlabel="否", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  escalate_task -> check_project [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  check_project -> project_sufficient [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  project_sufficient -> fix_project [xlabel="是", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, weight=1000, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="project_repair"];
+  project_sufficient -> recurrence [xlabel="否", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  recurrence -> local_scope [xlabel="不可能", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, weight=1000, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="local_scope_branch"];
+  recurrence -> check_global [xlabel="可能", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  check_global -> global_found [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  global_found -> fix_global [xlabel="找到", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, weight=1000, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="global_repair"];
+  global_found -> prevention_plan [xlabel="未找到", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+
+  fix_task -> repair_task_bus [constraint=false, weight=1000, arrowhead=none, headclip=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="feedback", audit_corridor="outer_right_repair", audit_reason="修正结果进入右侧统一收束线路"];
+  fix_project -> repair_project_bus [constraint=false, weight=1000, arrowhead=none, headclip=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="feedback", audit_corridor="outer_right_repair", audit_reason="修正结果进入右侧统一收束线路"];
+  local_scope -> repair_scope_bus [constraint=false, weight=1000, arrowhead=none, headclip=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="feedback", audit_corridor="outer_right_repair", audit_reason="车间材料处理进入右侧统一收束线路"];
+  fix_global -> repair_global_bus [constraint=false, weight=1000, arrowhead=none, headclip=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="feedback", audit_corridor="outer_right_repair", audit_reason="修正结果进入右侧统一收束线路"];
+  repair_task_bus -> repair_project_bus [arrowhead=none, weight=1000, tailclip=false, headclip=false, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="feedback", audit_corridor="outer_right_repair", audit_reason="沿同一条右侧收束线向下"];
+  repair_project_bus -> repair_scope_bus [arrowhead=none, weight=1000, tailclip=false, headclip=false, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="feedback", audit_corridor="outer_right_repair", audit_reason="沿同一条右侧收束线向下"];
+  repair_scope_bus -> repair_global_bus [arrowhead=none, weight=1000, tailclip=false, headclip=false, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="feedback", audit_corridor="outer_right_repair", audit_reason="沿同一条右侧收束线向下"];
+  repair_global_bus -> repair_exit_bus [arrowhead=none, weight=1000, tailclip=false, headclip=false, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="feedback", audit_corridor="outer_right_repair", audit_reason="沿同一条右侧收束线到达共同出口"];
+  repair_exit_bus -> prevention_plan [constraint=false, weight=1000, tailclip=false, audit_tail_side="left", audit_head_side="right", audit_route_kind="feedback", audit_corridor="outer_right_repair", audit_reason="所有已修正路径汇回防复发方案"];
+
+  prevention_plan -> plan_decision [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  plan_decision -> continue_decision [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  continue_decision -> stop [xlabel="不继续", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="stop_branch"];
+  continue_decision -> reverify [xlabel="继续", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  reverify -> verify_passed [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  verify_passed -> verify_return_bottom [style=dashed, xlabel="未通过", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, weight=1000, arrowhead=none, headclip=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="feedback", audit_corridor="outer_right_recheck", audit_reason="验证未通过时进入右侧外圈重新激活"];
+  verify_return_bottom -> verify_return_top [style=dashed, weight=1000, arrowhead=none, tailclip=false, headclip=false, audit_tail_side="top", audit_head_side="bottom", audit_route_kind="feedback", audit_corridor="outer_right_recheck", audit_reason="沿右侧外圈返回现场激活位置"];
+  verify_return_top -> activate [style=dashed, constraint=false, weight=1000, tailclip=false, audit_tail_side="left", audit_head_side="right", audit_route_kind="feedback", audit_corridor="outer_right_recheck", audit_reason="验证未通过后重新切换治理模式并诊断"];
+  verify_passed -> reusable [xlabel="通过", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  reusable -> local [xlabel="不能", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="local_feedback"];
+  reusable -> central [xlabel="能", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+
+  fix_task -> fix_project [style=invis, weight=1000];
+  fix_project -> local_scope -> fix_global [style=invis, weight=1000];
+
+  { rank=same; task_sufficient; fix_task; repair_task_bus; }
+  { rank=same; project_sufficient; fix_project; repair_project_bus; }
+  { rank=same; recurrence; local_scope; repair_scope_bus; }
+  { rank=same; global_found; fix_global; repair_global_bus; }
+  { rank=same; prevention_plan; repair_exit_bus; }
+  { rank=same; continue_decision; stop; }
+  { rank=same; verify_passed; verify_return_bottom; }
+  { rank=same; activate; verify_return_top; }
+  { rank=same; reusable; local; }
+}

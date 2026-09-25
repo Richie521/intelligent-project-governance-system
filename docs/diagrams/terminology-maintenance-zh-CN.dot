@@ -1,0 +1,95 @@
+digraph UnifiedWording {
+  graph [
+    rankdir=TB,
+    splines=ortho,
+    newrank=true,
+    ordering=out,
+    outputorder=edgesfirst,
+    bgcolor="#FFFFFF",
+    pad=0.38,
+    nodesep=0.58,
+    ranksep=0.66,
+    fontname="Microsoft YaHei",
+    fontcolor="#111111",
+    fontsize=18,
+    label="统一用词",
+    labelloc=t,
+    labeljust=c,
+    audit_purpose="只说明已启用项目怎样在会话内统一用词并在后续真实任务验证采用；未启用项目不进入本图",
+    audit_reader_question="已启用项目怎样加载承载面、处理无害差异与实质冲突，以及后续未采用时返回哪里",
+    audit_direction="top_to_bottom",
+    audit_route_continuity="strict"
+  ];
+
+  node [shape=box, style="rounded,filled", color="#333333", fillcolor="#FFFFFF", fontcolor="#111111", fontname="Microsoft YaHei", fontsize=11, margin="0.26,0.16", penwidth=1.2];
+  edge [color="#444444", arrowsize=0.74, penwidth=1.2];
+
+  subgraph cluster_session {
+    graph [label="第一阶段：会话内统一用词", color="#777777", fontname="Microsoft YaHei", fontcolor="#111111", fontsize=14, penwidth=1.1, margin=22, audit_size_group="session_stage", audit_size_axis="both"];
+
+    session_start [shape=oval, style="filled", label="已启用项目的新对话、压缩恢复或相关任务开始", group=main, width=4.6, height=0.74, fixedsize=true, penwidth=1.5, audit_stage="session", audit_order="01", audit_role="start", audit_size_group="none"];
+    read_entry [label="读取声明已启用的项目本地入口", group=main, width=4.6, height=0.72, fixedsize=true, fillcolor="#F2F2F2", audit_stage="session", audit_order="02", audit_role="read_entry", audit_size_group="main_actions"];
+    read_carrier [label="自动读取用词承载面一次", group=main, width=4.6, height=0.72, fixedsize=true, fillcolor="#F2F2F2", audit_stage="session", audit_order="03", audit_role="read_wording_surface", audit_size_group="main_actions"];
+    use_confirmed [label="静默使用已确认说法", group=main, width=4.6, height=0.72, fixedsize=true, audit_stage="session", audit_order="04", audit_role="use_confirmed", audit_size_group="main_actions"];
+    material_difference [shape=diamond, style="filled", label="出现实质冲突或值得长期固定的新说法？", group=main, width=4.6, height=1.18, fixedsize=true, audit_stage="session", audit_order="05", audit_role="decision", audit_size_group="none"];
+    no_material_difference [shape=oval, style="filled", label="无实质差异：继续当前任务", group=side, width=3.8, height=0.76, fixedsize=true, fillcolor="#F7F7F7", audit_stage="session", audit_order="end", audit_role="harmless_end", audit_size_group="session_ends"];
+    clarify [label="核对含义和使用边界", group=main, width=4.6, height=0.72, fixedsize=true, fillcolor="#F2F2F2", audit_stage="session", audit_order="06", audit_role="clarify", audit_size_group="main_actions"];
+    propose [label="只提出一个统一建议", group=main, width=4.6, height=0.72, fixedsize=true, audit_stage="session", audit_order="07", audit_role="propose", audit_size_group="main_actions"];
+    confirmed [shape=diamond, style="filled", label="用户已经确认？", group=main, width=4.6, height=1.04, fixedsize=true, audit_stage="session", audit_order="08", audit_role="decision", audit_size_group="none"];
+    not_confirmed [shape=oval, style="filled,dashed", label="未确认：不写回，继续当前任务", group=side, width=3.8, height=0.76, fixedsize=true, fillcolor="#F7F7F7", audit_stage="session", audit_order="end", audit_role="unconfirmed_end", audit_size_group="session_ends"];
+    need_table [shape=diamond, style="filled", label="确有持续需要建立项目用词表？", group=main, width=4.6, height=1.12, fixedsize=true, audit_stage="session", audit_order="09", audit_role="decision", audit_size_group="none"];
+    create_table [label="确有需要：建立项目用词表", group=main, width=4.6, height=0.72, fixedsize=true, fillcolor="#F2F2F2", audit_stage="session", audit_order="10", audit_role="create_wording_table", audit_size_group="main_actions"];
+    update_owner [label="无需新文件：更新现有承载面", group=side, width=3.8, height=0.72, fixedsize=true, fillcolor="#F2F2F2", audit_stage="session", audit_order="side", audit_role="update_wording_surface", audit_size_group="side_actions"];
+    session_done [shape=oval, style="filled", label="返回当前任务", group=main, width=3.8, height=0.76, fixedsize=true, fillcolor="#E8E8E8", penwidth=1.5, audit_stage="session", audit_order="end", audit_role="session_end", audit_size_group="session_ends"];
+
+    session_start -> read_entry [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="session_main"];
+    read_entry -> read_carrier [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="session_main"];
+    read_carrier -> use_confirmed [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="session_main"];
+    use_confirmed -> material_difference [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="session_main"];
+    material_difference -> no_material_difference [xlabel="没有", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, weight=1000, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="harmless_branch"];
+    material_difference -> clarify [xlabel="有", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="session_main"];
+    clarify -> propose [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="session_main"];
+    propose -> confirmed [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="session_main"];
+    confirmed -> not_confirmed [xlabel="未确认", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, weight=1000, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="unconfirmed_branch"];
+    confirmed -> need_table [xlabel="已确认", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="session_main"];
+    need_table -> create_table [xlabel="需要", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="session_main"];
+    need_table -> update_owner [xlabel="不需要", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, weight=1000, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="owner_branch"];
+    create_table -> session_done [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="session_main"];
+    update_owner -> session_done [constraint=false, weight=1000, audit_tail_side="bottom", audit_head_side="right", audit_route_kind="branch", audit_corridor="owner_merge", audit_reason="更新现有承载面后汇入当前任务返回节点"];
+
+    { rank=same; material_difference; no_material_difference; }
+    { rank=same; confirmed; not_confirmed; }
+    { rank=same; need_table; update_owner; }
+  }
+
+  subgraph cluster_adoption {
+    graph [label="第二阶段：后续真实任务采用验证", color="#777777", fontname="Microsoft YaHei", fontcolor="#111111", fontsize=14, penwidth=1.1, margin=22, audit_size_group="adoption_stage", audit_size_axis="both"];
+
+    later_task [shape=oval, style="filled", label="后续真实任务使用已确认说法", group=main, width=4.6, height=0.76, fixedsize=true, penwidth=1.5, audit_stage="adoption", audit_order="01", audit_role="start", audit_size_group="none"];
+    actually_adopted [shape=diamond, style="filled", label="真正采用？", group=main, width=4.6, height=1.04, fixedsize=true, audit_stage="adoption", audit_order="02", audit_role="decision", audit_size_group="none"];
+    adoption_done [shape=oval, style="filled", label="已采用：统一用词生效", group=side, width=3.8, height=0.76, fixedsize=true, fillcolor="#E8E8E8", penwidth=1.5, audit_stage="adoption", audit_order="end", audit_role="end", audit_size_group="adoption_ends"];
+    diagnose [label="未采用：进入分层诊断", group=main, width=4.6, height=0.72, fixedsize=true, fillcolor="#F2F2F2", audit_stage="adoption", audit_order="03", audit_role="diagnose", audit_size_group="adoption_actions"];
+    repair [label="修正最小责任面", group=main, width=4.6, height=0.72, fixedsize=true, audit_stage="adoption", audit_order="04", audit_role="repair", audit_size_group="adoption_actions"];
+
+    node [shape=point, width=0.02, height=0.02, fixedsize=true, label="", style=invis];
+    feedback_bottom [group=main, audit_anchor="turn", audit_corridor="adoption_feedback_bottom"];
+    feedback_outer_bottom [group=feedback_outer, audit_anchor="turn", audit_corridor="outer_left_adoption"];
+    feedback_outer_top [group=feedback_outer, audit_anchor="turn", audit_corridor="outer_left_adoption"];
+
+    later_task -> actually_adopted [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="adoption_main"];
+    actually_adopted -> adoption_done [xlabel="已采用", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, weight=1000, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="adopted_branch"];
+    actually_adopted -> diagnose [xlabel="未采用", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="adoption_main"];
+    diagnose -> repair [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="adoption_main"];
+
+    repair -> feedback_bottom [style=dashed, weight=1000, arrowhead=none, headclip=false, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="feedback", audit_corridor="outer_left_adoption", audit_reason="修正最小责任面后从节点下边中点进入第二阶段反馈线路"];
+    feedback_outer_bottom -> feedback_bottom [style=dashed, weight=1000, arrowhead=none, tailclip=false, headclip=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="feedback", audit_corridor="outer_left_adoption", audit_reason="在第二阶段底部转入左侧外圈"];
+    feedback_outer_top -> feedback_outer_bottom [style=dashed, weight=1000, arrowhead=none, tailclip=false, headclip=false, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="feedback", audit_corridor="outer_left_adoption", audit_reason="沿第二阶段左侧外圈返回后续真实任务高度"];
+    feedback_outer_top -> later_task [style=dashed, weight=1000, tailclip=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="feedback", audit_corridor="outer_left_adoption", audit_reason="修正后回到原后续真实任务重新验证，不返回会话内读取步骤"];
+
+    { rank=same; actually_adopted; adoption_done; }
+    { rank=same; feedback_outer_top; later_task; }
+    { rank=same; feedback_outer_bottom; feedback_bottom; }
+  }
+
+  session_done -> later_task [style=invis, weight=1000];
+}

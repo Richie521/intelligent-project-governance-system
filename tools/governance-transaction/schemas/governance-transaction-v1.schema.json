@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/intelligent-project-governance/governance-transaction-v1.schema.json",
+  "title": "GovernanceTransaction v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "transaction_id",
+    "manifest_sha256",
+    "authorization",
+    "projections"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "transaction_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{2,127}$"
+    },
+    "manifest_sha256": { "type": "string", "pattern": "^[0-9a-fA-F]{64}$" },
+    "authorization": { "enum": ["automatic_low_risk", "explicit_current_task"] },
+    "contract_tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9._-]{1,128}$"
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 512 }
+    },
+    "projections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["owner", "operation"],
+        "properties": {
+          "owner": { "type": "string", "minLength": 1 },
+          "operation": {
+            "enum": ["replace_exact", "insert_after", "append_unique", "compare_exchange"]
+          },
+          "target_variables": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9._-]{1,128}$"
+            }
+          },
+          "old": { "type": "string", "minLength": 1 },
+          "new": { "type": "string" },
+          "anchor": { "type": "string", "minLength": 1 },
+          "content": { "type": "string" },
+          "event_id": {
+            "type": "string",
+            "pattern": "^gov-[A-Za-z0-9][A-Za-z0-9._-]{2,127}$"
+          },
+          "expected_sha256": { "type": "string", "pattern": "^[0-9a-fA-F]{64}$" }
+        }
+      }
+    }
+  }
+}

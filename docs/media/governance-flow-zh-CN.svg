@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">项目智能治理中心流程图</title>
+  <desc id="desc">展示用户目标如何经过全局桥接、项目本地治理、验证、写回和中央方法库复用闭环。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7f8fb}.title{font:700 34px "Microsoft YaHei","Segoe UI",Arial,sans-serif;fill:#172033}.sub{font:400 17px "Microsoft YaHei","Segoe UI",Arial,sans-serif;fill:#546174}.head{font:700 18px "Microsoft YaHei","Segoe UI",Arial,sans-serif;fill:#243044}.label{font:700 15px "Microsoft YaHei","Segoe UI",Arial,sans-serif;fill:#172033}.small{font:400 12px "Microsoft YaHei","Segoe UI",Arial,sans-serif;fill:#536174}.box{fill:#fff;stroke:#cbd5e1;stroke-width:1.5}.blue{fill:#eef6ff;stroke:#8db9e5}.green{fill:#eef8f3;stroke:#8bc5a8}.amber{fill:#fff6e8;stroke:#deb36b}.shell{fill:#fff;stroke:#6f8fb5;stroke-width:2}.central{fill:#f8fbff;stroke:#91a9c9;stroke-width:2}.decision{fill:#fffaf0;stroke:#d7a947;stroke-width:1.8}.arrow{stroke:#66758a;stroke-width:2.2;fill:none;marker-end:url(#arrow)}.yes{stroke:#2f8f62;stroke-width:2.4;fill:none;marker-end:url(#yes)}.no{stroke:#b2732c;stroke-width:2.2;fill:none;marker-end:url(#no)}.dash{stroke:#6e7f96;stroke-width:2;fill:none;stroke-dasharray:7 6;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#66758a"/></marker>
+    <marker id="yes" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#2f8f62"/></marker>
+    <marker id="no" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#b2732c"/></marker>
+  </defs>
+  <rect class="bg" width="1280" height="720"/>
+  <text class="title" x="60" y="58">项目智能治理中心</text>
+  <text class="sub" x="60" y="86">用轻量入口把混乱上下文转成项目本地、可验证、可持续的治理层。</text>
+
+  <rect class="box blue" x="60" y="126" width="155" height="78" rx="10"/>
+  <text class="label" x="137.5" y="157" text-anchor="middle">用户目标</text>
+  <text class="small" x="137.5" y="181" text-anchor="middle">意图和边界</text>
+  <rect class="box" x="260" y="126" width="165" height="78" rx="10"/>
+  <text class="label" x="342.5" y="157" text-anchor="middle">智能体会话</text>
+  <text class="small" x="342.5" y="181" text-anchor="middle">读取当前证据</text>
+  <rect class="box green" x="470" y="126" width="175" height="78" rx="10"/>
+  <text class="label" x="557.5" y="157" text-anchor="middle">全局桥接规则</text>
+  <text class="small" x="557.5" y="181" text-anchor="middle">路由到具体项目</text>
+  <rect class="box" x="690" y="126" width="190" height="78" rx="10"/>
+  <text class="label" x="785" y="157" text-anchor="middle">项目 AGENTS.md</text>
+  <text class="small" x="785" y="181" text-anchor="middle">本地入口规则</text>
+  <rect class="box" x="925" y="126" width="180" height="78" rx="10"/>
+  <text class="label" x="1015" y="157" text-anchor="middle">主题索引</text>
+  <text class="small" x="1015" y="181" text-anchor="middle">最小必要上下文</text>
+
+  <path class="arrow" d="M215 165H260"/>
+  <path class="arrow" d="M425 165H470"/>
+  <path class="arrow" d="M645 165H690"/>
+  <path class="arrow" d="M880 165H925"/>
+
+  <rect class="shell" x="80" y="280" width="610" height="250" rx="16"/>
+  <text class="head" x="112" y="316">项目本地治理层</text>
+  <text class="small" x="112" y="340">具体项目真实工作的权威层，而不是中央模板的机械复制。</text>
+  <rect class="box blue" x="112" y="368" width="250" height="62" rx="9"/>
+  <text class="label" x="237" y="393" text-anchor="middle">来源权威边界</text>
+  <text class="small" x="237" y="414" text-anchor="middle">区分权威、证据和输出</text>
+  <rect class="box blue" x="410" y="368" width="250" height="62" rx="9"/>
+  <text class="label" x="535" y="393" text-anchor="middle">上下文管理</text>
+  <text class="small" x="535" y="414" text-anchor="middle">只读取任务真正需要的内容</text>
+  <rect class="box green" x="112" y="452" width="250" height="62" rx="9"/>
+  <text class="label" x="237" y="477" text-anchor="middle">长期决策</text>
+  <text class="small" x="237" y="498" text-anchor="middle">让后续会话保持一致</text>
+  <rect class="box green" x="410" y="452" width="250" height="62" rx="9"/>
+  <text class="label" x="535" y="477" text-anchor="middle">验证探针</text>
+  <text class="small" x="535" y="498" text-anchor="middle">测试路由和安全行为</text>
+  <path class="dash" d="M535 514V548H237V514"/>
+  <path class="arrow" d="M1015 204V250H385V280"/>
+
+  <rect class="box amber" x="760" y="352" width="175" height="82" rx="10"/>
+  <text class="label" x="847.5" y="384" text-anchor="middle">写回结果</text>
+  <text class="small" x="847.5" y="408" text-anchor="middle">无、写回本地、或暂缓</text>
+  <path class="arrow" d="M690 405H760"/>
+
+  <polygon class="decision" points="1065,330 1160,392 1065,454 970,392"/>
+  <text class="label" x="1065" y="386" text-anchor="middle">可复用</text>
+  <text class="label" x="1065" y="407" text-anchor="middle">模式？</text>
+  <path class="arrow" d="M935 393H970"/>
+
+  <rect class="box amber" x="830" y="478" width="170" height="58" rx="9"/>
+  <text class="label" x="915" y="502" text-anchor="middle">留在本地项目</text>
+  <text class="small" x="915" y="522" text-anchor="middle">项目特有知识</text>
+  <path class="no" d="M1020 438L968 478"/>
+  <text class="small" x="984" y="458">否</text>
+
+  <rect class="central" x="760" y="585" width="430" height="88" rx="16"/>
+  <text class="head" x="792" y="620">中央方法库</text>
+  <text class="small" x="792" y="644">沉淀可复用原则、接入方法、验证规则和模式反馈。</text>
+  <path class="yes" d="M1105 445V585"/>
+  <text class="small" x="1116" y="510">是</text>
+  <path class="dash" d="M1190 629H1228V165H1105"/>
+  <text class="small" x="1040" y="696" text-anchor="middle">中央方法改进后续项目接入，但不覆盖每个项目自己的真实工作方式。</text>
+</svg>

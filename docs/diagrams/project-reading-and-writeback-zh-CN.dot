@@ -1,0 +1,78 @@
+digraph ProjectReadingAndWriteback {
+  graph [
+    rankdir=TB,
+    splines=ortho,
+    newrank=true,
+    ordering=out,
+    outputorder=edgesfirst,
+    bgcolor="#FFFFFF",
+    pad=0.38,
+    nodesep=0.56,
+    ranksep=0.66,
+    fontname="Microsoft YaHei",
+    fontcolor="#111111",
+    fontsize=18,
+    label="项目资料处理与写回循环",
+    labelloc=t,
+    labeljust=c,
+    audit_purpose="说明项目资料怎样按任务读取、修改或生成，当前计划怎样按关联性参与，长期结果与治理投影怎样写回",
+    audit_reader_question="什么时候读取当前计划，资料如何处理，长期结果写入哪里，同轮治理变化怎样一次提交",
+    audit_direction="top_to_bottom",
+    audit_route_continuity="strict"
+  ];
+
+  node [shape=box, style="rounded,filled", color="#333333", fillcolor="#FFFFFF", fontcolor="#111111", fontname="Microsoft YaHei", fontsize=11, margin="0.26,0.16", penwidth=1.2];
+  edge [color="#444444", arrowsize=0.74, penwidth=1.2];
+
+  user [shape=oval, style="filled", label="用户指示", group=main, penwidth=1.5, audit_stage="task", audit_order="01", audit_role="start", audit_size_group="none"];
+  define_task [label="先根据用户最新表达确定当前任务", group=main, width=4.4, height=0.78, fixedsize=true, fillcolor="#F2F2F2", audit_stage="task", audit_order="02", audit_role="task_scope", audit_size_group="main_actions"];
+  needs_plan [shape=diamond, style="filled", label="当前任务需要计划连续性\n或直接后续依赖？", group=main, width=4.4, height=1.10, fixedsize=true, penwidth=1.5, audit_stage="task", audit_order="03", audit_role="decision", audit_size_group="none"];
+  read_without_plan [label="不需要：不读取旧计划，\n只核验必要资料", group=main, width=4.4, height=0.78, fixedsize=true, fillcolor="#F2F2F2", audit_stage="task", audit_order="04", audit_role="read_without_plan", audit_size_group="main_actions"];
+  read_related_plan [label="需要：只读取相关计划项，\n再核验必要资料", group=plan_side, width=3.6, height=0.78, fixedsize=true, fillcolor="#F2F2F2", audit_stage="task", audit_order="side", audit_role="read_related_plan", audit_size_group="none"];
+  handle_materials [label="按任务需要修改或生成项目资料", group=main, width=4.4, height=0.78, fixedsize=true, audit_stage="task", audit_order="05", audit_role="material_action", audit_size_group="main_actions"];
+  execute [label="执行任务并验证结果", group=main, width=4.4, height=0.78, fixedsize=true, audit_stage="task", audit_order="06", audit_role="verify", audit_size_group="main_actions"];
+  continue_work [shape=diamond, style="filled", label="还要继续工作？", group=main, width=4.4, height=1.10, fixedsize=true, penwidth=1.5, audit_stage="continuation", audit_order="07", audit_role="decision", audit_size_group="none"];
+  update_plan [label="继续工作：形成计划候选，\n旧计划不自动激活", group=return_outer, width=3.55, height=0.78, fixedsize=true, fillcolor="#F2F2F2", audit_stage="continuation", audit_order="side", audit_role="plan_update", audit_size_group="none"];
+
+  save_result [shape=diamond, style="filled", label="结果需要长期写回？", group=main, width=4.4, height=1.10, fixedsize=true, audit_stage="writeback", audit_order="08", audit_role="decision", audit_size_group="none"];
+  no_write [shape=oval, style="filled", label="不需要写回：不读治理清单，\n不创建长期文件并结束", group=no_write_side, width=3.75, height=0.82, fixedsize=true, fillcolor="#F7F7F7", audit_stage="completion", audit_order="end", audit_role="no_write_end", audit_size_group="none"];
+  choose_destination [label="需要写回：先判断已有文件\n能否承担职责", group=main, width=4.4, height=0.78, fixedsize=true, fillcolor="#F2F2F2", audit_stage="writeback", audit_order="09", audit_role="route", audit_size_group="main_actions"];
+  needs_confirmation [shape=diamond, style="filled", label="需要高影响新文件\n或职责仍不清？", group=main, width=4.4, height=1.10, fixedsize=true, audit_stage="writeback", audit_order="10", audit_role="decision", audit_size_group="none"];
+  write_local [label="写入项目长期文件；计划、日志、\n状态等先形成治理投影", group=main, width=4.4, height=0.78, fixedsize=true, fillcolor="#F2F2F2", audit_stage="writeback", audit_order="11", audit_role="write", audit_size_group="main_actions"];
+  defer_write [shape=oval, style="filled,dashed", label="需要确认：报告延期写回\n并等待用户决定", group=defer_side, width=3.55, height=0.82, fixedsize=true, fillcolor="#F7F7F7", audit_stage="writeback", audit_order="side", audit_role="deferred", audit_size_group="none"];
+  verify_writeback [label="同轮治理投影一次提交并统一验证", group=main, width=4.4, height=0.78, fixedsize=true, fillcolor="#F2F2F2", penwidth=1.4, audit_stage="writeback", audit_order="12", audit_role="verify", audit_size_group="main_actions"];
+  close_plan [label="终端回执给出唯一 Writeback 结论", group=main, width=4.4, height=0.78, fixedsize=true, fillcolor="#F2F2F2", audit_stage="completion", audit_order="13", audit_role="plan_close", audit_size_group="main_actions"];
+  done [shape=oval, style="filled", label="本次任务结束", group=main, fillcolor="#E8E8E8", penwidth=1.5, audit_stage="completion", audit_order="14", audit_role="end", audit_size_group="none"];
+
+  return_top [shape=point, width=0.02, height=0.02, fixedsize=true, label="", style=invis, group=return_outer, audit_anchor="turn", audit_corridor="outer_right_continue"];
+  return_start [shape=point, width=0.02, height=0.02, fixedsize=true, label="", style=invis, group=return_outer, audit_anchor="turn", audit_corridor="outer_right_continue"];
+
+  user -> define_task [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  define_task -> needs_plan [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  needs_plan -> read_without_plan [xlabel="不需要", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  needs_plan -> read_related_plan [xlabel="需要", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, audit_tail_side="right", audit_head_side="top", audit_route_kind="branch", audit_corridor="plan_relevance_branch", audit_reason="相关计划分支从判断右侧离开并从分支框上侧进入，避免与主干重叠"];
+  read_without_plan -> handle_materials [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  read_related_plan -> handle_materials [constraint=false, audit_tail_side="bottom", audit_head_side="right", audit_route_kind="branch", audit_corridor="plan_relevance_branch", audit_reason="相关计划分支在核验必要资料后汇回当前任务资料处理"];
+  handle_materials -> execute [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  execute -> continue_work [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  continue_work -> update_plan [xlabel="继续", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="continue_branch"];
+  return_start -> update_plan [style=dashed, weight=1000, arrowhead=none, tailclip=false, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="return", audit_corridor="outer_right_continue", audit_reason="无箭头走廊段在更新计划框的上边中点连续接入返回线路"];
+  return_top -> return_start [style=dashed, weight=1000, arrowhead=none, tailclip=false, headclip=false, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="return", audit_corridor="outer_right_continue", audit_reason="沿同一条右侧外圈返回资料读取高度"];
+  return_top -> define_task [style=dashed, constraint=false, tailclip=false, audit_tail_side="left", audit_head_side="right", audit_route_kind="return", audit_corridor="outer_right_continue", audit_reason="从外侧回路准确接回当前任务判断步骤"];
+
+  continue_work -> save_result [xlabel="结束工作", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  save_result -> no_write [xlabel="不需要", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, weight=1000, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="no_write_branch"];
+  save_result -> choose_destination [xlabel="需要", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  choose_destination -> needs_confirmation [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  needs_confirmation -> write_local [xlabel="不需要", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  needs_confirmation -> defer_write [xlabel="需要", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="defer_branch"];
+  write_local -> verify_writeback [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  verify_writeback -> close_plan [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  close_plan -> done [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+
+  { rank=same; define_task; return_top; }
+  { rank=same; read_without_plan; read_related_plan; }
+  { rank=same; continue_work; update_plan; }
+  { rank=same; save_result; no_write; }
+  { rank=same; needs_confirmation; defer_write; }
+}

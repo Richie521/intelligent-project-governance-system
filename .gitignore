@@ -1,0 +1,29 @@
+# Operating system
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor and tool state
+.idea/
+.vscode/
+.codex/
+.agents/*
+!.agents/skills/
+!.agents/skills/**
+
+# Logs, caches, and temporary output
+*.log
+*.tmp
+*.cache
+cache/
+tmp/
+temp/
+logs/
+run-archives/
+
+# Local and private configuration
+.env
+.env.*
+*.local
+private/
+secrets/

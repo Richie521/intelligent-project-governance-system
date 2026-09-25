@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "project_id": "replace-with-project-id",
+  "governance_language": "en",
+  "project_role": "adopted",
+  "routing_sources": {
+    "entry": {
+      "path": "AGENTS.md",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size": 0,
+      "mtime_ns": 0
+    },
+    "topic_map": {
+      "path": "docs/00-topic-map.md",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size": 0,
+      "mtime_ns": 0
+    },
+    "source_authority": {
+      "path": "docs/01-source-of-truth.md",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size": 0,
+      "mtime_ns": 0
+    },
+    "context": {
+      "path": "docs/02-context-management.md",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size": 0,
+      "mtime_ns": 0
+    }
+  },
+  "projections": {
+    "governance_log": {
+      "path_pattern": "docs/governance-log/{period}.md",
+      "operations": ["append_unique"],
+      "allowed_authorizations": ["automatic_low_risk", "explicit_current_task"],
+      "encoding": "utf-8",
+      "create_if_missing": true,
+      "new_file_preamble": "# {period} Governance Log\n\n"
+    },
+    "decision_record": {
+      "path": "docs/10-decisions.md",
+      "operations": ["replace_exact", "insert_after", "compare_exchange"],
+      "allowed_authorizations": ["explicit_current_task"],
+      "encoding": "utf-8",
+      "create_if_missing": false
+    }
+  },
+  "runtime": {
+    "receipt_limit": 200
+  }
+}

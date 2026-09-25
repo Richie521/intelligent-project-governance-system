@@ -1,0 +1,6 @@
+interface:
+  display_name: "项目治理"
+  short_description: "项目治理接入、迁移、来源权威、同步升级、人工诊断和治理验证"
+  default_prompt: "使用 $project-governance 从目标项目本地规则和权威来源开始处理结构性治理任务。"
+policy:
+  allow_implicit_invocation: true

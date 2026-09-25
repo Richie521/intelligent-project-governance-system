@@ -1,0 +1,338 @@
+digraph SystemOverviewCompany {
+  graph [
+    rankdir=TB,
+    bgcolor="#FFFFFF",
+    pad="0.38",
+    nodesep="0.34",
+    ranksep="0.62",
+    splines=ortho,
+    compound=true,
+    newrank=true,
+    ordering=out,
+    outputorder=edgesfirst,
+    fontname="Microsoft YaHei",
+    fontcolor="#111111",
+    fontsize=18,
+    label="项目智能治理中心总览（公司版）",
+    labelloc=t,
+    labeljust=c,
+    audit_purpose="用直白的公司和车间说法解释项目智能治理中心怎样组成、一次记账和运行",
+    audit_reader_question="董事长的要求怎样进入车间，结构问题谁处理，日常变化怎样一次记好并验收",
+    audit_direction="top_to_bottom"
+  ];
+
+  node [
+    shape=box,
+    style="rounded,filled",
+    color="#333333",
+    fillcolor="#FFFFFF",
+    fontcolor="#111111",
+    fontname="Microsoft YaHei",
+    fontsize=10.8,
+    margin="0.24,0.14",
+    penwidth=1.2
+  ];
+
+  edge [color="#444444", arrowsize=0.72, penwidth=1.15];
+
+  user [
+    shape=oval,
+    style="filled",
+    label="董事长",
+    group=entry_col,
+    width=2.65,
+    height=0.68,
+    fixedsize=true,
+    penwidth=1.5,
+    audit_stage="system_entry",
+    audit_order="01",
+    audit_role="user_authority",
+    audit_size_group="top_peer"
+  ];
+  central [
+    label="机床研发中心",
+    group=landing_col,
+    width=2.65,
+    height=0.68,
+    fixedsize=true,
+    fillcolor="#F2F2F2",
+    penwidth=1.5,
+    audit_stage="central_method",
+    audit_order="01",
+    audit_role="reusable_method",
+    audit_size_group="top_peer"
+  ];
+  global [
+    label="集团总经理",
+    group=entry_col,
+    width=2.65,
+    height=0.68,
+    fixedsize=true,
+    audit_stage="system_routing",
+    audit_order="02",
+    audit_role="global_router",
+    audit_size_group="routing_peer"
+  ];
+  skill [
+    label="治理工作队（结构治理）",
+    group=landing_col,
+    width=2.65,
+    height=0.68,
+    fixedsize=true,
+    fillcolor="#F2F2F2",
+    audit_stage="system_routing",
+    audit_order="02",
+    audit_role="governance_executor",
+    audit_size_group="routing_peer"
+  ];
+
+  subgraph cluster_target {
+    label="生产车间";
+    color="#555555";
+    fillcolor="#FAFAFA";
+    style="rounded,filled";
+    fontname="Microsoft YaHei";
+    fontcolor="#222222";
+    fontsize=14;
+    margin=22;
+
+    entry [
+      label="车间入口和规矩",
+      group=entry_col,
+      width=2.65,
+      height=0.72,
+      fixedsize=true,
+      fillcolor="#F2F2F2",
+      audit_stage="local_governance",
+      audit_order="03",
+      audit_role="local_entry",
+      audit_size_group="local_role_peer"
+    ];
+    landing [
+      label="把治理办法接进车间",
+      group=landing_col,
+      width=2.65,
+      height=0.72,
+      fixedsize=true,
+      fillcolor="#F2F2F2",
+      audit_stage="local_governance",
+      audit_order="03",
+      audit_role="adoption_activation",
+      audit_size_group="local_role_peer"
+    ];
+    diagnosis [
+      label="出问题先查清哪一层",
+      group=diagnosis_col,
+      width=2.65,
+      height=0.72,
+      fixedsize=true,
+      audit_stage="local_governance",
+      audit_order="03",
+      audit_role="layered_diagnosis",
+      audit_size_group="local_role_peer"
+    ];
+    sync [
+      label="好办法再给别的车间试",
+      group=sync_col,
+      width=2.65,
+      height=0.72,
+      fixedsize=true,
+      fillcolor="#F2F2F2",
+      audit_stage="local_governance",
+      audit_order="03",
+      audit_role="cross_project_sync",
+      audit_size_group="local_role_peer"
+    ];
+
+    daily [
+      label="处理每天的生产资料",
+      group=entry_col,
+      width=2.65,
+      height=0.72,
+      fixedsize=true,
+      audit_stage="daily_work",
+      audit_order="04",
+      audit_role="daily_information",
+      audit_size_group="local_role_peer"
+    ];
+    validation [
+      label="都要过关：真实试产验收",
+      group=diagnosis_col,
+      width=8.65,
+      height=0.72,
+      fixedsize=true,
+      fillcolor="#E8E8E8",
+      penwidth=1.55,
+      audit_stage="verification",
+      audit_order="04",
+      audit_role="shared_live_validation",
+      audit_size_group="none"
+    ];
+
+    node [shape=point, width=0.02, height=0.02, fixedsize=true, label="", style=invis];
+    memory_turn_left [group=entry_col, audit_anchor="turn", audit_corridor="memory_entry_route"];
+    memory_turn_center [group=overview_center_col, audit_anchor="turn", audit_corridor="memory_entry_route"];
+
+    subgraph cluster_memory {
+      label="车间记录和工作接续";
+      color="#777777";
+      fillcolor="#FFFFFF";
+      style="rounded,filled";
+      fontname="Microsoft YaHei";
+      fontcolor="#333333";
+      fontsize=12;
+      labeljust=l;
+      margin=18;
+
+      node [shape=box, fixedsize=true, style="rounded,filled", color="#333333", fillcolor="#FFFFFF"];
+      memory_entry [
+        label="有变化：一次办完，各类记录各归各位",
+        group=overview_center_col,
+        width=10.8,
+        height=0.66,
+        audit_stage="project_memory",
+        audit_order="05",
+        audit_role="durable_destination",
+        audit_size_group="none",
+        audit_balance_group="overview_center"
+      ];
+
+      memory_balance_left [
+        shape=point,
+        width=0.02,
+        height=0.02,
+        fixedsize=true,
+        label="",
+        style=invis,
+        audit_anchor="turn",
+        audit_corridor="memory_layout"
+      ];
+      memory_balance_right [
+        shape=point,
+        width=0.02,
+        height=0.02,
+        fixedsize=true,
+        label="",
+        style=invis,
+        audit_anchor="turn",
+        audit_corridor="memory_layout"
+      ];
+
+      node [shape=point, width=0.02, height=0.02, fixedsize=true, label="", style=invis];
+      memory_anchor_1 [group=memory_1, audit_anchor="turn", audit_corridor="memory_bus"];
+      memory_anchor_2 [group=memory_2, audit_anchor="turn", audit_corridor="memory_bus"];
+      memory_anchor_mid [group=overview_center_col, audit_anchor="turn", audit_corridor="memory_bus"];
+      memory_anchor_3 [group=memory_3, audit_anchor="turn", audit_corridor="memory_bus"];
+      memory_anchor_4 [group=memory_4, audit_anchor="turn", audit_corridor="memory_bus"];
+
+      node [shape=box, fixedsize=true, style="rounded,filled", color="#333333", fillcolor="#FFFFFF"];
+      current_plan [
+        label="生产计划板",
+        group=memory_1,
+        width=2.35,
+        height=0.68,
+        fillcolor="#F2F2F2",
+        audit_stage="project_memory",
+        audit_order="06",
+        audit_role="current_plan",
+        audit_size_group="memory_components"
+      ];
+      vocabulary [
+        label="常用术语和规格",
+        group=memory_2,
+        width=2.35,
+        height=0.68,
+        audit_stage="project_memory",
+        audit_order="06",
+        audit_role="terminology",
+        audit_size_group="memory_components"
+      ];
+      project_log [
+        label="车间工作记录",
+        group=memory_3,
+        width=2.35,
+        height=0.68,
+        fillcolor="#F2F2F2",
+        audit_stage="project_memory",
+        audit_order="06",
+        audit_role="project_log",
+        audit_size_group="memory_components"
+      ];
+      durable_files [
+        label="运行材料和其他档案",
+        group=memory_4,
+        width=2.35,
+        height=0.68,
+        audit_stage="project_memory",
+        audit_order="06",
+        audit_role="other_durable_files",
+        audit_size_group="memory_components"
+      ];
+
+      memory_entry -> memory_anchor_mid [style=dotted, arrowhead=none, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="memory_bus", audit_reason="从居中的归档节点进入车间资料分配线"];
+      memory_anchor_1 -> memory_anchor_2 [style=dotted, arrowhead=none, audit_tail_side="right", audit_head_side="left", audit_route_kind="normal", audit_corridor="memory_bus", audit_reason="同一条水平分配线"];
+      memory_anchor_2 -> memory_anchor_mid [style=dotted, arrowhead=none, audit_tail_side="right", audit_head_side="left", audit_route_kind="normal", audit_corridor="memory_bus", audit_reason="同一条水平分配线"];
+      memory_anchor_mid -> memory_anchor_3 [style=dotted, arrowhead=none, audit_tail_side="right", audit_head_side="left", audit_route_kind="normal", audit_corridor="memory_bus", audit_reason="同一条水平分配线"];
+      memory_anchor_3 -> memory_anchor_4 [style=dotted, arrowhead=none, audit_tail_side="right", audit_head_side="left", audit_route_kind="normal", audit_corridor="memory_bus", audit_reason="同一条水平分配线"];
+      memory_anchor_1 -> current_plan [style=dotted, arrowhead=none, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="branch", audit_corridor="memory_bus", audit_reason="长期结果可以进入生产计划板职责"];
+      memory_anchor_2 -> vocabulary [style=dotted, arrowhead=none, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="branch", audit_corridor="memory_bus", audit_reason="长期结果可以进入术语和规格职责"];
+      memory_anchor_3 -> project_log [style=dotted, arrowhead=none, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="branch", audit_corridor="memory_bus", audit_reason="长期结果可以进入车间工作记录职责"];
+      memory_anchor_4 -> durable_files [style=dotted, arrowhead=none, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="branch", audit_corridor="memory_bus", audit_reason="长期结果可以进入其他车间档案职责"];
+
+      current_plan -> vocabulary -> project_log -> durable_files [style=invis, weight=1000];
+      memory_balance_left -> memory_entry [style=invis, weight=1000];
+      memory_entry -> memory_balance_right [style=invis, weight=1000];
+      { rank=same; memory_balance_left; memory_entry; memory_balance_right; }
+      { rank=same; memory_anchor_1; memory_anchor_2; memory_anchor_mid; memory_anchor_3; memory_anchor_4; }
+      { rank=same; current_plan; vocabulary; project_log; durable_files; }
+    }
+
+    scope_note [
+      shape=note,
+      style="filled,dashed",
+      label="没变化不翻台账；资料留在车间；真管用的办法才交研发中心",
+      width=10.8,
+      height=0.62,
+      fixedsize=true,
+      fillcolor="#F7F7F7",
+      color="#777777",
+      fontsize=9.8,
+      group=overview_center_col,
+      audit_stage="boundary",
+      audit_order="note",
+      audit_role="local_central_boundary",
+      audit_size_group="none",
+      audit_balance_group="overview_center"
+    ];
+
+    entry -> daily [audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="daily_route"];
+    landing -> validation [style=dashed, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="branch", audit_corridor="validation_gate", audit_reason="治理办法接进车间后就近进入真实试产验收"];
+    diagnosis -> validation [style=dashed, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="branch", audit_corridor="validation_gate", audit_reason="问题修好后就近进入真实试产验收"];
+    sync -> validation [style=dashed, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="branch", audit_corridor="validation_gate", audit_reason="别的车间采用办法后就近进入真实试产验收"];
+    diagnosis -> sync [style=dashed, constraint=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="sync_short", audit_reason="车间里发现的好办法用短线路进入跨车间试用"];
+    daily -> memory_turn_left [arrowhead=none, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="memory_entry_route", audit_reason="日常资料尽早转向居中的车间资料归档入口"];
+    memory_turn_left -> memory_turn_center [arrowhead=none, audit_tail_side="right", audit_head_side="left", audit_route_kind="normal", audit_corridor="memory_entry_route", audit_reason="转向居中的车间资料归档入口"];
+    memory_turn_center -> memory_entry [audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="memory_entry_route", audit_reason="从上边中点进入居中的车间资料归档入口"];
+
+    entry -> landing [style=invis, weight=1000];
+    landing -> diagnosis [style=invis, weight=1000];
+    daily -> validation [style=invis, weight=1000];
+    current_plan -> scope_note [style=invis, weight=100];
+    vocabulary -> scope_note [style=invis, weight=100];
+    project_log -> scope_note [style=invis, weight=100];
+    durable_files -> scope_note [style=invis, weight=100];
+
+    { rank=same; entry; landing; diagnosis; sync; }
+    { rank=same; daily; validation; }
+    { rank=same; memory_turn_left; memory_turn_center; }
+  }
+
+  user -> global [audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="user_route"];
+  central -> skill [audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="central_method_route"];
+  global -> skill [constraint=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="governance_route"];
+  global -> entry [audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="local_entry_route"];
+  skill -> landing [audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="governance_entry_route"];
+
+  { rank=same; user; central; }
+  { rank=same; global; skill; }
+}

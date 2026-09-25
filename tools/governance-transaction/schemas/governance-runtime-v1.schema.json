@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/intelligent-project-governance/governance-runtime-v1.schema.json",
+  "title": "GovernanceRuntimeManifest v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project_id",
+    "governance_language",
+    "project_role",
+    "routing_sources",
+    "projections"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "project_id": { "type": "string", "minLength": 1 },
+    "governance_language": { "enum": ["zh-CN", "en"] },
+    "project_role": { "enum": ["central", "adopted"] },
+    "routing_sources": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "$ref": "#/$defs/routingSource" }
+    },
+    "projections": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "$ref": "#/$defs/projection" }
+    },
+    "transaction_contracts": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/transactionContract" }
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "receipt_limit": { "type": "integer", "minimum": 1 }
+      }
+    }
+  },
+  "$defs": {
+    "routingSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "size", "mtime_ns"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "sha256": { "type": "string", "pattern": "^[0-9a-fA-F]{64}$" },
+        "size": { "type": "integer", "minimum": 0 },
+        "mtime_ns": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "projection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operations", "allowed_authorizations"],
+      "oneOf": [
+        { "required": ["path"], "not": { "required": ["path_pattern"] } },
+        { "required": ["path_pattern"], "not": { "required": ["path"] } }
+      ],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "path_pattern": { "type": "string", "minLength": 1 },
+        "operations": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": ["replace_exact", "insert_after", "append_unique", "compare_exchange"]
+          }
+        },
+        "allowed_authorizations": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "enum": ["automatic_low_risk", "explicit_current_task"] }
+        },
+        "encoding": { "const": "utf-8" },
+        "create_if_missing": { "type": "boolean" },
+        "new_file_preamble": { "type": "string" }
+      }
+    },
+    "transactionContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "required_owners"],
+      "anyOf": [
+        { "required": ["trigger_owners"] },
+        { "required": ["trigger_tags"] }
+      ],
+      "properties": {
+        "name": { "type": "string", "pattern": "^[A-Za-z0-9._-]{1,128}$" },
+        "trigger_owners": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "trigger_tags": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9._-]{1,128}$"
+          }
+        },
+        "required_owners": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

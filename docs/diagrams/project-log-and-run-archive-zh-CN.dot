@@ -1,0 +1,108 @@
+digraph ProjectLogAndRunArchive {
+  graph [
+    rankdir=TB,
+    splines=ortho,
+    newrank=true,
+    ordering=out,
+    outputorder=edgesfirst,
+    nodesep=0.58,
+    ranksep=0.72,
+    pad=0.38,
+    bgcolor="#FFFFFF",
+    fontcolor="#111111",
+    fontname="Microsoft YaHei",
+    fontsize=18,
+    labelloc=t,
+    label="项目日志与运行档案",
+    audit_purpose="说明重要治理事件怎样形成日志投影，并把机器证据、稳定决定和当前状态分开保存后一次提交",
+    audit_reader_question="什么情况下形成治理记录，各类结果分别去哪里，治理投影怎样一次提交和统一验证",
+    audit_direction="top_to_bottom",
+    audit_route_continuity="strict"
+  ];
+
+  node [
+    shape=box,
+    style="rounded,filled",
+    color="#333333",
+    fillcolor="#FFFFFF",
+    fontcolor="#111111",
+    fontname="Microsoft YaHei",
+    fontsize=11,
+    margin="0.24,0.15",
+    penwidth=1.2
+  ];
+
+  edge [color="#444444", arrowsize=0.72, penwidth=1.2];
+
+  start [shape=oval, style="filled", label="任务或治理流程产生结果", group=main, penwidth=1.5, audit_stage="trigger", audit_order="01", audit_role="start", audit_size_group="none"];
+  material [shape=diamond, style="filled", fillcolor="#F2F2F2", label="结果改变未来状态\n或需要证据解释？", group=main, width=4.25, height=1.10, fixedsize=true, audit_stage="trigger", audit_order="02", audit_role="decision", audit_size_group="none"];
+  no_log [shape=oval, style="filled", fillcolor="#F7F7F7", label="普通读取、讨论或无变化结果：\n零治理 I/O，任务正常结束", group=no_log_side, width=4.05, height=0.82, fixedsize=true, audit_stage="no_log", audit_order="side", audit_role="end", audit_size_group="none"];
+
+  identify [label="重要事件：生成事件编号\n并记录带时区时间", group=main, width=4.25, height=0.78, fixedsize=true, audit_stage="human_log", audit_order="03", audit_role="action", audit_size_group="main_actions"];
+  human_write [label="形成日志投影：实际结果、验证、\n风险、写回目标和证据引用", group=main, width=4.25, height=0.78, fixedsize=true, audit_stage="human_log", audit_order="04", audit_role="action", audit_size_group="main_actions"];
+
+  machine [shape=diamond, style="filled", fillcolor="#F2F2F2", label="产生可复现的\n机器材料？", group=main, width=4.25, height=1.05, fixedsize=true, audit_stage="machine_evidence", audit_order="05", audit_role="decision", audit_size_group="none"];
+  machine_write [label="有：由实际工具写入本地运行档案\n或原生证据包", group=owner_side, width=4.05, height=0.78, fixedsize=true, fillcolor="#F2F2F2", audit_stage="machine_evidence", audit_order="side", audit_role="archive", audit_size_group="owner_actions"];
+  machine_join [shape=point, width=0.02, height=0.02, fixedsize=true, label="", style=invis, group=main, audit_stage="machine_evidence", audit_order="05.5", audit_role="join", audit_size_group="none"];
+  machine_turn [shape=point, width=0.02, height=0.02, fixedsize=true, label="", style=invis, group=owner_side, audit_stage="machine_evidence", audit_order="side", audit_role="join", audit_size_group="none"];
+
+  decision [shape=diamond, style="filled", fillcolor="#F2F2F2", label="形成已确认的\n稳定决定？", group=main, width=4.25, height=1.05, fixedsize=true, audit_stage="decision", audit_order="06", audit_role="decision", audit_size_group="none"];
+  decision_write [label="有：形成决策投影\n治理日志只保留引用", group=owner_side, width=4.05, height=0.78, fixedsize=true, fillcolor="#F2F2F2", audit_stage="decision", audit_order="side", audit_role="decision_record", audit_size_group="owner_actions"];
+  decision_join [shape=point, width=0.02, height=0.02, fixedsize=true, label="", style=invis, group=main, audit_stage="decision", audit_order="06.5", audit_role="join", audit_size_group="none"];
+  decision_turn [shape=point, width=0.02, height=0.02, fixedsize=true, label="", style=invis, group=owner_side, audit_stage="decision", audit_order="side", audit_role="join", audit_size_group="none"];
+
+  state [shape=diamond, style="filled", fillcolor="#F2F2F2", label="当前采用、验证、同步\n或发布状态改变？", group=main, width=4.25, height=1.10, fixedsize=true, audit_stage="state", audit_order="07", audit_role="decision", audit_size_group="none"];
+  state_write [label="有：形成状态投影\n不在登记中堆积历史", group=owner_side, width=4.05, height=0.78, fixedsize=true, fillcolor="#F2F2F2", audit_stage="state", audit_order="side", audit_role="state_update", audit_size_group="owner_actions"];
+  state_join [shape=point, width=0.02, height=0.02, fixedsize=true, label="", style=invis, group=main, audit_stage="state", audit_order="07.5", audit_role="join", audit_size_group="none"];
+  state_turn [shape=point, width=0.02, height=0.02, fixedsize=true, label="", style=invis, group=owner_side, audit_stage="state", audit_order="side", audit_role="join", audit_size_group="none"];
+
+  verify [shape=diamond, style="filled", fillcolor="#F2F2F2", label="投影职责、事件引用和\n隐私边界都正确？", group=main, width=4.25, height=1.08, fixedsize=true, audit_stage="verification", audit_order="08", audit_role="decision", audit_size_group="none"];
+  repair [label="未通过：重新分类、删除敏感内容\n并补齐事件和证据引用", group=repair_side, width=4.05, height=0.78, fixedsize=true, fillcolor="#F2F2F2", audit_stage="repair", audit_order="side", audit_role="repair", audit_size_group="none"];
+  done [shape=oval, style="filled", fillcolor="#E8E8E8", label="治理投影已提交并统一验证", group=main, penwidth=1.5, audit_stage="completion", audit_order="09", audit_role="end", audit_size_group="none"];
+  correction [shape=note, style="filled,dashed", fillcolor="#F7F7F7", color="#777777", label="完成事件被新证据修正时：\n新建事件引用原编号，不静默改写历史", fontsize=9.5, group=main, audit_stage="correction", audit_order="note", audit_role="note", audit_size_group="none"];
+
+  node [shape=point, width=0.02, height=0.02, fixedsize=true, label="", style=invis];
+  return_top [group=return_right, audit_anchor="turn", audit_corridor="outer_right_reclassify"];
+  return_bottom [group=return_right, audit_anchor="turn", audit_corridor="outer_right_reclassify"];
+
+  start -> material [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  material -> no_log [xlabel="否", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="no_log_branch"];
+  material -> identify [xlabel="是", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  identify -> human_write [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  human_write -> machine [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+
+  machine -> machine_join [xlabel="无", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", arrowhead=none, weight=1000, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  machine -> machine_write [xlabel="有", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="owner_branch"];
+  machine_write -> machine_turn [arrowhead=none, weight=1000, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="owner_branch"];
+  machine_turn -> machine_join [arrowhead=none, weight=1000, audit_tail_side="left", audit_head_side="right", audit_route_kind="normal", audit_corridor="owner_join"];
+  machine_join -> decision [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+
+  decision -> decision_join [xlabel="无", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", arrowhead=none, weight=1000, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  decision -> decision_write [xlabel="有", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="owner_branch"];
+  decision_write -> decision_turn [arrowhead=none, weight=1000, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="owner_branch"];
+  decision_turn -> decision_join [arrowhead=none, weight=1000, audit_tail_side="left", audit_head_side="right", audit_route_kind="normal", audit_corridor="owner_join"];
+  decision_join -> state [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+
+  state -> state_join [xlabel="无", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", arrowhead=none, weight=1000, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  state -> state_write [xlabel="有", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="owner_branch"];
+  state_write -> state_turn [arrowhead=none, weight=1000, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="owner_branch"];
+  state_turn -> state_join [arrowhead=none, weight=1000, audit_tail_side="left", audit_head_side="right", audit_route_kind="normal", audit_corridor="owner_join"];
+  state_join -> verify [weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+
+  verify -> done [xlabel="正确", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=100, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
+  verify -> repair [xlabel="需修正", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="repair_branch"];
+  repair -> return_bottom [style=dashed, weight=1000, arrowhead=none, headclip=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="return", audit_corridor="outer_right_reclassify", audit_reason="进入主流程右侧的重新分类走廊"];
+  return_bottom -> return_top [style=dashed, weight=1000, arrowhead=none, tailclip=false, headclip=false, audit_tail_side="top", audit_head_side="bottom", audit_route_kind="return", audit_corridor="outer_right_reclassify", audit_reason="沿外侧走廊返回人读事件写入步骤所在高度"];
+  return_top -> human_write [style=dashed, constraint=false, tailclip=false, audit_tail_side="left", audit_head_side="right", audit_route_kind="return", audit_corridor="outer_right_reclassify", audit_reason="重新分类后准确接回事件内容和引用写入步骤"];
+  done -> correction [style=dotted, arrowhead=none, weight=40, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="branch", audit_corridor="main"];
+
+  { rank=same; material; no_log; }
+  { rank=same; human_write; return_top; }
+  { rank=same; machine; machine_write; }
+  { rank=same; machine_join; machine_turn; }
+  { rank=same; decision; decision_write; }
+  { rank=same; decision_join; decision_turn; }
+  { rank=same; state; state_write; }
+  { rank=same; state_join; state_turn; }
+  { rank=same; verify; repair; return_bottom; }
+}

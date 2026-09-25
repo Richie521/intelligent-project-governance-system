@@ -1,0 +1,23 @@
+name: Windows verification
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - name: Transaction release checks
+        run: python -m unittest discover -s tools/governance-transaction/tests -p 'test_release*.py' -v
+      - name: Installation and restoration checks
+        run: python -m unittest discover -s tools/governance-activation-guard/tests -p 'test_release*.py' -v
