@@ -1,8 +1,8 @@
-# 项目智能治理中心
+# 项目智能治理系统
 
 [English](README.md)
 
-项目智能治理中心是一套以文档为方法权威的通用治理方法，用来帮助各项目建立适合本地现实的治理规则，让 AI 参与的项目文件夹更容易理解、更安全地修改。
+项目智能治理系统是一套以文档为方法权威的通用治理方法，用来帮助各项目建立适合本地现实的治理规则，让 AI 参与的项目文件夹更容易理解、更安全地修改。
 
 它帮助智能体根据项目本地证据进行分析，识别源文件边界，保留项目已有的有效做法，避免复制隐私或过期上下文，并把真正会影响未来工作的知识写回到正确位置。
 
@@ -28,9 +28,9 @@ AI 编程智能体经常进入一种上下文很混乱的项目：聊天历史�
 
 ## 图示总览
 
-![项目智能治理中心流程图](docs/media/governance-flow-zh-CN.svg)
+![项目智能治理系统英文总览图](docs/media/system-architecture-en.svg)
 
-更多可编辑 Mermaid 源图和补充工作流见 [docs/flowchart.md](docs/flowchart.md)。
+这张总览图的[可编辑 DOT 图源](docs/diagrams/system-architecture-en.dot)；其他专题流程图见 [docs/flowchart.md](docs/flowchart.md)。
 
 ## 快速开始
 

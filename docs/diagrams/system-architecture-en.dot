@@ -1,0 +1,485 @@
+digraph SystemOverview {
+  graph [
+    rankdir=TB,
+    bgcolor="#FFFFFF",
+    pad="0.38",
+    nodesep="0.34",
+    ranksep="0.62",
+    splines=ortho,
+    compound=true,
+    newrank=true,
+    ordering=out,
+    outputorder=edgesfirst,
+    fontname="Arial",
+    fontcolor="#111111",
+    fontsize=24,
+    label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><B>Project Intelligent Governance System Overview</B></TD></TR><TR><TD HEIGHT="22">&#160;</TD></TR></TABLE>>,
+    labelloc=t,
+    labeljust=c,
+    audit_purpose="说明用户、全局规则、中央方法、治理技能、轻量治理事务和目标项目本地治理怎样组成当前系统",
+    audit_reader_question="普通任务和结构治理从哪里进入，项目事实存在哪里，日常治理结果怎样一次提交和验证",
+    audit_direction="top_to_bottom"
+  ];
+
+  node [
+    shape=box,
+    style="rounded,filled",
+    color="#333333",
+    fillcolor="#FFFFFF",
+    fontcolor="#111111",
+    fontname="Arial",
+    fontsize=10.8,
+    margin="0.24,0.14",
+    penwidth=1.2
+  ];
+
+  edge [color="#444444", arrowsize=0.72, penwidth=1.15];
+
+  user [
+    shape=oval,
+    style="filled",
+    label="User",
+    group=entry_col,
+    width=2.65,
+    height=0.68,
+    fixedsize=true,
+    penwidth=1.5,
+    audit_stage="system_entry",
+    audit_order="01",
+    audit_role="user_authority",
+    audit_size_group="top_peer"
+  ];
+  central [
+    label="Central Method Library",
+    group=landing_col,
+    width=2.65,
+    height=0.68,
+    fixedsize=true,
+    fillcolor="#F2F2F2",
+    penwidth=1.5,
+    audit_stage="central_method",
+    audit_order="01",
+    audit_role="reusable_method",
+    audit_size_group="top_peer"
+  ];
+  global [
+    label="Global AGENTS.md",
+    group=entry_col,
+    width=2.65,
+    height=0.68,
+    fixedsize=true,
+    audit_stage="system_routing",
+    audit_order="02",
+    audit_role="global_router",
+    audit_size_group="routing_peer"
+  ];
+  skill [
+    label="Project Governance Skill",
+    group=landing_col,
+    width=2.65,
+    height=0.68,
+    fixedsize=true,
+    fillcolor="#F2F2F2",
+    audit_stage="system_routing",
+    audit_order="02",
+    audit_role="governance_executor",
+    audit_size_group="routing_peer"
+  ];
+
+  subgraph cluster_target {
+    fontsize=16;
+
+    label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD HEIGHT="10"><FONT POINT-SIZE="1">&#160;</FONT></TD></TR><TR><TD><B>Target Project: Local Governance</B></TD></TR><TR><TD HEIGHT="10"><FONT POINT-SIZE="1">&#160;</FONT></TD></TR></TABLE>>;
+    color="#555555";
+    fillcolor="#FAFAFA";
+    style="rounded,filled";
+    fontname="Arial";
+    fontcolor="#222222";
+    fontsize=16;
+    margin=22;
+
+    entry [
+      label="Local Entry & Boundaries",
+      group=entry_col,
+      width=2.65,
+      height=0.72,
+      fixedsize=true,
+      fillcolor="#F2F2F2",
+      audit_stage="local_governance",
+      audit_order="03",
+      audit_role="local_entry",
+      audit_size_group="local_role_peer"
+    ];
+    landing [
+      label="System Setup & Adoption",
+      group=landing_col,
+      width=2.65,
+      height=0.72,
+      fixedsize=true,
+      fillcolor="#F2F2F2",
+      audit_stage="local_governance",
+      audit_order="03",
+      audit_role="adoption_activation",
+      audit_size_group="local_role_peer"
+    ];
+    diagnosis [
+      label="Layered Diagnosis",
+      group=diagnosis_col,
+      width=2.65,
+      height=0.72,
+      fixedsize=true,
+      audit_stage="local_governance",
+      audit_order="03",
+      audit_role="layered_diagnosis",
+      audit_size_group="local_role_peer"
+    ];
+    sync [
+      label="Cross-Project Learning\n& Improvement",
+      group=sync_col,
+      width=2.65,
+      height=0.72,
+      fixedsize=true,
+      fillcolor="#F2F2F2",
+      audit_stage="local_governance",
+      audit_order="03",
+      audit_role="cross_project_sync",
+      audit_size_group="local_role_peer"
+    ];
+
+    daily [
+      label="Daily Information Handling",
+      group=entry_col,
+      width=2.65,
+      height=0.72,
+      fixedsize=true,
+      audit_stage="daily_work",
+      audit_order="04",
+      audit_role="daily_information",
+      audit_size_group="local_role_peer"
+    ];
+    validation [
+      label="Shared Check: Test in a Real Project Conversation",
+      group=diagnosis_col,
+      width=8.65,
+      height=0.72,
+      fixedsize=true,
+      fillcolor="#E8E8E8",
+      penwidth=1.55,
+      audit_stage="verification",
+      audit_order="04",
+      audit_role="shared_live_validation",
+      audit_size_group="none"
+    ];
+
+    node [shape=point, width=0.02, height=0.02, fixedsize=true, label="", style=invis];
+    memory_turn_left [group=entry_col, audit_anchor="turn", audit_corridor="memory_entry_route"];
+    memory_turn_center [group=overview_center_col, audit_anchor="turn", audit_corridor="memory_entry_route"];
+
+    subgraph cluster_memory {
+    fontsize=16;
+
+      label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD HEIGHT="10"><FONT POINT-SIZE="1">&#160;</FONT></TD></TR><TR><TD><B>Project Memory &amp; Continuity</B></TD></TR><TR><TD HEIGHT="10"><FONT POINT-SIZE="1">&#160;</FONT></TD></TR></TABLE>>;
+      color="#777777";
+      fillcolor="#FFFFFF";
+      style="rounded,filled";
+      fontname="Arial";
+      fontcolor="#333333";
+      fontsize=16;
+      labeljust=l;
+      margin=18;
+
+      node [shape=box, fixedsize=true, style="rounded,filled", color="#333333", fillcolor="#FFFFFF"];
+      memory_entry [
+        label="Lasting Value: File Results Where They Belong",
+        group=overview_center_col,
+        width=10.8,
+        height=0.66,
+        audit_stage="project_memory",
+        audit_order="05",
+        audit_role="durable_destination",
+        audit_size_group="none",
+        audit_balance_group="overview_center"
+      ];
+
+      memory_balance_left [
+        shape=point,
+        width=0.02,
+        height=0.02,
+        fixedsize=true,
+        label="",
+        style=invis,
+        audit_anchor="turn",
+        audit_corridor="memory_layout"
+      ];
+      memory_balance_right [
+        shape=point,
+        width=0.02,
+        height=0.02,
+        fixedsize=true,
+        label="",
+        style=invis,
+        audit_anchor="turn",
+        audit_corridor="memory_layout"
+      ];
+
+      node [shape=point, width=0.02, height=0.02, fixedsize=true, label="", style=invis];
+      memory_anchor_1 [group=memory_1, audit_anchor="turn", audit_corridor="memory_bus"];
+      memory_anchor_2 [group=memory_2, audit_anchor="turn", audit_corridor="memory_bus"];
+      memory_anchor_mid [group=overview_center_col, audit_anchor="turn", audit_corridor="memory_bus"];
+      memory_anchor_3 [group=memory_3, audit_anchor="turn", audit_corridor="memory_bus"];
+      memory_anchor_4 [group=memory_4, audit_anchor="turn", audit_corridor="memory_bus"];
+
+      node [shape=box, fixedsize=true, style="rounded,filled", color="#333333", fillcolor="#FFFFFF"];
+      current_plan [
+        label="Plan Items (Retired)",
+        group=memory_1,
+        width=2.35,
+        height=0.68,
+        fillcolor="#F5F5F5",
+        fontcolor="#888888",
+        color="#BBBBBB",
+        audit_stage="project_memory",
+        audit_order="06",
+        audit_role="current_plan",
+        audit_size_group="memory_components"
+      ];
+      vocabulary [
+        label="Shared Terminology",
+        group=memory_2,
+        width=2.35,
+        height=0.68,
+        audit_stage="project_memory",
+        audit_order="06",
+        audit_role="terminology",
+        audit_size_group="memory_components"
+      ];
+      project_log [
+        label="Governance Log",
+        group=memory_3,
+        width=2.35,
+        height=0.68,
+        fillcolor="#F2F2F2",
+        audit_stage="project_memory",
+        audit_order="06",
+        audit_role="project_log",
+        audit_size_group="memory_components"
+      ];
+      durable_files [
+        label="Long-Term Project Files",
+        group=memory_4,
+        width=2.35,
+        height=0.68,
+        audit_stage="project_memory",
+        audit_order="06",
+        audit_role="other_durable_files",
+        audit_size_group="memory_components"
+      ];
+
+      memory_entry -> memory_anchor_mid [
+        style=dotted,
+        arrowhead=none,
+        audit_tail_side="bottom",
+        audit_head_side="top",
+        audit_route_kind="normal",
+        audit_corridor="memory_bus",
+        audit_reason="从居中的归位节点进入项目记忆分配线", headclip=false];
+      memory_anchor_1 -> memory_anchor_2 [
+        style=dotted,
+        arrowhead=none,
+        audit_tail_side="right",
+        audit_head_side="left",
+        audit_route_kind="normal",
+        audit_corridor="memory_bus",
+        audit_reason="同一条水平分配线", tailclip=false, headclip=false];
+      memory_anchor_2 -> memory_anchor_mid [
+        style=dotted,
+        arrowhead=none,
+        audit_tail_side="right",
+        audit_head_side="left",
+        audit_route_kind="normal",
+        audit_corridor="memory_bus",
+        audit_reason="同一条水平分配线", tailclip=false, headclip=false];
+      memory_anchor_mid -> memory_anchor_3 [
+        style=dotted,
+        arrowhead=none,
+        audit_tail_side="right",
+        audit_head_side="left",
+        audit_route_kind="normal",
+        audit_corridor="memory_bus",
+        audit_reason="同一条水平分配线", tailclip=false, headclip=false];
+      memory_anchor_3 -> memory_anchor_4 [
+        style=dotted,
+        arrowhead=none,
+        audit_tail_side="right",
+        audit_head_side="left",
+        audit_route_kind="normal",
+        audit_corridor="memory_bus",
+        audit_reason="同一条水平分配线", tailclip=false, headclip=false];
+      memory_anchor_1 -> current_plan [
+        style=dotted,
+        arrowhead=none,
+        audit_tail_side="bottom",
+        audit_head_side="top",
+        audit_route_kind="branch",
+        audit_corridor="memory_bus",
+        audit_reason="长期结果可以进入计划事项职责", tailclip=false];
+      memory_anchor_2 -> vocabulary [
+        style=dotted,
+        arrowhead=none,
+        audit_tail_side="bottom",
+        audit_head_side="top",
+        audit_route_kind="branch",
+        audit_corridor="memory_bus",
+        audit_reason="长期结果可以进入词汇职责", tailclip=false];
+      memory_anchor_3 -> project_log [
+        style=dotted,
+        arrowhead=none,
+        audit_tail_side="bottom",
+        audit_head_side="top",
+        audit_route_kind="branch",
+        audit_corridor="memory_bus",
+        audit_reason="长期结果可以进入日志职责", tailclip=false];
+      memory_anchor_4 -> durable_files [
+        style=dotted,
+        arrowhead=none,
+        audit_tail_side="bottom",
+        audit_head_side="top",
+        audit_route_kind="branch",
+        audit_corridor="memory_bus",
+        audit_reason="长期结果可以进入其他长期文件职责", tailclip=false];
+
+      current_plan -> vocabulary -> project_log -> durable_files [style=invis, weight=1000];
+      memory_balance_left -> memory_entry [style=invis, weight=1000, tailclip=false];
+      memory_entry -> memory_balance_right [style=invis, weight=1000, headclip=false];
+      { rank=same; memory_balance_left; memory_entry; memory_balance_right; }
+      { rank=same; memory_anchor_1; memory_anchor_2; memory_anchor_mid; memory_anchor_3; memory_anchor_4; }
+      { rank=same; current_plan; vocabulary; project_log; durable_files; }
+    }
+
+    scope_note [
+      shape=note,
+      style="filled,dashed",
+      label="No lasting change? Do not add a record. Keep project facts local; share only reusable methods.",
+      width=10.8,
+      height=0.62,
+      fixedsize=true,
+      fillcolor="#F7F7F7",
+      color="#777777",
+      fontsize=9.8,
+      group=overview_center_col,
+      audit_stage="boundary",
+      audit_order="note",
+      audit_role="local_central_boundary",
+      audit_size_group="none",
+      audit_balance_group="overview_center"
+    ];
+
+    entry -> daily [
+      audit_tail_side="bottom",
+      audit_head_side="top",
+      audit_route_kind="normal",
+      audit_corridor="daily_route"
+    ];
+    landing -> validation [
+      style=dashed,
+      audit_tail_side="bottom",
+      audit_head_side="top",
+      audit_route_kind="branch",
+      audit_corridor="validation_gate",
+      audit_reason="落地和激活结果就近进入同层的共同验证门槛"
+    ];
+    diagnosis -> validation [
+      style=dashed,
+      audit_tail_side="bottom",
+      audit_head_side="top",
+      audit_route_kind="branch",
+      audit_corridor="validation_gate",
+      audit_reason="治理修复结果就近进入同层的共同验证门槛"
+    ];
+    sync -> validation [
+      style=dashed,
+      audit_tail_side="bottom",
+      audit_head_side="top",
+      audit_route_kind="branch",
+      audit_corridor="validation_gate",
+      audit_reason="同步适配结果就近进入同层的共同验证门槛"
+    ];
+    diagnosis -> sync [
+      style=dashed,
+      constraint=false,
+      audit_tail_side="right",
+      audit_head_side="left",
+      audit_route_kind="branch",
+      audit_corridor="sync_short",
+      audit_reason="项目内验证候选通过短线路进入跨项目同步"
+    ];
+    daily -> memory_turn_left [
+      arrowhead=none,
+      audit_tail_side="bottom",
+      audit_head_side="top",
+      audit_route_kind="normal",
+      audit_corridor="memory_entry_route",
+      audit_reason="日常资料结果尽早转向居中的项目记忆入口", headclip=false];
+    memory_turn_left -> memory_turn_center [
+      arrowhead=none,
+      audit_tail_side="right",
+      audit_head_side="left",
+      audit_route_kind="normal",
+      audit_corridor="memory_entry_route",
+      audit_reason="转向居中的项目记忆入口", tailclip=false, headclip=false];
+    memory_turn_center -> memory_entry [
+      audit_tail_side="bottom",
+      audit_head_side="top",
+      audit_route_kind="normal",
+      audit_corridor="memory_entry_route",
+      audit_reason="从上边中点进入居中的项目记忆入口", tailclip=false];
+
+    entry -> landing [style=invis, weight=1000];
+    landing -> diagnosis [style=invis, weight=1000];
+    daily -> validation [style=invis, weight=1000];
+    current_plan -> scope_note [style=invis, weight=100];
+    vocabulary -> scope_note [style=invis, weight=100];
+    project_log -> scope_note [style=invis, weight=100];
+    durable_files -> scope_note [style=invis, weight=100];
+
+    { rank=same; entry; landing; diagnosis; sync; }
+    { rank=same; daily; validation; }
+    { rank=same; memory_turn_left; memory_turn_center; }
+  }
+
+  user -> global [
+    audit_tail_side="bottom",
+    audit_head_side="top",
+    audit_route_kind="normal",
+    audit_corridor="user_route"
+  ];
+  central -> skill [
+    audit_tail_side="bottom",
+    audit_head_side="top",
+    audit_route_kind="normal",
+    audit_corridor="central_method_route"
+  ];
+  global -> skill [
+    constraint=false,
+    audit_tail_side="right",
+    audit_head_side="left",
+    audit_route_kind="branch",
+    audit_corridor="governance_route"
+  ];
+  global -> entry [
+    audit_tail_side="bottom",
+    audit_head_side="top",
+    audit_route_kind="normal",
+    audit_corridor="local_entry_route"
+  ];
+  skill -> landing [
+    audit_tail_side="bottom",
+    audit_head_side="top",
+    audit_route_kind="normal",
+    audit_corridor="governance_entry_route"
+  ];
+
+  { rank=same; user; central; }
+  { rank=same; global; skill; }
+}
+
