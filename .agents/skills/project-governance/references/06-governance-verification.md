@@ -1,36 +1,30 @@
 # Governance Verification
 
-Use this reference to verify structural governance behavior. Public-release readiness is outside this governance verification.
+Use this reference to report evidence at the level actually requested and available. Minimal file adoption, host adoption verification, and optional full verification are distinct outcomes.
 
-## Representative Probes
+## Minimal File Adoption
 
-- Entry routing starts from the local project entry.
-- Selective context locates only task-relevant evidence, preserves provenance, verifies current authority, and expands by a stated bounded step when needed.
-- Source boundaries distinguish source, generated copy, runtime state, private material, cache, report, history, and draft.
-- Historical chats and handoff material remain evidence rather than authority.
-- Governance-language selection preserves one `zh-CN` or `en` authority and leaves business files outside batch translation.
-- Optional unified wording activates only after user approval and a local owner declaration.
-- Governance logs, machine run archives, stable decisions, and current state remain separate.
-- A dedicated manual command activates layered diagnosis; ordinary corrections, reminders, file conflicts, and governance discussion remain inactive.
-- Layered diagnosis explains the failure mechanism and recurrence conditions, selects exactly one primary root cause and an inspection stop, defines one prevention plan anchored to that root, and passes a same-class regression probe.
-- Migrated or renamed target folders can host a fresh real conversation.
-- Private material remains outside shared method files.
-- Cross-project synchronization adapts locally and reports actual status back to the central registry.
-- An explicitly authorized Governance Center repair preserves each project's adoption state and business boundary, and reports the actual local result.
-- Public governance slots `00–05` map to topic routing, source authority, context management, a disabled `03` slot, governance-log entry, and an optional project-wording surface; do not create a planning projection in slot `03`. Project-specific documents do not occupy these slots. Verify practical filename shortening, same-series suffixes, current-reference updates, and preserved historical paths when a naming migration is in scope.
+Check that the requested target folder was used, its existing authority and useful local rules were preserved, and the smallest necessary host-entry change was made. If the current entry already provides the needed behavior, confirm that no duplicate was needed. Check that no default Skill, global bridge, runtime, gate, or empty `00–05` files were added without authorization. These checks establish a reviewed file-level result, not live behavior.
+
+The `00–05` numbers remain reserved, but there is no requirement to create files for every slot. The `03` planning projection and standalone planning Skill are discontinued. Do not require a Task projection, Task update, or planning-file check.
+
+## Host Adoption Verification
+
+Verify host behavior only through a fresh conversation actually attached to the target folder. Use one representative real task to confirm that the host entry is loaded, relevant context is selected from local authority, and the task remains within its privacy and write boundaries. Report the observed action and result. Static review, simulations, or a conversation attached elsewhere do not prove host adoption.
+
+If the environment or task is unsafe or unsupported, stop the affected probe, preserve the observed condition, and mark host verification incomplete. Name the missing evidence or prerequisite without implying that minimal file adoption also failed.
+
+## Optional Full Verification
+
+Run broader probes or optional governance tools only when explicitly requested and available. Select checks that match the target's actual mechanisms, such as source boundaries, language handling, logs, migration behavior, or an explicitly activated diagnostic workflow. Do not impose the full probe suite on every adoption, and do not claim checks that were not run. A dedicated user command is required to activate layered diagnosis; ordinary corrections, reminders, file conflicts, and governance discussion remain inactive.
 
 ## Hard Failures
 
-Treat these as hard failures:
+- An example, generated, cached, historical, or public copy silently replaces current local authority.
+- A change exceeds the authorized target folder or adds optional infrastructure without authorization.
+- Governance files are added when existing local rules already suffice and no new durable instruction is needed.
+- Static files or a simulated task are presented as proof of live host adoption.
+- Unsafe or unsupported conditions are hidden behind a success claim or substituted with fabricated evidence.
+- Raw conversations, credentials, or unrelated private facts enter shared method files.
 
-- a generated, cached, historical, or public copy silently replacing current local authority;
-- governance files created during discussion-only work;
-- an unapproved authority, privacy, language, topic-system, or long-term structure change;
-- automatic layered diagnosis without a dedicated user command;
-- layer-by-layer advice that replaces precise root-cause selection, skips a lower layer, continues above the inspection stop, assigns multiple primary roots, or gives a non-responsible layer its own repair recommendation;
-- a diagnosis that only assigns responsibility or repairs the current output without a recurrence barrier and a passing same-class regression probe;
-- central changes blindly overwriting local project rules;
-- activation claimed from static files or a conversation attached to the wrong folder;
-- raw conversations, credentials, or unrelated private facts entering shared governance material.
-
-Record wording clarity and optional routing improvements as non-blocking only when behavior still passes.
+Treat wording clarity and optional routing improvements as non-blocking when the requested outcome passes its applicable checks.

@@ -34,18 +34,9 @@ See [docs/flowchart.md](docs/flowchart.md) for the editable Mermaid source and a
 
 ## Quick Start
 
-Read [QUICKSTART.md](QUICKSTART.md) to install and apply the method.
+Send the [interactive installation prompt](INSTALL.md) to Codex, select target folders and necessary capabilities, and let it preserve existing content and check minimal adoption. No Skill or runtime installation is required by default.
 
-The short version:
-
-1. Install the structural-governance Skill, `.agents/skills/project-governance/`, into `$HOME/.agents/skills/`.
-2. Optionally add `templates/global-agents-snippet.md` to global agent instructions when adopting the method across projects.
-3. Choose the new-project, existing-project, or migration path.
-4. Resolve and persist one authoritative governance language: `zh-CN` or `en`; ask once only when user and existing entry language conflict.
-5. Run a Skill-guided read-only intake before editing anything.
-6. Adapt only the local governance mechanisms that are active for the project; the planning projection is discontinued.
-7. Use the [logging and operational evidence guide](docs/logging-guide.md) to separate human event history, machine archives, decisions, and current state.
-8. Write back only durable routing, authority, verification, safety, or decision changes.
+[Quick Start](QUICKSTART.md) covers optional advanced capabilities. File adoption and actual fresh-session use are verified separately; arbitrary environments are not guaranteed.
 
 ## Repository Layout
 

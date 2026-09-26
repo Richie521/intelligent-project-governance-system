@@ -1,6 +1,12 @@
 # Quick Start
 
-This guide installs the structural-governance Codex Skill, then adapts the local governance files to a real target project.
+Start with the [interactive installation prompt](INSTALL.md) in Codex. Supply target paths or let it ask for necessary choices. Basic adoption preserves existing content and adds only the needed local entry; no Skill, Git, Python, or runtime installation is required.
+
+File-adoption checks and actual use in a fresh session are separate outcomes. Unsupported or conflicting targets must be reported incomplete.
+
+## Advanced adoption (optional)
+
+The following Skill, bridge, and templates are for projects explicitly needing extra capabilities, not prerequisites for basic adoption. Do not mechanically create the full file set.
 
 ## 1. Install The Codex Skill
 

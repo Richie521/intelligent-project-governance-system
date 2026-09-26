@@ -2,68 +2,36 @@
 
 The core model is: central method, local reality.
 
-The shared method gives projects a repeatable way to manage agent context, source authority, durable decisions, verification, writeback, and improvement loops. It also provides unified wording, preserves the user's latest direction, and keeps an active long-task plan without making chat history authoritative. Each project still keeps its own local rules, domain knowledge, runtime facts, and privacy boundaries.
-
-The former planning display is discontinued. Historical design material may remain for context, but it does not define current behavior or authorize planning-file reads or writes.
-
-The global agent bridge is the entry signal. It tells the agent to look for project-local governance files when a project adopts this system. The bridge is small by design; it should not store project-specific facts.
+The shared method helps an agent distinguish current authority from notes, generated output, runtime state, and history, then read and update only what the task needs. A single self-contained prompt can carry the adoption instructions. In the target folder, create or merge only a minimal host entry when durable local instructions are needed; if existing rules already suffice, do not duplicate them.
 
 ## Center, Local System, And Adjacent Work
 
-The Project Intelligent Governance Center is the reusable method source, templates, verification rules, and synchronization protocol. A Project Intelligent Governance System (Local) is the adapted instance that runs inside one target project. The seven governance modules belong to the same product, but most daily execution is local; landing and cross-project synchronization are coordinated by the center.
+The Project Intelligent Governance Center maintains the reusable method, examples, and optional verification guidance. A target project remains the authority for its own rules, domain facts, runtime state, privacy boundaries, and durable decisions. Reusable guidance must be adapted to that local reality rather than copied wholesale.
 
-A project may also contain adjacent work such as a portfolio website, a flowchart-production Skill, public-release preparation, or model-selection tools. Those activities may use governance files or produce presentation assets, but they are not governance modules or default runtime dependencies.
+A global agent bridge, installed Skill, runtime, automated gate, or broad governance file set is optional infrastructure, not a default dependency of adoption. Adjacent portfolio, flowchart, release, and tooling work may use governance guidance without becoming governance modules or required runtime components.
 
-## What The Method Solves
+## Adoption And Verification
 
-Long-running AI-assisted work fails when current source files, old notes, generated outputs, runtime state, reports, and chat history all compete as context without clear authority.
+Distinguish three outcomes: minimal file adoption changes or confirms the target folder's minimum host entry; host adoption verification demonstrates behavior in a fresh conversation attached to the actual target folder; optional full verification runs additional tools or probes when explicitly requested and available. Static files do not prove live behavior, and optional full verification is not a prerequisite for either of the first two outcomes.
 
-This method creates a small governance layer so the agent can decide what to read, what to trust, what to ignore, and what to write back.
+If a target or operation is unsafe or unsupported in the available environment, preserve the observed condition, mark the affected outcome incomplete, and state what remains unverified. Do not claim success from a partial or simulated result.
+
+The `00–05` numbers remain reserved for the shared governance interface; reservation does not require creating files. The `03` planning projection and its standalone Skill are discontinued. Do not install a planning Skill or create, read, update, or maintain planning files as part of this method. Project-specific documents can use local numbering when a real need and an authorized owner exist. Unified wording, logs, archives, decision records, Skills, and other tools are optional and should be introduced only when the project needs them and authorization covers the change.
 
 ## Durable Knowledge
 
-Durable knowledge is anything that changes future routing, authority, verification, safety, decisions, or recurring diagnosis.
+Durable knowledge changes future routing, authority, verification, safety, decisions, or recurring diagnosis. Raw sessions, summaries, examples, and handoff notes are evidence, not authority, until adapted into an appropriate local owner.
 
-Raw sessions, memory summaries, and handoff notes are evidence. They do not become authority until distilled into the correct project file.
+Reuse a fitting local file before creating another one. During authorized work, add only the smallest durable instruction needed for a recurring behavior. Do not create a long-term file for one-off content, and do not change source-of-truth or manifest records unless a file's role or authority changes.
 
-Daily work may read, update, or generate files. Reuse a fitting owner first; create and route a focused low-impact topic only during authorized work, defer high-impact or unclear destinations, and create no long-term file for one-off content.
+## Corrections And Layered Diagnosis
 
-Reuse an existing file when its responsibility fits. During authorized work, a focused low-impact topic may be created together with its topic-map route when no existing owner fits. Confirm changes to authority, privacy, topic structure, or long-term governance first. Discussion-only work defers the write, and one-off content does not receive a long-term file. Source-of-truth or manifest records change only when file role or authority changes.
+Handle ordinary corrections and current-task scope changes within the current task. They do not activate a governance gate or a full layered diagnosis. Enter manual layered diagnosis only after a dedicated user command such as `启动分层诊断` or `请启动治理门禁：检查……`.
 
-## Layered Diagnosis And Feedback
+After explicit activation, examine the current task first, then the project mechanism, then global guidance or tools only when the failure may recur across unrelated projects. Stop at the first layer that explains the failure, identify one primary cause, and verify the durable repair with a representative probe. This diagnostic workflow is separate from ordinary adoption and is not a default adoption prerequisite.
 
-Self-reflection and layered diagnosis operate throughout project work, not only during initial adoption.
-
-When user dissatisfaction, goal drift, file conflict, failed verification, or repeated friction appears, distinguish two directions. Rules apply top-down: global guidance, project mechanism, then current task. Diagnose failures bottom-up in this order:
-
-1. user input and the current task: goal, information, authorization, and work sequence;
-2. the target project's mechanism: entry, routing, authority, verification, and writeback.
-3. general agent behavior: global guidance, Skill behavior, and tooling, only when the defect may recur across unrelated projects.
-
-Stop at the first layer that fully explains the failure. If several layers contributed, record their causal connection to one primary root cause. The inspection order is not a layer-by-layer advice outline: record one inspection stop, give non-responsible layers only exclusion or stop reasons, and produce one prevention plan anchored to the primary root. Repair the smallest durable surface, rerun the failed probe, and promote only genuinely reusable local lessons into the central method. Central changes normally return through local discussion and verification rather than bulk replacement; an explicit user authorization for a Governance Center cross-project repair is the narrow exception and still requires per-project adaptation, rollback, and evidence.
-
-If the same class of failure appears again after a claimed repair, pause domain writes, reconstruct the correction and failure sequence, continue beyond the current-task layer, state each contributing layer, and verify the repair in the real task or an equivalent probe. This gate does not create a long-term profile of user expression.
-
-Ordinary project writeback remains local: write durable facts or decisions into a fitting project file, or write nothing for a one-off result. Central promotion is a later self-improvement or sync decision, not a parallel ordinary writeback destination.
+Ordinary writeback stays within the project's fitting local owner, or produces no file change for a one-off result. Promoting a reusable pattern to the center is a separate, explicit synchronization decision.
 
 ## Typical Local Surfaces
 
-- a lightweight global-agent bridge outside the project;
-- `AGENTS.md`
-- `docs/00-topic-map.md`
-- `docs/01-source-of-truth.md`
-- `docs/02-context-management.md`
-- `docs/04-governance-log.md` as the stable route to the actual project log
-- `docs/09-decisions.md`
-- focused topic docs that match the project's real work
-- a declared wording surface only when the user has approved unified wording
-
-Optional surfaces can include a standalone project wording table, human-readable logs, machine run archive policies, migration notes, or verification checklists when the target project needs them.
-
-The `00–05` numbers are reserved for the shared governance interface; `05` is created only when a project enables unified wording. Project-specific documents start at `10` and use local domain ranges. Human-readable filename stems should stay within six Chinese characters where practical; same-series files share a base number and add a short hyphen suffix. A first-level topic subdirectory appends a child sequence to form a three-digit number; a second-level history or archive directory appends another sequence to form a four-digit number. Machine interfaces, code identifiers, vendor files, historical snapshots, and ecosystem conventions may keep their required names.
-
-Unified wording is optional for long-running, complex, or naming-sensitive projects. The system may recommend it, but it is enabled only after user approval and a local-entry declaration naming the wording surface. Projects that have not enabled it add no declaration, carrier, empty table, or probe. An enabled project uses an existing topic document or a standalone project wording table as its surface. A fresh conversation reads that surface once after the local entry; context-compression recovery reads it once again. The same context refreshes it only after the surface changes or for naming and material wording work. Harmless abbreviations, equivalent expressions, and uniquely correctable voice input are normalized silently. Material meaning, decision, verification, or durable-naming differences trigger one clarification. Write back only after user confirmation, and verify adoption in later real work. Do not retain unconfirmed candidates, raw prompts, expression profiles, or cross-conversation frequency, and do not create an empty table.
-
-Keep machine reproduction material in run archives, human-readable process in concise logs, and stable confirmed choices in decision records. These three responsibilities must not absorb raw conversations, credentials, or unrelated private material.
-
-Governance logs are event-triggered rather than turn-triggered. Record a material event only when it changes future state or preserves evidence needed to interpret a result. Keep current status in its state owner. See `logging-guide.md` for the record, correction, machine evidence, and privacy rules.
+A project may use a local host entry such as `AGENTS.md`, existing topic documents, source boundaries, context instructions, logs, decisions, or optional verification material. These are examples of possible owners, not a required checklist. Use existing local files where they fit and create no empty `00–05` files as ceremony.

@@ -1,67 +1,28 @@
 # Adoption And Cleanup
 
-Use this reference for new project adoption and existing project governance cleanup.
+Use this reference to adapt the single self-contained adoption prompt to a target folder. The prompt should state the authorized folder, the minimal host-entry change, default exclusions, and the evidence needed to report the result.
 
-## New Projects
+## Default Adoption Contract
 
-Use this category only for greenfield work without existing code, data, documents, or runtime state. Clarify the objective, scope, privacy boundary, and expected work before proposing files. If existing assets are present, use the existing-project path even when governance is new.
+1. Read the target folder's existing host entry and only the additional local material needed to understand the requested change.
+2. Preserve existing rules, authority, useful local practices, and privacy boundaries. Merge durable instructions into a fitting host entry; if current rules already cover the need, do not duplicate them.
+3. Make the smallest authorized change in the target folder. Create a minimal host entry only when one is missing and the user authorized it.
+4. Do not install a Skill, global bridge, runtime, automated gate, or broad file set by default. Do not create empty `00–05` files. Those numbers remain reserved, and the `03` planning projection is discontinued.
+5. Do not create, read, update, or maintain planning files as part of this method. Historical instructions that request a Task projection or Task update are inactive.
+6. Preserve observed unsafe or unsupported conditions. Mark the affected work incomplete and state what could not be verified; do not replace missing real evidence with a simulation or claim.
 
-Resolve the authoritative governance language before selecting templates. Accept an existing `zh-CN` or `en` declaration. Without one, compare the user's primary interaction language with the existing governance entry language; select when they agree and ask once when they conflict or remain unclear. Persist the result in the local entry during authorized execution and do not switch it because a later turn uses another language. This applies only to human-readable governance files and entries, not business documents, code, vendor files, runtime output, or historical snapshots.
+For a new project, determine the user's goal, scope, language, and privacy boundary from the current task and target files before editing. For an existing project, inspect current local authority and reuse its fitting owner. A project with no existing governance may still need only one concise host entry. Migration, renaming, deletion, and broad restructuring require their own explicit scope and preservation method; they are not implied by ordinary adoption.
 
-Create the smallest useful local governance layer. Prefer:
+Unified wording, logs, archives, decision records, topic documents, and optional tools are added only when the project has a real recurring need, an appropriate owner, and authorization. User approval is required before enabling unified wording. A discussion or suggestion alone does not authorize durable changes.
 
-- fixed public governance slots `00` topic map, `01` source authority, `02` context management, disabled `03`, `04` governance-log entry, and optional `05` project wording surface; do not create a planning projection in slot `03`;
+## Outcomes And Completion
 
-- local `AGENTS.md`;
-- topic map;
-- source-of-truth or authority-boundary document;
-- context-management and writeback rules;
-- selective context loading, source verification, and bounded scope expansion;
-- decision record;
-- verification guide or checklist.
+- **Minimal file adoption:** the authorized prompt has been applied to the target folder's minimum host entry, or inspection confirmed that existing local rules already suffice. Report the exact file change or that no duplicate was needed.
+- **Host adoption verified:** a fresh conversation actually attached to the target folder used the host entry in a representative real task and respected its boundaries. Static content alone cannot establish this outcome.
+- **Optional full verification:** additional probes or governance tools were explicitly requested and available. Report only the checks actually run. This is not required for minimal file adoption or host adoption.
 
-Keep ecosystem entry filenames unnumbered. Start project-specific document ranges at `10`. Human-readable filename stems should stay within six Chinese characters where practical; same-series files share a base number and add a short hyphen suffix. Machine interfaces, code identifiers, vendor files, and historical snapshots may keep required names. When logs are stored by month or domain, `04` is a stable router and must not duplicate event bodies. Existing projects with conflicts need an old-to-new map, collision checks, current-reference updates, and preserved historical path meaning.
+Keep the three outcomes separate. If a real target-folder conversation is unavailable, report host adoption verification as pending or incomplete without undoing a valid minimal file adoption. If a special safety or compatibility condition blocks the task, preserve its evidence and identify the blocked portion and next required condition.
 
-Unified wording is optional for long-running, complex, or naming-sensitive projects and requires explicit user approval. Projects that have not enabled it add no declaration, carrier, empty table, or probe. An enabled project declares an existing topic document or a justified standalone project wording table as its surface. A fresh conversation reads that surface once after the local entry; context-compression recovery reads it once again. The same context refreshes it only after the surface changes or for naming and material wording work. Harmless variation is normalized silently; material meaning, decision, verification, or durable-naming differences trigger one clarification. Write back only after user confirmation, create no empty table, and verify later real adoption.
+## Legacy Requirements
 
-Add human-readable log, machine run archive, or decision surfaces only when the project has the corresponding recurring need. Do not create empty files as adoption ceremony. Machine reproduction material, human process, and stable decisions must remain separate and exclude raw conversations, credentials, and unrelated privacy.
-
-Do not copy central wording blindly. Adapt rules to the target project's actual files, tests, data, privacy risks, and work habits.
-
-Prefer an existing file when its responsibility fits. During authorized execution, create a focused topic file and update the topic map in the same turn when its role and path are clear and authority, privacy, and long-term governance structure do not change. Explain and confirm those high-impact changes first. During read-only or discussion-only work, report the candidate destination as deferred. Do not create a long-term file for one-off content, and update source-of-truth or manifest records only when file role or authority changes.
-
-The planning projection and its standalone Skill are discontinued. Do not install a planning Skill or create, read, update, or maintain planning files as part of this method. Determine the current work from the latest user instruction. Migration, handoff, and long-work recovery use relevant evidence and project authority.
-
-## Existing Projects
-
-This category includes every project with existing code, data, documents, or runtime state, including first-time governance adoption.
-
-Before proposing changes, classify files:
-
-- current execution authority;
-- current reference;
-- historical evidence;
-- generated or runtime output;
-- stage plan;
-- discussion draft;
-- private or non-public material.
-
-When the project is being renamed, moved, or cleaned before migration, produce a migration asset map before copying files. Use the language-matched `assets/migration-asset-map.zh-CN.md` or `assets/migration-asset-map.en.md` to separate both file assets and conversation assets:
-
-- migrate into the clean target project;
-- keep only as historical evidence;
-- leave in the old source location;
-- do not migrate;
-- ask the user before deciding.
-
-For conversations, do not equate "useful" with "write into files." Classify each relevant conversation as long-term file material, handoff prompt material, source-index-only, out of scope, or needing user confirmation.
-
-Keep local strengths. If an existing file already owns a responsibility, merge stable rules there instead of creating a parallel governance file.
-
-Keep raw logs, run archives, long conversations, large document collections, private material, and historical corpora outside the default working context. Use retrieval only to locate candidate evidence. Require a provenance path back to the local source-of-truth, current implementation, current runtime, or external primary source, plus a bounded expansion route when evidence is insufficient or conflicting.
-
-Ask before deleting, moving, renaming, merging, or large-scale rewriting.
-
-## Completion
-
-Adoption is not complete until representative probes pass, including a manual activation probe. Ordinary correction, execution-drift, file-conflict, and writeback language must remain inactive unless the user sends the dedicated activation command.
+Earlier versions required fixed files in `00–05`, planning projections, a dedicated planning Skill, and a manual activation probe for every adoption. These requirements are discontinued. Keep historical material only as historical context; do not apply it as current behavior. A dedicated user command can still activate layered diagnosis when that separate workflow is requested.

@@ -1,401 +1,6 @@
 {
   "files": [
     {
-      "path": ".gitattributes",
-      "bytes": 164,
-      "sha256": "05490dd5fc3342f17abcccd0675a446092e69c18623754b263c521236fe0d7c2"
-    },
-    {
-      "path": ".gitignore",
-      "bytes": 315,
-      "sha256": "84c85c78ce66431b2deeba2a1e3def18765cbfb1703706c96cb8dc8b35e688aa"
-    },
-    {
-      "path": "CONTRIBUTING.md",
-      "bytes": 613,
-      "sha256": "69599c05a64a8ba09b42a8066694be50be16b4eae86d0eb5b1f194e8e91cc17d"
-    },
-    {
-      "path": "LICENSE",
-      "bytes": 1068,
-      "sha256": "ac60e3f8bbe9c0626e770e64b60500a7a1fb004891fdf741fcf24b1ab1ee45c6"
-    },
-    {
-      "path": "QUICKSTART.md",
-      "bytes": 7782,
-      "sha256": "b8169b632dccd9d069d1a88d448668d55c1dfebfa0421b16a38ed03ac35de56e"
-    },
-    {
-      "path": "QUICKSTART.zh-CN.md",
-      "bytes": 6430,
-      "sha256": "f3d42b5a55180550a793e50fbd0c248b2bde0acd9378bc894d343fafd54e52f4"
-    },
-    {
-      "path": "README.md",
-      "bytes": 5436,
-      "sha256": "955e71caaf545227485c65836476110e5682b47c37b9904553f82ecbc37370d3"
-    },
-    {
-      "path": "README.zh-CN.md",
-      "bytes": 4970,
-      "sha256": "0d2ff60d4bb605669f4c6af0c04321fbe894c880e519ce84ecc1d52795c788c5"
-    },
-    {
-      "path": "SECURITY.md",
-      "bytes": 441,
-      "sha256": "184095ac06b94bb1914cac5472434b2453d0ab14f1b34a5134b37091fa4f8d6e"
-    },
-    {
-      "path": "docs/adoption-guide.md",
-      "bytes": 8308,
-      "sha256": "be4ee8ffd184708e9688a8c83337746a42183bb1df02b9eb7dbf2f30ad0c8788"
-    },
-    {
-      "path": "docs/core-model.md",
-      "bytes": 7937,
-      "sha256": "f0bb9f0a9ccca58c50cc0ea60710573dfd0f23196ec737107915aa3523cc5b8f"
-    },
-    {
-      "path": "docs/desensitization-map.md",
-      "bytes": 1809,
-      "sha256": "ba7fb22460ec5f34a8b72d2e8d6513a5acda258f9db3f5da7b469a06f67e18a9"
-    },
-    {
-      "path": "docs/flowchart.md",
-      "bytes": 14302,
-      "sha256": "3535752a566e1e0cbc979b4efc298e5663242ad62367ec78f20a47cd734d010a"
-    },
-    {
-      "path": "docs/global-agent-integration.md",
-      "bytes": 3123,
-      "sha256": "2cd171486f693655ad3e58498ba53a2af6fd45654460c013cecdbb57c0c6f064"
-    },
-    {
-      "path": "docs/logging-guide.md",
-      "bytes": 2735,
-      "sha256": "e8aa25edbb7ac0670f0cf221607c0231ac84f983d42cf04b8ff46cd34d07b558"
-    },
-    {
-      "path": "docs/logging-guide.zh-CN.md",
-      "bytes": 2441,
-      "sha256": "ac8722f9d753033500a2b58b80c2625e2229968a641dc064f060fbbf5703ecdc"
-    },
-    {
-      "path": "docs/publication-checklist.md",
-      "bytes": 2328,
-      "sha256": "bbb6e6adee42671f6470970988dec831fede750192ad96a7ad944cf79007e8aa"
-    },
-    {
-      "path": "docs/release-verification.md",
-      "bytes": 4880,
-      "sha256": "bd399ede9629c2adbbdb9d2bfec1b9fbe3f578875fd06154b9ef744cbbc39918"
-    },
-    {
-      "path": "docs/runtime-tools.md",
-      "bytes": 3705,
-      "sha256": "2d00ac8e9cba85e40524fceb88cd950812ccc0b367c2d08b94f3a93a5450efae"
-    },
-    {
-      "path": "docs/verification-guide.md",
-      "bytes": 7311,
-      "sha256": "48feb1c6466857155e16426c4ea833bf891184d97b7be90a311978834e99db45"
-    },
-    {
-      "path": "evidence/release-validation.json",
-      "bytes": 2075,
-      "sha256": "2b61bd169dfd864d5d480c3c4a836f73f1db508ea16b1b1be3c6c503b4d2a358"
-    },
-    {
-      "path": "templates/AGENTS.md",
-      "bytes": 6373,
-      "sha256": "6cbb4c8a19c94051abbe3fe91b10bfd30b8d143a8eadac744ae8b7351041a2f9"
-    },
-    {
-      "path": "templates/AGENTS.zh-CN.md",
-      "bytes": 4966,
-      "sha256": "7e9017c8831423df25942a86cba614ed01f1e5ca7e09d4fdfc0d0b91ff6e3401"
-    },
-    {
-      "path": "templates/global-agents-snippet.md",
-      "bytes": 3149,
-      "sha256": "2247bbb7b2581807a0cad923aaf2466180217ba73ab432f1f5e40e29778194b7"
-    },
-    {
-      "path": "templates/governance-runtime.json",
-      "bytes": 1560,
-      "sha256": "04508d986340631d95f8192a99e46b99f894991b067eec7a3678148fd09ba896"
-    },
-    {
-      "path": "tools/governance-activation-guard/governance_guard.py",
-      "bytes": 29028,
-      "sha256": "fce10d1bb0a98d8d52923e55b649bfd86f456f842be155651c143dd5ef633d75"
-    },
-    {
-      "path": "tools/governance-activation-guard/hook_entry.py",
-      "bytes": 880,
-      "sha256": "30714e065ab180b348d4eaa3cc28674d95a40ea259897f5ccf9a7cfaefe2e8f9"
-    },
-    {
-      "path": "tools/governance-activation-guard/install.ps1",
-      "bytes": 8088,
-      "sha256": "fe4456505a5971ac781dde4ea704fc607793b203ffd6845e31544a7f4e37e9aa"
-    },
-    {
-      "path": "tools/governance-activation-guard/receipt_entry.py",
-      "bytes": 1262,
-      "sha256": "96e768a71b23d11851f78bd0a904471c0de93a3ca13aa38d7f012469aa2fbea6"
-    },
-    {
-      "path": "tools/governance-activation-guard/requirements.toml.template",
-      "bytes": 1590,
-      "sha256": "10e26d14c5e65ea6291aa4bd2322f373b607c6b493844138df0bec0070fd8037"
-    },
-    {
-      "path": "tools/governance-activation-guard/run-hook.ps1",
-      "bytes": 3198,
-      "sha256": "8c18917d9a5834ce9474a9e10402aec6155a78bc99e902f5741d8c3a507ae4eb"
-    },
-    {
-      "path": "tools/governance-activation-guard/uninstall.ps1",
-      "bytes": 4756,
-      "sha256": "678faa2a1e704b9e8822f1040ec1a273f778a4b4388e23033ff9e9ee7f95b679"
-    },
-    {
-      "path": "tools/governance-markdown/reflow_markdown.py",
-      "bytes": 11841,
-      "sha256": "638af4a4a2e8017a0946ee0d42e2895823193dd924ddffcb5a5b444785a28598"
-    },
-    {
-      "path": "tools/governance-markdown/test_reflow_markdown.py",
-      "bytes": 3309,
-      "sha256": "902c68efbd9d86b4e9fa5c38eaef551f07a0f7348bcf7df3c0dc6cdd7969441d"
-    },
-    {
-      "path": "tools/governance-transaction/cli.py",
-      "bytes": 2676,
-      "sha256": "07e851b163b1ad471ef4a99d0ae4be3faf1e964d2f9104bd5bfb51fb1be39691"
-    },
-    {
-      "path": "tools/governance-transaction/governance_transaction.py",
-      "bytes": 59763,
-      "sha256": "33c07bb90dbf16cebb7ceca3a58e8cd74f9263dec60dcfcbe6eb10fa83c93cb0"
-    },
-    {
-      "path": "tools/governance-transaction/install.ps1",
-      "bytes": 1203,
-      "sha256": "e4c689a7ddfcdc687b353cfdd272b84eaf48f558db7f981355b4e8b8c4319779"
-    },
-    {
-      "path": "tools/governance-transaction/README.md",
-      "bytes": 2283,
-      "sha256": "e9008b5cb3b795aa88df23891d4fda44dd69aa273619f771a2071c2f7395f4f2"
-    },
-    {
-      "path": "tools/governance-transaction/run.ps1",
-      "bytes": 1567,
-      "sha256": "ef7906a5e836f41453f7d2d89e8adf61db3ea840411889bf9a54efad34fe227c"
-    },
-    {
-      "path": "tools/governance-transaction/uninstall.ps1",
-      "bytes": 2409,
-      "sha256": "e4dc74bdc2509502c4b98ef8b50b0f80d89f97602bd54358b252549acfe96c1b"
-    },
-    {
-      "path": "tools/governance-transaction/schemas/governance-runtime-v1.schema.json",
-      "bytes": 3692,
-      "sha256": "1e5bcf9d18b190bcc2054920799887b75e814d7e01730dd5ae9ab41ab05d0c3a"
-    },
-    {
-      "path": "tools/governance-transaction/schemas/governance-transaction-v1.schema.json",
-      "bytes": 1983,
-      "sha256": "4fe34701ebacab1c9d30ec7bb2b99d395c17c926edee1a662ba4628d8642326a"
-    },
-    {
-      "path": "tools/governance-transaction/tests/test_release_concurrency.py",
-      "bytes": 7552,
-      "sha256": "54b4aa204c5402030fcf482503c890e5b03a9165967ef475d1f1ef327a320595"
-    },
-    {
-      "path": "tools/governance-transaction/tests/test_release_install_uninstall.py",
-      "bytes": 2932,
-      "sha256": "9f1d2c5e2bfc010a8c8e2ab52d936c84bd8196b4a7a89c947da4a8c5df5e8514"
-    },
-    {
-      "path": "tools/governance-activation-guard/tests/test_release_install_uninstall.py",
-      "bytes": 8419,
-      "sha256": "438024f924af2ffb9fd9c9f3b18913c1d67d61c1cee940e89f110efe4da4116b"
-    },
-    {
-      "path": "templates/docs/00-topic-map.md",
-      "bytes": 2127,
-      "sha256": "036f2cfc9ffdb0fe0433e9719f27162fade5fbb823161a904b5ee888258b49fc"
-    },
-    {
-      "path": "templates/docs/00-主题地图.md",
-      "bytes": 1601,
-      "sha256": "753a5b6e23453e0eb883a0150b64cefdac6787eff69538f373b9d1528ed7d057"
-    },
-    {
-      "path": "templates/docs/01-source-of-truth.md",
-      "bytes": 1654,
-      "sha256": "473f224beee89b14a7e6b153fe324efefb1cf39d369474c8612fb1a3a142f554"
-    },
-    {
-      "path": "templates/docs/01-来源权威.md",
-      "bytes": 1291,
-      "sha256": "7a03213dc4cf93193b73d07198470de5297aaeddea3d24e7069c83fb6649cf2c"
-    },
-    {
-      "path": "templates/docs/02-context-management.md",
-      "bytes": 3791,
-      "sha256": "2b0b8a128f1b2bca25a0d00d119dbfcd3cd7c978da2c445323f1e233b5267551"
-    },
-    {
-      "path": "templates/docs/02-上下文管理.md",
-      "bytes": 2441,
-      "sha256": "8651051394c9491972aee9b660b14a95f7c213f318393474052ea7d2f8a3d7cc"
-    },
-    {
-      "path": "templates/docs/09-decisions.md",
-      "bytes": 226,
-      "sha256": "75d90b459a434672d6c8f0c05d8f823984ab390f41ab11a71800e61cd061feac"
-    },
-    {
-      "path": "templates/docs/09-长期决策.md",
-      "bytes": 186,
-      "sha256": "a1e1bd994ab575510e6566adca2649ef0e0b1ab25a6bc091e1c12a6e98629b74"
-    },
-    {
-      "path": "templates/docs/governance-log.en.md",
-      "bytes": 550,
-      "sha256": "89eaa4389d175d91abf3e68ac6e2dfcc79853c1c6258c3d96b4a66c500cb0aeb"
-    },
-    {
-      "path": "templates/docs/governance-log.zh-CN.md",
-      "bytes": 480,
-      "sha256": "fee7bfdf73a53a8bb45751ca2b8056119f0f5c9273a3cffa18a7f1adc5f154fe"
-    },
-    {
-      "path": "examples/demo-project/README.md",
-      "bytes": 718,
-      "sha256": "892eacd33676d00c74eed7a030632963438360eb85ad01a8438375931ce5cb5c"
-    },
-    {
-      "path": "docs/diagrams/adoption-flow-zh-CN.dot",
-      "bytes": 19239,
-      "sha256": "5ec0f512c1fdde0eb7d94be450ac32e00fe87439530148671556f0ca07e2447d"
-    },
-    {
-      "path": "docs/diagrams/cross-project-learning-and-sync-zh-CN.dot",
-      "bytes": 12999,
-      "sha256": "a2d0671d581c87c4026ab37a3dd09e14360bdbc6cc52bd039272753998990260"
-    },
-    {
-      "path": "docs/diagrams/layered-diagnosis-and-feedback-company-zh-CN.dot",
-      "bytes": 18466,
-      "sha256": "6580f1a792e6e3c42c513868ce067169d3b4ae73e2f3754fc4dc3b6924db18df"
-    },
-    {
-      "path": "docs/diagrams/layered-diagnosis-and-feedback-zh-CN.dot",
-      "bytes": 18443,
-      "sha256": "8818bb76955e7a5024f77f00b1fff2229d5bfed8ccd7ccc020c6f9060c9da2a4"
-    },
-    {
-      "path": "docs/diagrams/project-log-and-run-archive-zh-CN.dot",
-      "bytes": 11831,
-      "sha256": "9f302bae3f85c6fc82b195048514e0a63cfb7388c15d83352646f77d727f0a60"
-    },
-    {
-      "path": "docs/diagrams/project-reading-and-writeback-company-zh-CN.dot",
-      "bytes": 10291,
-      "sha256": "6a381a8d405802bfea48312291e2993b4b2295890c210129d20cf595dc1601b8"
-    },
-    {
-      "path": "docs/diagrams/project-reading-and-writeback-zh-CN.dot",
-      "bytes": 10419,
-      "sha256": "7a06b08c50432b7d10cb1f53bc75fdf9e70daf7e0b62b686af1da595e8c51bd0"
-    },
-    {
-      "path": "docs/diagrams/system-architecture-company-zh-CN.dot",
-      "bytes": 13560,
-      "sha256": "d4b92f10788112ca6de67677c08c731ad679847ae80c54fc4d06acf685d7d5e2"
-    },
-    {
-      "path": "docs/diagrams/system-architecture-zh-CN.dot",
-      "bytes": 14550,
-      "sha256": "4623937df13c6711fa0337c7d3a2163fcac36fb07123b30564e82a37f3a417eb"
-    },
-    {
-      "path": "docs/diagrams/terminology-maintenance-zh-CN.dot",
-      "bytes": 11630,
-      "sha256": "b1189f17f4193479bd48a26001145a07d406f961c87e3f8f62c213d4a038e267"
-    },
-    {
-      "path": "docs/media/adoption-flow-zh-CN.svg",
-      "bytes": 37675,
-      "sha256": "36b9ab0e651761c8da44906a15a522e2c588f3ef72bb66a01b4abff42cce9828"
-    },
-    {
-      "path": "docs/media/cross-project-learning-and-sync-zh-CN.svg",
-      "bytes": 26812,
-      "sha256": "e1998043d67d9435d44f24f5344b8bacf910e9331a3e3fc31701860bab0576a8"
-    },
-    {
-      "path": "docs/media/governance-flow-en.svg",
-      "bytes": 6250,
-      "sha256": "87208931368f7a2927baf2d7ea252ed14b771f7fb6f860d73e75b625247ffecd"
-    },
-    {
-      "path": "docs/media/governance-flow-zh-CN.svg",
-      "bytes": 6339,
-      "sha256": "02edc37c59e6631bfa77eaca11f96e86ccb4abb41457368d1b0197b9866946c7"
-    },
-    {
-      "path": "docs/media/layered-diagnosis-and-feedback-company-zh-CN.svg",
-      "bytes": 31489,
-      "sha256": "1555619dc9e92e87599a36b667c0689fc978782fdf19e5312a507f90c5fe357d"
-    },
-    {
-      "path": "docs/media/layered-diagnosis-and-feedback-zh-CN.svg",
-      "bytes": 31448,
-      "sha256": "25a7d6dd9e741e0159811a2d72e1fc3b7b7d9ad543d010ca313354b6ceabd1a5"
-    },
-    {
-      "path": "docs/media/project-log-and-run-archive-zh-CN.svg",
-      "bytes": 19945,
-      "sha256": "ffe514a3e9d486e61a7417ecfe467b41e76ad9e745bda1ca29041c7f4a5d3f08"
-    },
-    {
-      "path": "docs/media/project-reading-and-writeback-company-zh-CN.svg",
-      "bytes": 20969,
-      "sha256": "7547ed3d34253fe75122a0b229d628092e9b60413885db03f4a9d1e8f26676e6"
-    },
-    {
-      "path": "docs/media/project-reading-and-writeback-zh-CN.svg",
-      "bytes": 21016,
-      "sha256": "5662b3333758097933387b2674d91edfedb757ad28163814728631d53c95dc82"
-    },
-    {
-      "path": "docs/media/system-architecture-company-zh-CN.svg",
-      "bytes": 19712,
-      "sha256": "e73b36ab743a47c057ff5e84c5acfdfb5eaa307f8044c521bf4a0af115d6ba4f"
-    },
-    {
-      "path": "docs/media/system-architecture-zh-CN.svg",
-      "bytes": 19669,
-      "sha256": "bb8fe47f64c6ee63409a5aa07bf83105f1a68bb9d4bfa96e94d732151610ecce"
-    },
-    {
-      "path": "docs/media/terminology-maintenance-zh-CN.svg",
-      "bytes": 20684,
-      "sha256": "d216bd30d9ba07f411b59e829ebf34f232b4960ed1ce4d8e63bbfe7c2235310f"
-    },
-    {
-      "path": ".github/workflows/windows-verification.yml",
-      "bytes": 705,
-      "sha256": "a2f10a53a687b2ebbc151dd98f44e33483d15ff497356fefda0f940bfe697ba9"
-    },
-    {
       "path": ".agents/skills/project-governance/SKILL.md",
       "bytes": 6454,
       "sha256": "266610219e7c132d218bf2f3c9010d5912492a1f0a3409e12a70c12e66a8f9a4"
@@ -497,8 +102,8 @@
     },
     {
       "path": ".agents/skills/project-governance/references/02-adoption-and-cleanup.md",
-      "bytes": 6194,
-      "sha256": "0033fd44a51d079fa7df553b18c5fb0cb79a77e113271a0f2e9ce7efa15381c7"
+      "bytes": 3576,
+      "sha256": "cefa14be1b37e89acc87ec40cd3d3cde70ce287516c30208147ad9204c09b2e1"
     },
     {
       "path": ".agents/skills/project-governance/references/03-migration-and-handoff.md",
@@ -517,8 +122,8 @@
     },
     {
       "path": ".agents/skills/project-governance/references/06-governance-verification.md",
-      "bytes": 3191,
-      "sha256": "656e5e261a972d8ca74198baa68330238b0b5d7bc1c077d2a1eff89761aaca08"
+      "bytes": 2949,
+      "sha256": "8285c1bbd8a6784221ab517e513bb70993ba3aa077fc8f2c370a2324fbbd09ef"
     },
     {
       "path": ".agents/skills/project-governance/references/07-task-and-user-authority.md",
@@ -529,11 +134,416 @@
       "path": ".agents/skills/project-governance/references/08-logging-and-operational-evidence.md",
       "bytes": 3070,
       "sha256": "d3fe7fb5677129e379fb7ba223304edb4657ea953b4a491e98589c7c14076922"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 164,
+      "sha256": "05490dd5fc3342f17abcccd0675a446092e69c18623754b263c521236fe0d7c2"
+    },
+    {
+      "path": ".github/workflows/windows-verification.yml",
+      "bytes": 705,
+      "sha256": "a2f10a53a687b2ebbc151dd98f44e33483d15ff497356fefda0f940bfe697ba9"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 315,
+      "sha256": "84c85c78ce66431b2deeba2a1e3def18765cbfb1703706c96cb8dc8b35e688aa"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 613,
+      "sha256": "69599c05a64a8ba09b42a8066694be50be16b4eae86d0eb5b1f194e8e91cc17d"
+    },
+    {
+      "path": "INSTALL.md",
+      "bytes": 7210,
+      "sha256": "9780fa05c87fb652fd112e1eb8695bfa8a84133489364c4009330cdfb6dab148"
+    },
+    {
+      "path": "INSTALL.zh-CN.md",
+      "bytes": 6078,
+      "sha256": "d62f058c663b26dbc7c41afc8792a6936e5c8d2e74fa116925b9b12a547c02fa"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1068,
+      "sha256": "ac60e3f8bbe9c0626e770e64b60500a7a1fb004891fdf741fcf24b1ab1ee45c6"
+    },
+    {
+      "path": "QUICKSTART.md",
+      "bytes": 8286,
+      "sha256": "2d3da9c141564ef1d8c0a64f8928d311c92cbdf1f91a3e95b7f2f8d1b69dd7d3"
+    },
+    {
+      "path": "QUICKSTART.zh-CN.md",
+      "bytes": 6872,
+      "sha256": "5d13e256f9388dc54be2327611c1b7ad5a61363b63923bb902953f4a2faa77d4"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4792,
+      "sha256": "05ae357f47d44e4480a20e29d3f740313721e5229e6c97dee0b57d07edbc31c6"
+    },
+    {
+      "path": "README.zh-CN.md",
+      "bytes": 4299,
+      "sha256": "d4facdd8881b8ebab2d64fef6b9730d697d51ef1ecc3b6ef6be496381869dc58"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 441,
+      "sha256": "184095ac06b94bb1914cac5472434b2453d0ab14f1b34a5134b37091fa4f8d6e"
+    },
+    {
+      "path": "docs/adoption-guide.md",
+      "bytes": 3996,
+      "sha256": "acabc816519321b52775b2af21c530ac8ef842cf8b9ff898cb1b31ad634274f1"
+    },
+    {
+      "path": "docs/core-model.md",
+      "bytes": 4357,
+      "sha256": "14068764c39a7be0a895bd9e281211284c4e90fcd52704b2719e5db0245ed214"
+    },
+    {
+      "path": "docs/desensitization-map.md",
+      "bytes": 1809,
+      "sha256": "ba7fb22460ec5f34a8b72d2e8d6513a5acda258f9db3f5da7b469a06f67e18a9"
+    },
+    {
+      "path": "docs/diagrams/adoption-flow-zh-CN.dot",
+      "bytes": 19239,
+      "sha256": "5ec0f512c1fdde0eb7d94be450ac32e00fe87439530148671556f0ca07e2447d"
+    },
+    {
+      "path": "docs/diagrams/cross-project-learning-and-sync-zh-CN.dot",
+      "bytes": 12999,
+      "sha256": "a2d0671d581c87c4026ab37a3dd09e14360bdbc6cc52bd039272753998990260"
+    },
+    {
+      "path": "docs/diagrams/layered-diagnosis-and-feedback-company-zh-CN.dot",
+      "bytes": 18466,
+      "sha256": "6580f1a792e6e3c42c513868ce067169d3b4ae73e2f3754fc4dc3b6924db18df"
+    },
+    {
+      "path": "docs/diagrams/layered-diagnosis-and-feedback-zh-CN.dot",
+      "bytes": 18443,
+      "sha256": "8818bb76955e7a5024f77f00b1fff2229d5bfed8ccd7ccc020c6f9060c9da2a4"
+    },
+    {
+      "path": "docs/diagrams/project-log-and-run-archive-zh-CN.dot",
+      "bytes": 11831,
+      "sha256": "9f302bae3f85c6fc82b195048514e0a63cfb7388c15d83352646f77d727f0a60"
+    },
+    {
+      "path": "docs/diagrams/project-reading-and-writeback-company-zh-CN.dot",
+      "bytes": 10291,
+      "sha256": "6a381a8d405802bfea48312291e2993b4b2295890c210129d20cf595dc1601b8"
+    },
+    {
+      "path": "docs/diagrams/project-reading-and-writeback-zh-CN.dot",
+      "bytes": 10419,
+      "sha256": "7a06b08c50432b7d10cb1f53bc75fdf9e70daf7e0b62b686af1da595e8c51bd0"
+    },
+    {
+      "path": "docs/diagrams/system-architecture-company-zh-CN.dot",
+      "bytes": 13560,
+      "sha256": "d4b92f10788112ca6de67677c08c731ad679847ae80c54fc4d06acf685d7d5e2"
+    },
+    {
+      "path": "docs/diagrams/system-architecture-zh-CN.dot",
+      "bytes": 14550,
+      "sha256": "4623937df13c6711fa0337c7d3a2163fcac36fb07123b30564e82a37f3a417eb"
+    },
+    {
+      "path": "docs/diagrams/terminology-maintenance-zh-CN.dot",
+      "bytes": 11630,
+      "sha256": "b1189f17f4193479bd48a26001145a07d406f961c87e3f8f62c213d4a038e267"
+    },
+    {
+      "path": "docs/flowchart.md",
+      "bytes": 14302,
+      "sha256": "3535752a566e1e0cbc979b4efc298e5663242ad62367ec78f20a47cd734d010a"
+    },
+    {
+      "path": "docs/global-agent-integration.md",
+      "bytes": 3123,
+      "sha256": "2cd171486f693655ad3e58498ba53a2af6fd45654460c013cecdbb57c0c6f064"
+    },
+    {
+      "path": "docs/logging-guide.md",
+      "bytes": 2735,
+      "sha256": "e8aa25edbb7ac0670f0cf221607c0231ac84f983d42cf04b8ff46cd34d07b558"
+    },
+    {
+      "path": "docs/logging-guide.zh-CN.md",
+      "bytes": 2441,
+      "sha256": "ac8722f9d753033500a2b58b80c2625e2229968a641dc064f060fbbf5703ecdc"
+    },
+    {
+      "path": "docs/media/adoption-flow-zh-CN.svg",
+      "bytes": 37675,
+      "sha256": "36b9ab0e651761c8da44906a15a522e2c588f3ef72bb66a01b4abff42cce9828"
+    },
+    {
+      "path": "docs/media/cross-project-learning-and-sync-zh-CN.svg",
+      "bytes": 26812,
+      "sha256": "e1998043d67d9435d44f24f5344b8bacf910e9331a3e3fc31701860bab0576a8"
+    },
+    {
+      "path": "docs/media/governance-flow-en.svg",
+      "bytes": 6250,
+      "sha256": "87208931368f7a2927baf2d7ea252ed14b771f7fb6f860d73e75b625247ffecd"
+    },
+    {
+      "path": "docs/media/governance-flow-zh-CN.svg",
+      "bytes": 6339,
+      "sha256": "02edc37c59e6631bfa77eaca11f96e86ccb4abb41457368d1b0197b9866946c7"
+    },
+    {
+      "path": "docs/media/layered-diagnosis-and-feedback-company-zh-CN.svg",
+      "bytes": 31489,
+      "sha256": "1555619dc9e92e87599a36b667c0689fc978782fdf19e5312a507f90c5fe357d"
+    },
+    {
+      "path": "docs/media/layered-diagnosis-and-feedback-zh-CN.svg",
+      "bytes": 31448,
+      "sha256": "25a7d6dd9e741e0159811a2d72e1fc3b7b7d9ad543d010ca313354b6ceabd1a5"
+    },
+    {
+      "path": "docs/media/project-log-and-run-archive-zh-CN.svg",
+      "bytes": 19945,
+      "sha256": "ffe514a3e9d486e61a7417ecfe467b41e76ad9e745bda1ca29041c7f4a5d3f08"
+    },
+    {
+      "path": "docs/media/project-reading-and-writeback-company-zh-CN.svg",
+      "bytes": 20969,
+      "sha256": "7547ed3d34253fe75122a0b229d628092e9b60413885db03f4a9d1e8f26676e6"
+    },
+    {
+      "path": "docs/media/project-reading-and-writeback-zh-CN.svg",
+      "bytes": 21016,
+      "sha256": "5662b3333758097933387b2674d91edfedb757ad28163814728631d53c95dc82"
+    },
+    {
+      "path": "docs/media/system-architecture-company-zh-CN.svg",
+      "bytes": 19712,
+      "sha256": "e73b36ab743a47c057ff5e84c5acfdfb5eaa307f8044c521bf4a0af115d6ba4f"
+    },
+    {
+      "path": "docs/media/system-architecture-zh-CN.svg",
+      "bytes": 19669,
+      "sha256": "bb8fe47f64c6ee63409a5aa07bf83105f1a68bb9d4bfa96e94d732151610ecce"
+    },
+    {
+      "path": "docs/media/terminology-maintenance-zh-CN.svg",
+      "bytes": 20684,
+      "sha256": "d216bd30d9ba07f411b59e829ebf34f232b4960ed1ce4d8e63bbfe7c2235310f"
+    },
+    {
+      "path": "docs/publication-checklist.md",
+      "bytes": 2328,
+      "sha256": "bbb6e6adee42671f6470970988dec831fede750192ad96a7ad944cf79007e8aa"
+    },
+    {
+      "path": "docs/release-verification.md",
+      "bytes": 4880,
+      "sha256": "bd399ede9629c2adbbdb9d2bfec1b9fbe3f578875fd06154b9ef744cbbc39918"
+    },
+    {
+      "path": "docs/runtime-tools.md",
+      "bytes": 3705,
+      "sha256": "2d00ac8e9cba85e40524fceb88cd950812ccc0b367c2d08b94f3a93a5450efae"
+    },
+    {
+      "path": "docs/verification-guide.md",
+      "bytes": 7311,
+      "sha256": "48feb1c6466857155e16426c4ea833bf891184d97b7be90a311978834e99db45"
+    },
+    {
+      "path": "evidence/release-validation.json",
+      "bytes": 2075,
+      "sha256": "2b61bd169dfd864d5d480c3c4a836f73f1db508ea16b1b1be3c6c503b4d2a358"
+    },
+    {
+      "path": "examples/demo-project/README.md",
+      "bytes": 718,
+      "sha256": "892eacd33676d00c74eed7a030632963438360eb85ad01a8438375931ce5cb5c"
+    },
+    {
+      "path": "templates/AGENTS.md",
+      "bytes": 6373,
+      "sha256": "6cbb4c8a19c94051abbe3fe91b10bfd30b8d143a8eadac744ae8b7351041a2f9"
+    },
+    {
+      "path": "templates/AGENTS.zh-CN.md",
+      "bytes": 4966,
+      "sha256": "7e9017c8831423df25942a86cba614ed01f1e5ca7e09d4fdfc0d0b91ff6e3401"
+    },
+    {
+      "path": "templates/docs/00-topic-map.md",
+      "bytes": 2127,
+      "sha256": "036f2cfc9ffdb0fe0433e9719f27162fade5fbb823161a904b5ee888258b49fc"
+    },
+    {
+      "path": "templates/docs/00-主题地图.md",
+      "bytes": 1601,
+      "sha256": "753a5b6e23453e0eb883a0150b64cefdac6787eff69538f373b9d1528ed7d057"
+    },
+    {
+      "path": "templates/docs/01-source-of-truth.md",
+      "bytes": 1654,
+      "sha256": "473f224beee89b14a7e6b153fe324efefb1cf39d369474c8612fb1a3a142f554"
+    },
+    {
+      "path": "templates/docs/01-来源权威.md",
+      "bytes": 1291,
+      "sha256": "7a03213dc4cf93193b73d07198470de5297aaeddea3d24e7069c83fb6649cf2c"
+    },
+    {
+      "path": "templates/docs/02-context-management.md",
+      "bytes": 3791,
+      "sha256": "2b0b8a128f1b2bca25a0d00d119dbfcd3cd7c978da2c445323f1e233b5267551"
+    },
+    {
+      "path": "templates/docs/02-上下文管理.md",
+      "bytes": 2441,
+      "sha256": "8651051394c9491972aee9b660b14a95f7c213f318393474052ea7d2f8a3d7cc"
+    },
+    {
+      "path": "templates/docs/09-decisions.md",
+      "bytes": 226,
+      "sha256": "75d90b459a434672d6c8f0c05d8f823984ab390f41ab11a71800e61cd061feac"
+    },
+    {
+      "path": "templates/docs/09-长期决策.md",
+      "bytes": 186,
+      "sha256": "a1e1bd994ab575510e6566adca2649ef0e0b1ab25a6bc091e1c12a6e98629b74"
+    },
+    {
+      "path": "templates/docs/governance-log.en.md",
+      "bytes": 550,
+      "sha256": "89eaa4389d175d91abf3e68ac6e2dfcc79853c1c6258c3d96b4a66c500cb0aeb"
+    },
+    {
+      "path": "templates/docs/governance-log.zh-CN.md",
+      "bytes": 480,
+      "sha256": "fee7bfdf73a53a8bb45751ca2b8056119f0f5c9273a3cffa18a7f1adc5f154fe"
+    },
+    {
+      "path": "templates/global-agents-snippet.md",
+      "bytes": 3149,
+      "sha256": "2247bbb7b2581807a0cad923aaf2466180217ba73ab432f1f5e40e29778194b7"
+    },
+    {
+      "path": "templates/governance-runtime.json",
+      "bytes": 1560,
+      "sha256": "04508d986340631d95f8192a99e46b99f894991b067eec7a3678148fd09ba896"
+    },
+    {
+      "path": "tools/governance-activation-guard/governance_guard.py",
+      "bytes": 29028,
+      "sha256": "fce10d1bb0a98d8d52923e55b649bfd86f456f842be155651c143dd5ef633d75"
+    },
+    {
+      "path": "tools/governance-activation-guard/hook_entry.py",
+      "bytes": 880,
+      "sha256": "30714e065ab180b348d4eaa3cc28674d95a40ea259897f5ccf9a7cfaefe2e8f9"
+    },
+    {
+      "path": "tools/governance-activation-guard/install.ps1",
+      "bytes": 8088,
+      "sha256": "fe4456505a5971ac781dde4ea704fc607793b203ffd6845e31544a7f4e37e9aa"
+    },
+    {
+      "path": "tools/governance-activation-guard/receipt_entry.py",
+      "bytes": 1262,
+      "sha256": "96e768a71b23d11851f78bd0a904471c0de93a3ca13aa38d7f012469aa2fbea6"
+    },
+    {
+      "path": "tools/governance-activation-guard/requirements.toml.template",
+      "bytes": 1590,
+      "sha256": "10e26d14c5e65ea6291aa4bd2322f373b607c6b493844138df0bec0070fd8037"
+    },
+    {
+      "path": "tools/governance-activation-guard/run-hook.ps1",
+      "bytes": 3198,
+      "sha256": "8c18917d9a5834ce9474a9e10402aec6155a78bc99e902f5741d8c3a507ae4eb"
+    },
+    {
+      "path": "tools/governance-activation-guard/tests/test_release_install_uninstall.py",
+      "bytes": 8419,
+      "sha256": "438024f924af2ffb9fd9c9f3b18913c1d67d61c1cee940e89f110efe4da4116b"
+    },
+    {
+      "path": "tools/governance-activation-guard/uninstall.ps1",
+      "bytes": 4756,
+      "sha256": "678faa2a1e704b9e8822f1040ec1a273f778a4b4388e23033ff9e9ee7f95b679"
+    },
+    {
+      "path": "tools/governance-markdown/reflow_markdown.py",
+      "bytes": 11841,
+      "sha256": "638af4a4a2e8017a0946ee0d42e2895823193dd924ddffcb5a5b444785a28598"
+    },
+    {
+      "path": "tools/governance-markdown/test_reflow_markdown.py",
+      "bytes": 3309,
+      "sha256": "902c68efbd9d86b4e9fa5c38eaef551f07a0f7348bcf7df3c0dc6cdd7969441d"
+    },
+    {
+      "path": "tools/governance-transaction/README.md",
+      "bytes": 2283,
+      "sha256": "e9008b5cb3b795aa88df23891d4fda44dd69aa273619f771a2071c2f7395f4f2"
+    },
+    {
+      "path": "tools/governance-transaction/cli.py",
+      "bytes": 2676,
+      "sha256": "07e851b163b1ad471ef4a99d0ae4be3faf1e964d2f9104bd5bfb51fb1be39691"
+    },
+    {
+      "path": "tools/governance-transaction/governance_transaction.py",
+      "bytes": 59763,
+      "sha256": "33c07bb90dbf16cebb7ceca3a58e8cd74f9263dec60dcfcbe6eb10fa83c93cb0"
+    },
+    {
+      "path": "tools/governance-transaction/install.ps1",
+      "bytes": 1203,
+      "sha256": "e4c689a7ddfcdc687b353cfdd272b84eaf48f558db7f981355b4e8b8c4319779"
+    },
+    {
+      "path": "tools/governance-transaction/run.ps1",
+      "bytes": 1567,
+      "sha256": "ef7906a5e836f41453f7d2d89e8adf61db3ea840411889bf9a54efad34fe227c"
+    },
+    {
+      "path": "tools/governance-transaction/schemas/governance-runtime-v1.schema.json",
+      "bytes": 3692,
+      "sha256": "1e5bcf9d18b190bcc2054920799887b75e814d7e01730dd5ae9ab41ab05d0c3a"
+    },
+    {
+      "path": "tools/governance-transaction/schemas/governance-transaction-v1.schema.json",
+      "bytes": 1983,
+      "sha256": "4fe34701ebacab1c9d30ec7bb2b99d395c17c926edee1a662ba4628d8642326a"
+    },
+    {
+      "path": "tools/governance-transaction/tests/test_release_concurrency.py",
+      "bytes": 7552,
+      "sha256": "54b4aa204c5402030fcf482503c890e5b03a9165967ef475d1f1ef327a320595"
+    },
+    {
+      "path": "tools/governance-transaction/tests/test_release_install_uninstall.py",
+      "bytes": 2932,
+      "sha256": "9f1d2c5e2bfc010a8c8e2ab52d936c84bd8196b4a7a89c947da4a8c5df5e8514"
+    },
+    {
+      "path": "tools/governance-transaction/uninstall.ps1",
+      "bytes": 2409,
+      "sha256": "e4dc74bdc2509502c4b98ef8b50b0f80d89f97602bd54358b252549acfe96c1b"
     }
   ],
   "retired_paths_excluded_without_reading": [
     "templates/docs/task.en.md",
     "templates/docs/task.zh-CN.md"
   ],
-  "scope": "export of reviewed working files, not original git history"
+  "scope": "reviewed candidate files; onboarding validation pending"
 }
