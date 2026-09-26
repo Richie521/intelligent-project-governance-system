@@ -28,17 +28,29 @@ AI 编程智能体经常进入一种上下文很混乱的项目：聊天历史�
 
 ## 图示总览
 
-![项目智能治理系统英文总览图](docs/media/system-architecture-en.svg)
+![项目智能治理系统中文总览图](docs/media/system-architecture-zh-CN.svg)
 
-这张总览图的[可编辑 DOT 图源](docs/diagrams/system-architecture-en.dot)；其他专题流程图见 [docs/flowchart.md](docs/flowchart.md)。
+这张总览图的[可编辑 DOT 图源](docs/diagrams/system-architecture-zh-CN.dot)；其他专题流程图见 [docs/flowchart.md](docs/flowchart.md)。
 
 总图包含可选全局指导和结构治理 Skill；下面的基础接入 prompt 不要求安装它们或任何 Hook。
 
-## 快速开始
+## 如何下载安装到自己的文件夹
 
-将[交互式安装 prompt](INSTALL.zh-CN.md)发给 Codex，选择目标文件夹及必要功能；它会保留现有内容并完成最小接入检查。默认无需安装 Skill 或运行工具。
+1. 打开[下载页面](https://github.com/richie-liu512/intelligent-project-governance-system/releases/tag/v0.1.0-preview.2)，在 **Assets（资源）** 中下载 `governance-v0.1.0-preview.2.zip`，解压到方便找到的位置。不要把下载包目录误当成自己的项目。
+2. 打开 Codex，进入要使用的项目文件夹并新建对话。打开[中文安装提示词](INSTALL.zh-CN.md)（解压包内也有同名文件），复制其中整个代码框的文字，粘贴到对话中发送。
+3. 告诉 Codex 要接入的文件夹，以及想用哪些功能。可以有多个文件夹；不确定时选“基础接入”。如果没有说清，提示词会让 Codex 集中询问必要信息。路径示例：
 
-[快速开始](QUICKSTART.zh-CN.md)说明可选进阶能力。文件接入与新会话实际采用分别验收，不承诺任意环境自动成功。
+   ```text
+   目标文件夹：D:\Projects\我的项目
+   选择基础接入，暂不启用其他功能。
+   ```
+
+4. Codex 会检查现有规则，在目标文件夹建立或补充本地入口，并告诉你改了什么。已有规则足够时不会重复添加；没有写入权限或存在冲突时，会明确说明哪处没完成。**不要把“准备修改”当成已经安装成功。**
+5. 完成后，在同一个目标文件夹新开对话，交给 Codex 一个普通的小任务，就可以开始使用。文件夹里有入口文件，只说明规则已经放进去；新对话能按规则完成任务，才说明它实际用上了。
+
+基础接入不需要另装 Skill、Hook、Git、Python 或运行工具。需要的是能读写目标文件夹的 Codex，以及你对该文件夹的操作权限。不需要移动已有业务资料。通常只新增一个 `AGENTS.md`，已有入口时保留原文并先备份；撤回前须确认没有后续改动。
+
+[完整安装提示词](INSTALL.zh-CN.md) · [可选进阶功能](QUICKSTART.zh-CN.md) · [实际测试记录](docs/onboarding-verification.md)
 
 ## 项目结构
 
@@ -82,9 +94,13 @@ MCP、插件或应用形态应等本地来源权威、隐私边界、项目登�
 
 公开版只使用占位符和脱敏示例。不应包含本机绝对路径、私人项目名称、凭据、运行日志、原始对话、账号数据或机器状态。
 
-## 当前状态
+## 我们测过什么，还有什么没测
 
-`v0.1.0-preview.2`：交互式最小接入预览版，完成有边界的 WSL 复验。[落地验证报告](docs/onboarding-verification.md)记录6个通过回合、保留的首轮失败、成本和平台限制。既有[Windows运行工具验收](docs/release-verification.md)属于可选工具证据，不等于原生Windows安装链路已验证。
+这次更新主要让“下载后交给 Codex 接入自己的文件夹”更容易操作。我们实际跑通了询问目标后安装、保留已有规则、重复安装不重复改文件、多个目录中分别处理成功和失败，以及新对话完成普通任务。首轮失败也保留在[测试报告](docs/onboarding-verification.md)里。
+
+**测试是在 Windows 电脑里的 Linux 环境（WSL）中运行的。我们还没有直接在普通 Windows 环境中，把这套新安装流程从头到尾跑一遍；Mac 也没有测。** 所以不能说“所有 Windows 或 Mac 用户都已经验证可用”。此前 Windows 上通过的是另外一些可选工具的测试，不能替代这次安装测试。
+
+目前发布的是 `v0.1.0-preview.2` 预览版。也还没有证明长期使用一定稳定，或一定比不用这套系统更省 token。遇到不能安全接入的情况，应该保留原文件并说明原因。
 
 ## 许可证
 

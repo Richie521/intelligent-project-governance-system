@@ -182,13 +182,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 5139,
-      "sha256": "6c2d578ee1ba5ead0ece9f959d089d38410955340f2c2a913476792c89a74f93"
+      "bytes": 6997,
+      "sha256": "9dab2be96e74823249b3c15ff5a712d82ed5a5337cc9c9070293bb6c2b564146"
     },
     {
       "path": "README.zh-CN.md",
-      "bytes": 4605,
-      "sha256": "99306d084a2d445dd686bd16b3e9e6c8f68e7949012026f952f9d071c0a83c28"
+      "bytes": 6740,
+      "sha256": "dbe0ae515c5f871d632d064abd908e85ee335cf3afd919c507d647d1638d1e95"
     },
     {
       "path": "SECURITY.md",
@@ -257,8 +257,8 @@
     },
     {
       "path": "docs/diagrams/system-architecture-zh-CN.dot",
-      "bytes": 14550,
-      "sha256": "4623937df13c6711fa0337c7d3a2163fcac36fb07123b30564e82a37f3a417eb"
+      "bytes": 15453,
+      "sha256": "f5a11ba964e70f3f40b028b907b5d26bbe068758bd8a20872c8e6528fb51288b"
     },
     {
       "path": "docs/diagrams/terminology-maintenance-zh-CN.dot",
@@ -342,8 +342,8 @@
     },
     {
       "path": "docs/media/system-architecture-zh-CN.svg",
-      "bytes": 19669,
-      "sha256": "bb8fe47f64c6ee63409a5aa07bf83105f1a68bb9d4bfa96e94d732151610ecce"
+      "bytes": 20963,
+      "sha256": "fa72ca94db6deb72335397744205eae9a23551f7a49e7e58a2f02d09ddf69036"
     },
     {
       "path": "docs/media/terminology-maintenance-zh-CN.svg",

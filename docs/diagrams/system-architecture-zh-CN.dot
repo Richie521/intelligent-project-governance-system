@@ -12,8 +12,8 @@ digraph SystemOverview {
     outputorder=edgesfirst,
     fontname="Microsoft YaHei",
     fontcolor="#111111",
-    fontsize=18,
-    label="项目智能治理中心总览",
+    fontsize=24,
+    label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><B>项目智能治理系统总览</B></TD></TR><TR><TD HEIGHT="22">&#160;</TD></TR></TABLE>>,
     labelloc=t,
     labeljust=c,
     audit_purpose="说明用户、全局规则、中央方法、治理技能、轻量治理事务和目标项目本地治理怎样组成当前系统",
@@ -63,7 +63,7 @@ digraph SystemOverview {
     audit_size_group="top_peer"
   ];
   global [
-    label="全局 AGENTS.md",
+    label="全局 AGENTS.md（可选）",
     group=entry_col,
     width=2.65,
     height=0.68,
@@ -74,7 +74,7 @@ digraph SystemOverview {
     audit_size_group="routing_peer"
   ];
   skill [
-    label="项目治理 Skill（结构工作）",
+    label="项目治理 Skill（可选）",
     group=landing_col,
     width=2.65,
     height=0.68,
@@ -87,17 +87,19 @@ digraph SystemOverview {
   ];
 
   subgraph cluster_target {
-    label="目标项目本地治理";
+    fontsize=16;
+
+    label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD HEIGHT="10"><FONT POINT-SIZE="1">&#160;</FONT></TD></TR><TR><TD><B>目标项目：本地治理</B></TD></TR><TR><TD HEIGHT="10"><FONT POINT-SIZE="1">&#160;</FONT></TD></TR></TABLE>>;
     color="#555555";
     fillcolor="#FAFAFA";
     style="rounded,filled";
     fontname="Microsoft YaHei";
     fontcolor="#222222";
-    fontsize=14;
+    fontsize=16;
     margin=22;
 
     entry [
-      label="项目本地入口与边界",
+      label="本地入口与边界",
       group=entry_col,
       width=2.65,
       height=0.72,
@@ -109,7 +111,7 @@ digraph SystemOverview {
       audit_size_group="local_role_peer"
     ];
     landing [
-      label="项目落地与激活",
+      label="系统落地",
       group=landing_col,
       width=2.65,
       height=0.72,
@@ -121,7 +123,7 @@ digraph SystemOverview {
       audit_size_group="local_role_peer"
     ];
     diagnosis [
-      label="分层诊断与改进",
+      label="诊断反思",
       group=diagnosis_col,
       width=2.65,
       height=0.72,
@@ -132,7 +134,7 @@ digraph SystemOverview {
       audit_size_group="local_role_peer"
     ];
     sync [
-      label="跨项目学习与同步",
+      label="跨项目学习\n与同步升级",
       group=sync_col,
       width=2.65,
       height=0.72,
@@ -156,7 +158,7 @@ digraph SystemOverview {
       audit_size_group="local_role_peer"
     ];
     validation [
-      label="共同门槛：真实对话验证",
+      label="共同检查：在真实项目对话中验证",
       group=diagnosis_col,
       width=8.65,
       height=0.72,
@@ -174,19 +176,21 @@ digraph SystemOverview {
     memory_turn_center [group=overview_center_col, audit_anchor="turn", audit_corridor="memory_entry_route"];
 
     subgraph cluster_memory {
-      label="项目记忆与连续性";
+    fontsize=16;
+
+      label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD HEIGHT="10"><FONT POINT-SIZE="1">&#160;</FONT></TD></TR><TR><TD><B>项目记忆与连续性</B></TD></TR><TR><TD HEIGHT="10"><FONT POINT-SIZE="1">&#160;</FONT></TD></TR></TABLE>>;
       color="#777777";
       fillcolor="#FFFFFF";
       style="rounded,filled";
       fontname="Microsoft YaHei";
       fontcolor="#333333";
-      fontsize=12;
+      fontsize=16;
       labeljust=l;
       margin=18;
 
       node [shape=box, fixedsize=true, style="rounded,filled", color="#333333", fillcolor="#FFFFFF"];
       memory_entry [
-        label="有变化：一次事务把治理结果按职责归位",
+        label="有长期价值：将结果放回合适位置",
         group=overview_center_col,
         width=10.8,
         height=0.66,
@@ -227,11 +231,13 @@ digraph SystemOverview {
 
       node [shape=box, fixedsize=true, style="rounded,filled", color="#333333", fillcolor="#FFFFFF"];
       current_plan [
-        label="计划事项",
+        label="计划事项（已停用）",
         group=memory_1,
         width=2.35,
         height=0.68,
-        fillcolor="#F2F2F2",
+        fillcolor="#F5F5F5",
+        fontcolor="#888888",
+        color="#BBBBBB",
         audit_stage="project_memory",
         audit_order="06",
         audit_role="current_plan",
@@ -248,7 +254,7 @@ digraph SystemOverview {
         audit_size_group="memory_components"
       ];
       project_log [
-        label="项目日志",
+        label="治理日志",
         group=memory_3,
         width=2.35,
         height=0.68,
@@ -259,7 +265,7 @@ digraph SystemOverview {
         audit_size_group="memory_components"
       ];
       durable_files [
-        label="运行档案与其他长期文件",
+        label="项目长期资料",
         group=memory_4,
         width=2.35,
         height=0.68,
@@ -276,8 +282,7 @@ digraph SystemOverview {
         audit_head_side="top",
         audit_route_kind="normal",
         audit_corridor="memory_bus",
-        audit_reason="从居中的归位节点进入项目记忆分配线"
-      ];
+        audit_reason="从居中的归位节点进入项目记忆分配线", headclip=false];
       memory_anchor_1 -> memory_anchor_2 [
         style=dotted,
         arrowhead=none,
@@ -285,8 +290,7 @@ digraph SystemOverview {
         audit_head_side="left",
         audit_route_kind="normal",
         audit_corridor="memory_bus",
-        audit_reason="同一条水平分配线"
-      ];
+        audit_reason="同一条水平分配线", tailclip=false, headclip=false];
       memory_anchor_2 -> memory_anchor_mid [
         style=dotted,
         arrowhead=none,
@@ -294,8 +298,7 @@ digraph SystemOverview {
         audit_head_side="left",
         audit_route_kind="normal",
         audit_corridor="memory_bus",
-        audit_reason="同一条水平分配线"
-      ];
+        audit_reason="同一条水平分配线", tailclip=false, headclip=false];
       memory_anchor_mid -> memory_anchor_3 [
         style=dotted,
         arrowhead=none,
@@ -303,8 +306,7 @@ digraph SystemOverview {
         audit_head_side="left",
         audit_route_kind="normal",
         audit_corridor="memory_bus",
-        audit_reason="同一条水平分配线"
-      ];
+        audit_reason="同一条水平分配线", tailclip=false, headclip=false];
       memory_anchor_3 -> memory_anchor_4 [
         style=dotted,
         arrowhead=none,
@@ -312,8 +314,7 @@ digraph SystemOverview {
         audit_head_side="left",
         audit_route_kind="normal",
         audit_corridor="memory_bus",
-        audit_reason="同一条水平分配线"
-      ];
+        audit_reason="同一条水平分配线", tailclip=false, headclip=false];
       memory_anchor_1 -> current_plan [
         style=dotted,
         arrowhead=none,
@@ -321,8 +322,7 @@ digraph SystemOverview {
         audit_head_side="top",
         audit_route_kind="branch",
         audit_corridor="memory_bus",
-        audit_reason="长期结果可以进入计划事项职责"
-      ];
+        audit_reason="长期结果可以进入计划事项职责", tailclip=false];
       memory_anchor_2 -> vocabulary [
         style=dotted,
         arrowhead=none,
@@ -330,8 +330,7 @@ digraph SystemOverview {
         audit_head_side="top",
         audit_route_kind="branch",
         audit_corridor="memory_bus",
-        audit_reason="长期结果可以进入词汇职责"
-      ];
+        audit_reason="长期结果可以进入词汇职责", tailclip=false];
       memory_anchor_3 -> project_log [
         style=dotted,
         arrowhead=none,
@@ -339,8 +338,7 @@ digraph SystemOverview {
         audit_head_side="top",
         audit_route_kind="branch",
         audit_corridor="memory_bus",
-        audit_reason="长期结果可以进入日志职责"
-      ];
+        audit_reason="长期结果可以进入日志职责", tailclip=false];
       memory_anchor_4 -> durable_files [
         style=dotted,
         arrowhead=none,
@@ -348,12 +346,11 @@ digraph SystemOverview {
         audit_head_side="top",
         audit_route_kind="branch",
         audit_corridor="memory_bus",
-        audit_reason="长期结果可以进入其他长期文件职责"
-      ];
+        audit_reason="长期结果可以进入其他长期文件职责", tailclip=false];
 
       current_plan -> vocabulary -> project_log -> durable_files [style=invis, weight=1000];
-      memory_balance_left -> memory_entry [style=invis, weight=1000];
-      memory_entry -> memory_balance_right [style=invis, weight=1000];
+      memory_balance_left -> memory_entry [style=invis, weight=1000, tailclip=false];
+      memory_entry -> memory_balance_right [style=invis, weight=1000, headclip=false];
       { rank=same; memory_balance_left; memory_entry; memory_balance_right; }
       { rank=same; memory_anchor_1; memory_anchor_2; memory_anchor_mid; memory_anchor_3; memory_anchor_4; }
       { rank=same; current_plan; vocabulary; project_log; durable_files; }
@@ -362,7 +359,7 @@ digraph SystemOverview {
     scope_note [
       shape=note,
       style="filled,dashed",
-      label="无变化零治理 I/O；项目事实留在本地；通用治理经验才反馈中央方法",
+      label="没有长期变化就不新增记录；项目事实留在本地，只分享可复用的方法。",
       width=10.8,
       height=0.62,
       fixedsize=true,
@@ -422,23 +419,20 @@ digraph SystemOverview {
       audit_head_side="top",
       audit_route_kind="normal",
       audit_corridor="memory_entry_route",
-      audit_reason="日常资料结果尽早转向居中的项目记忆入口"
-    ];
+      audit_reason="日常资料结果尽早转向居中的项目记忆入口", headclip=false];
     memory_turn_left -> memory_turn_center [
       arrowhead=none,
       audit_tail_side="right",
       audit_head_side="left",
       audit_route_kind="normal",
       audit_corridor="memory_entry_route",
-      audit_reason="转向居中的项目记忆入口"
-    ];
+      audit_reason="转向居中的项目记忆入口", tailclip=false, headclip=false];
     memory_turn_center -> memory_entry [
       audit_tail_side="bottom",
       audit_head_side="top",
       audit_route_kind="normal",
       audit_corridor="memory_entry_route",
-      audit_reason="从上边中点进入居中的项目记忆入口"
-    ];
+      audit_reason="从上边中点进入居中的项目记忆入口", tailclip=false];
 
     entry -> landing [style=invis, weight=1000];
     landing -> diagnosis [style=invis, weight=1000];

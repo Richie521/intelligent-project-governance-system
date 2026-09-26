@@ -34,11 +34,23 @@ See the [editable DOT source](docs/diagrams/system-architecture-en.dot) for this
 
 The overview includes optional global guidance and the structural Skill; basic adoption through the prompt below does not require installing either or any Hook.
 
-## Quick Start
+## Install into your own folder
 
-Send the [interactive installation prompt](INSTALL.md) to Codex, select target folders and necessary capabilities, and let it preserve existing content and check minimal adoption. No Skill or runtime installation is required by default.
+1. Open the [release page](https://github.com/richie-liu512/intelligent-project-governance-system/releases/tag/v0.1.0-preview.2). Under **Assets**, download `governance-v0.1.0-preview.2.zip` and extract it. The download folder is not your project by default.
+2. Open Codex in your target project folder and start a conversation. Open [INSTALL.md](INSTALL.md), also included in the ZIP, copy the entire code block, and send it to Codex.
+3. Supply one or more target folders and your preferences. Choose basic adoption if unsure; Codex will ask together for missing information. For example:
 
-[Quick Start](QUICKSTART.md) covers optional advanced capabilities. File adoption and actual fresh-session use are verified separately; arbitrary environments are not guaranteed.
+   ```text
+   Target folder: D:\Projects\MyProject
+   Use basic adoption without additional features.
+   ```
+
+4. Codex checks existing rules, creates or extends the local entry, and reports exactly what changed. Adequate rules are reused. Permission problems or conflicts are reported for each affected folder. A proposal to edit is not a completed installation.
+5. Start a fresh conversation in the same target folder and give Codex a small ordinary task. An entry file shows that rules were saved; successful work in a fresh conversation shows that they were actually used.
+
+Basic adoption needs Codex with file access and permission to work in your target folder. It does not require installing a Skill, Hook, Git, Python, or runtime tools. Existing business files stay in place. Usually one `AGENTS.md` is created; existing entries are preserved and backed up before editing. Check for subsequent edits before rolling back.
+
+[Full installation prompt](INSTALL.md) · [Optional advanced features](QUICKSTART.md) · [Test record](docs/onboarding-verification.md)
 
 ## Repository Layout
 
@@ -82,9 +94,13 @@ See [docs/global-agent-integration.md](docs/global-agent-integration.md) for the
 
 This public version uses placeholders and sanitized examples. It should not contain local absolute paths, private project names, credentials, runtime logs, raw conversations, account data, or machine-specific state.
 
-## Status
+## What we tested—and what we have not
 
-`v0.1.0-preview.2`: interactive minimal adoption with bounded WSL retest evidence. See [onboarding verification](docs/onboarding-verification.md) for the six accepted retest turns, retained failures, costs and platform limits. Earlier [Windows runtime verification](docs/release-verification.md) covers separate optional tools; it is not native Windows onboarding acceptance.
+This update makes it easier to download the project and ask Codex to adopt it in your own folders. We tested asking for a target and installing, preserving existing rules, repeated installation without duplicate changes, separate outcomes for writable and restricted folders, and ordinary work in a fresh conversation. Earlier failures are retained in the [test report](docs/onboarding-verification.md).
+
+**These installation tests ran in Linux inside Windows (WSL). We have not run this new installation process end to end directly in ordinary Windows, or on a Mac.** Earlier Windows tests checked separate optional tools; they do not establish that this installation process works there.
+
+The current release is `v0.1.0-preview.2`, a preview. Long-term reliability and lower token usage compared with using no governance system have not been established. When a folder cannot be safely adopted, the installer should preserve it and explain why.
 
 ## License
 
