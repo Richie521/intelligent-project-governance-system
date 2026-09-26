@@ -32,6 +32,8 @@ AI 编程智能体经常进入一种上下文很混乱的项目：聊天历史�
 
 这张总览图的[可编辑 DOT 图源](docs/diagrams/system-architecture-en.dot)；其他专题流程图见 [docs/flowchart.md](docs/flowchart.md)。
 
+总图包含可选全局指导和结构治理 Skill；下面的基础接入 prompt 不要求安装它们或任何 Hook。
+
 ## 快速开始
 
 将[交互式安装 prompt](INSTALL.zh-CN.md)发给 Codex，选择目标文件夹及必要功能；它会保留现有内容并完成最小接入检查。默认无需安装 Skill 或运行工具。

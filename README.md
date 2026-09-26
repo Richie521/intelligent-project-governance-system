@@ -32,6 +32,8 @@ The system also includes a lightweight global agent bridge. The global bridge he
 
 See the [editable DOT source](docs/diagrams/system-architecture-en.dot) for this overview and [docs/flowchart.md](docs/flowchart.md) for additional diagrams.
 
+The overview includes optional global guidance and the structural Skill; basic adoption through the prompt below does not require installing either or any Hook.
+
 ## Quick Start
 
 Send the [interactive installation prompt](INSTALL.md) to Codex, select target folders and necessary capabilities, and let it preserve existing content and check minimal adoption. No Skill or runtime installation is required by default.
