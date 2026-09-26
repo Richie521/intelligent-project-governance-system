@@ -82,7 +82,7 @@ MCP、插件或应用形态应等本地来源权威、隐私边界、项目登�
 
 ## 当前状态
 
-`v0.1.0-preview.1`：完成有边界 Windows 验证的预览版。[验收报告](docs/release-verification.md)提供可复跑检查、真实工作结果、token 数据及未验证边界。可选宿主门禁仍属实验性组件。
+`v0.1.0-preview.2`：交互式最小接入预览版，完成有边界的 WSL 复验。[落地验证报告](docs/onboarding-verification.md)记录6个通过回合、保留的首轮失败、成本和平台限制。既有[Windows运行工具验收](docs/release-verification.md)属于可选工具证据，不等于原生Windows安装链路已验证。
 
 ## 许可证
 

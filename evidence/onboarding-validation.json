@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-26",
+  "candidate_sha256": "00131fa751a5428a7dc17593e7a0ee3ababf59cbc511b6499fe0d0327f668469",
+  "environment": {
+    "host": "WSL Ubuntu accessing Windows-mounted folders",
+    "cli": "0.157.1",
+    "model": "gpt-6-astra",
+    "reasoning": "low",
+    "hooks": false,
+    "memory": false,
+    "preinstalled_governance_skill": false
+  },
+  "outcome": "six bounded retest turns accepted; not a universal compatibility claim",
+  "totals": {
+    "rounds": 6,
+    "seconds": 615.27,
+    "input_tokens": 365595,
+    "cached_input_tokens": 310784,
+    "output_tokens": 7379,
+    "reasoning_output_tokens": 93
+  },
+  "runs": [
+    {
+      "case": "01-intake",
+      "seconds": 106.92,
+      "usage": {
+        "input_tokens": 44254,
+        "cached_input_tokens": 39680,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 404,
+        "reasoning_output_tokens": 0
+      },
+      "tool_calls": 2,
+      "web_calls": 0,
+      "configuration_verified": true,
+      "entry_in_context": true
+    },
+    {
+      "case": "02-answer",
+      "seconds": 101.52,
+      "usage": {
+        "input_tokens": 112776,
+        "cached_input_tokens": 105088,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1793,
+        "reasoning_output_tokens": 0
+      },
+      "tool_calls": 3,
+      "web_calls": 0,
+      "configuration_verified": true,
+      "entry_in_context": true
+    },
+    {
+      "case": "03-existing",
+      "seconds": 126.02,
+      "usage": {
+        "input_tokens": 76307,
+        "cached_input_tokens": 58624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2181,
+        "reasoning_output_tokens": 13
+      },
+      "tool_calls": 4,
+      "web_calls": 0,
+      "configuration_verified": true,
+      "entry_in_context": true
+    },
+    {
+      "case": "04-repeat",
+      "seconds": 92.58,
+      "usage": {
+        "input_tokens": 44965,
+        "cached_input_tokens": 39680,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 964,
+        "reasoning_output_tokens": 58
+      },
+      "tool_calls": 3,
+      "web_calls": 0,
+      "configuration_verified": true,
+      "entry_in_context": true
+    },
+    {
+      "case": "05-multiple",
+      "seconds": 124.98,
+      "usage": {
+        "input_tokens": 60572,
+        "cached_input_tokens": 43392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1869,
+        "reasoning_output_tokens": 22
+      },
+      "tool_calls": 3,
+      "web_calls": 0,
+      "configuration_verified": true,
+      "entry_in_context": true
+    },
+    {
+      "case": "06-work",
+      "seconds": 63.25,
+      "usage": {
+        "input_tokens": 26721,
+        "cached_input_tokens": 24320,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 168,
+        "reasoning_output_tokens": 0
+      },
+      "tool_calls": 1,
+      "web_calls": 0,
+      "configuration_verified": true,
+      "entry_in_context": true
+    }
+  ],
+  "first_batch": {
+    "rounds": 12,
+    "seconds": 1047.05,
+    "input_tokens": 669515,
+    "cached_input_tokens": 481920,
+    "output_tokens": 12297,
+    "accepted_for_release": false,
+    "issues": [
+      "two incomplete CLI setup attempts",
+      "cross-OS path inspection prevented interactive completion",
+      "mixed-target sandbox mount blocked execution",
+      "redundant entry reads"
+    ]
+  },
+  "limits": [
+    "no native Windows or macOS onboarding acceptance",
+    "English prompt statically reviewed, not behaviorally tested",
+    "no unguided control or relative token improvement claim",
+    "no long-term stability claim",
+    "optional tools and Hooks are not installed by the basic prompt"
+  ]
+}

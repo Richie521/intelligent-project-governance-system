@@ -82,7 +82,7 @@ This public version uses placeholders and sanitized examples. It should not cont
 
 ## Status
 
-`v0.1.0-preview.1`: a bounded Windows-verified preview. Read the [verification report](docs/release-verification.md) for reproducible checks, real-work results, token measurements and remaining limits. The optional host guard remains experimental.
+`v0.1.0-preview.2`: interactive minimal adoption with bounded WSL retest evidence. See [onboarding verification](docs/onboarding-verification.md) for the six accepted retest turns, retained failures, costs and platform limits. Earlier [Windows runtime verification](docs/release-verification.md) covers separate optional tools; it is not native Windows onboarding acceptance.
 
 ## License
 

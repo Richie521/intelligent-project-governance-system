@@ -182,13 +182,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 4792,
-      "sha256": "05ae357f47d44e4480a20e29d3f740313721e5229e6c97dee0b57d07edbc31c6"
+      "bytes": 4977,
+      "sha256": "2566cbb5e37ab825a70dfa1985b98ddc4560491cbfe57bde6dda81b9443f012d"
     },
     {
       "path": "README.zh-CN.md",
-      "bytes": 4299,
-      "sha256": "d4facdd8881b8ebab2d64fef6b9730d697d51ef1ecc3b6ef6be496381869dc58"
+      "bytes": 4482,
+      "sha256": "ad03a96e3aaad5cc093694110d3467d3043f054a2594087beee8e17e41c8570a"
     },
     {
       "path": "SECURITY.md",
@@ -249,6 +249,11 @@
       "path": "docs/diagrams/system-architecture-company-zh-CN.dot",
       "bytes": 13560,
       "sha256": "d4b92f10788112ca6de67677c08c731ad679847ae80c54fc4d06acf685d7d5e2"
+    },
+    {
+      "path": "docs/diagrams/system-architecture-en.dot",
+      "bytes": 15470,
+      "sha256": "783df67ee4e0ea83125ffdb6e90fc6a4002d1057921aed072934809589d367d7"
     },
     {
       "path": "docs/diagrams/system-architecture-zh-CN.dot",
@@ -331,6 +336,11 @@
       "sha256": "e73b36ab743a47c057ff5e84c5acfdfb5eaa307f8044c521bf4a0af115d6ba4f"
     },
     {
+      "path": "docs/media/system-architecture-en.svg",
+      "bytes": 20042,
+      "sha256": "d30b25ef03ebedac00b96d5e8b293bbd4b6b2a53003b679f02f4244b52438983"
+    },
+    {
       "path": "docs/media/system-architecture-zh-CN.svg",
       "bytes": 19669,
       "sha256": "bb8fe47f64c6ee63409a5aa07bf83105f1a68bb9d4bfa96e94d732151610ecce"
@@ -339,6 +349,11 @@
       "path": "docs/media/terminology-maintenance-zh-CN.svg",
       "bytes": 20684,
       "sha256": "d216bd30d9ba07f411b59e829ebf34f232b4960ed1ce4d8e63bbfe7c2235310f"
+    },
+    {
+      "path": "docs/onboarding-verification.md",
+      "bytes": 4383,
+      "sha256": "d2695f4bc57e7e9f54365e0b513776770d962e2de929c953bcfecd4c0a4be9d2"
     },
     {
       "path": "docs/publication-checklist.md",
@@ -359,6 +374,11 @@
       "path": "docs/verification-guide.md",
       "bytes": 7311,
       "sha256": "48feb1c6466857155e16426c4ea833bf891184d97b7be90a311978834e99db45"
+    },
+    {
+      "path": "evidence/onboarding-validation.json",
+      "bytes": 3674,
+      "sha256": "18f68ba42b5529ea0e95744e4c5e86ccafeccbf584e7e2956d82fd05ecdfbf8a"
     },
     {
       "path": "evidence/release-validation.json",
@@ -545,5 +565,5 @@
     "templates/docs/task.en.md",
     "templates/docs/task.zh-CN.md"
   ],
-  "scope": "reviewed candidate files; onboarding validation pending"
+  "scope": "reviewed release files; bounded interactive adoption acceptance"
 }
