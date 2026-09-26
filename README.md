@@ -10,7 +10,7 @@ It helps an agent inspect a project from local evidence, identify source boundar
 
 1. Open the [release page](https://github.com/richie-liu512/intelligent-project-governance-system/releases/tag/v0.1.0-preview.2). Under **Assets**, download `governance-v0.1.0-preview.2.zip` and extract it. The download folder is not your project by default.
 2. Open Codex in your target project folder and start a conversation. Open [INSTALL.md](INSTALL.md), also included in the ZIP, copy the entire code block, and send it to Codex.
-3. Supply one or more target folders and your preferences. Choose basic adoption if unsure; Codex will ask together for missing information. For example:
+3. Supply one or more target folders and your preferences. Choose basic adoption if unsure; Codex asks when something is unclear and continues after your answer. You can also add context or adjust your request as you go. For example:
 
    ```text
    Target folder: D:\Projects\MyProject
@@ -23,26 +23,6 @@ It helps an agent inspect a project from local evidence, identify source boundar
 Basic adoption needs Codex with file access and permission to work in your target folder. It does not require installing a Skill, Hook, Git, Python, or runtime tools. Existing business files stay in place. Usually one `AGENTS.md` is created; existing entries are preserved and backed up before editing. Check for subsequent edits before rolling back.
 
 [Full installation prompt](INSTALL.md) · [Optional advanced features](QUICKSTART.md) · [Test record](docs/onboarding-verification.md)
-
-### Installation is a conversation
-
-Stay in the same conversation after sending the prompt. Codex uses information you have already supplied, asks when a target, feature choice, or conflicting rule needs your decision, and continues after your answer. You can add context, correct a misunderstanding, or adjust work that has not happened yet. If an edit has already happened, ask Codex to explain its current state before undoing it; a new instruction does not itself roll back earlier changes.
-
-An illustrative exchange, not a fixed script:
-
-> You: Help me install this using the prompt. I have not chosen a folder yet.
->
-> Codex: Which folder or folders should I use? I recommend basic adoption first.
->
-> You: Use my project folder with basic features.
->
-> Codex: I will check existing rules and make the necessary changes.
->
-> You: Keep the rules already in that folder.
->
-> Codex: I will preserve them and ask if a conflict needs your decision.
-
-You do not need to approve every step: Codex continues when information is sufficient and asks when a decision is needed. Questions may appear as text or choices depending on the available Codex interface; no extra Hook is required. We tested asking for a target, receiving an answer, and completing installation, not every possible mid-task change.
 
 ## Why It Exists
 
