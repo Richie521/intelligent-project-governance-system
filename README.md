@@ -1,8 +1,8 @@
-# Project Intelligent Governance Center
+# Project Intelligent Governance System
 
 [简体中文](README.zh-CN.md)
 
-Project Intelligent Governance Center is a reusable, documentation-authoritative method for making AI-assisted project folders easier to understand and safer to modify.
+Project Intelligent Governance System is a reusable, documentation-authoritative method for making AI-assisted project folders easier to understand and safer to modify.
 
 It helps an agent inspect a project from local evidence, identify source boundaries, preserve useful project-specific practices, avoid copying private or stale context, and write durable knowledge back to the right place.
 
@@ -28,9 +28,9 @@ The system also includes a lightweight global agent bridge. The global bridge he
 
 ## Visual Overview
 
-![Project Intelligent Governance Center flow](docs/media/governance-flow-en.svg)
+![Project Intelligent Governance System overview](docs/media/system-architecture-en.svg)
 
-See [docs/flowchart.md](docs/flowchart.md) for the editable Mermaid source and additional workflow diagrams.
+See the [editable DOT source](docs/diagrams/system-architecture-en.dot) for this overview and [docs/flowchart.md](docs/flowchart.md) for additional diagrams.
 
 ## Quick Start
 
