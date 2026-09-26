@@ -30,11 +30,16 @@ Stay in the same conversation after sending the prompt. Codex uses information y
 
 An illustrative exchange, not a fixed script:
 
-> You: Help me install this using the prompt. I have not chosen a folder yet.  
-> Codex: Which folder or folders should I use? I recommend basic adoption first.  
-> You: Use my project folder with basic features.  
-> Codex: I will check existing rules and make the necessary changes.  
-> You: Keep the rules already in that folder.  
+> You: Help me install this using the prompt. I have not chosen a folder yet.
+>
+> Codex: Which folder or folders should I use? I recommend basic adoption first.
+>
+> You: Use my project folder with basic features.
+>
+> Codex: I will check existing rules and make the necessary changes.
+>
+> You: Keep the rules already in that folder.
+>
 > Codex: I will preserve them and ask if a conflict needs your decision.
 
 You do not need to approve every step: Codex continues when information is sufficient and asks when a decision is needed. Questions may appear as text or choices depending on the available Codex interface; no extra Hook is required. We tested asking for a target, receiving an answer, and completing installation, not every possible mid-task change.
