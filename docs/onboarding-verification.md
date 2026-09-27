@@ -1,4 +1,6 @@
-# Interactive adoption verification
+# Earlier interactive adoption verification
+
+This is the preserved preview.2 test record. Its unverified-platform statements describe that earlier batch; see the [current acceptance record](integration-verification.md) for subsequent native Windows, desktop and English evidence.
 
 The interactive installer is a self-contained prompt, not a mandatory global Skill or Hook. It asks for missing target paths and meaningful preferences, preserves existing local rules, and reports file adoption separately from actual use in a fresh session. Start with [English](../INSTALL.md) or [Chinese](../INSTALL.zh-CN.md).
 

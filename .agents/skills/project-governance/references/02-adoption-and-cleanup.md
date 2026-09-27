@@ -15,6 +15,10 @@ For a new project, determine the user's goal, scope, language, and privacy bound
 
 Unified wording, logs, archives, decision records, topic documents, and optional tools are added only when the project has a real recurring need, an appropriate owner, and authorization. User approval is required before enabling unified wording. A discussion or suggestion alone does not authorize durable changes.
 
+## Optional existing-material organization
+
+When an existing project needs historical knowledge organized, offer that choice without making it a prerequisite for basic adoption. Confirm selected source folders and conversations or exports, and the permitted destinations; then follow `03-migration-and-handoff.md`. Preserve originals and record coverage and provenance. Inaccessible history remains an explicit gap. Do not activate this work for ordinary tasks or on every resumed conversation.
+
 ## Outcomes And Completion
 
 - **Minimal file adoption:** the authorized prompt has been applied to the target folder's minimum host entry, or inspection confirmed that existing local rules already suffice. Report the exact file change or that no duplicate was needed.

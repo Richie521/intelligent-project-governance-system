@@ -34,7 +34,7 @@ For a material governance event, route through `docs/04-governance-log.md` to th
 
 ## Source Boundaries
 
-Use `docs/01-source-of-truth.md` to decide which files are authoritative.
+Read `docs/01-source-of-truth.md` when authority is unclear or conflicting. When the target and its role are already known, read that target directly without first loading the authority guide.
 
 Treat sessions, memory, old notes, and reports as evidence until their durable value is written into the right project file.
 

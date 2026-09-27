@@ -8,7 +8,7 @@ It helps an agent inspect a project from local evidence, identify source boundar
 
 ## Install into your own folder
 
-1. Open the [release page](https://github.com/richie-liu512/intelligent-project-governance-system/releases/tag/v0.1.0-preview.2). Under **Assets**, download `governance-v0.1.0-preview.2.zip` and extract it. The download folder is not your project by default.
+1. Open the [release page](https://github.com/richie-liu512/intelligent-project-governance-system/releases/tag/v0.1.0-preview.3). Under **Assets**, download `governance-v0.1.0-preview.3.zip` and extract it. The download folder is not your project by default.
 2. Open Codex in your target project folder and start a conversation. Open [INSTALL.md](INSTALL.md), also included in the ZIP, copy the entire code block, and send it to Codex.
 3. Supply one or more target folders and your preferences. Choose basic adoption if unsure; Codex asks when something is unclear and continues after your answer. You can also add context or adjust your request as you go. For example:
 
@@ -18,13 +18,13 @@ It helps an agent inspect a project from local evidence, identify source boundar
    ```
 
 4. Codex checks existing rules, creates or extends the local entry, and reports exactly what changed. Adequate rules are reused. Permission problems or conflicts are reported for each affected folder. A proposal to edit is not a completed installation.
-5. Start a fresh conversation in the same target folder and give Codex a small ordinary task. An entry file shows that rules were saved; successful work in a fresh conversation shows that they were actually used.
+5. When you start a new conversation in the target folder, begin with your normal task. If you choose to check adoption, report only what that task actually demonstrates; do not mark it passed while any required item remains unverified.
 
 <p align="center"><a href="docs/media/installation-guide-en.svg"><img src="docs/media/installation-guide-en.svg" alt="Preview installation steps" width="520"></a></p>
 
-Basic adoption needs Codex with file access and permission to work in your target folder. It does not require installing a Skill, Hook, Git, Python, or runtime tools. Existing business files stay in place. Usually one `AGENTS.md` is created; existing entries are preserved and backed up before editing. Check for subsequent edits before rolling back.
+Basic adoption needs Codex with file access and permission to work in your target folder. It does not require installing a Skill, Hook, Git, Python, or runtime tools. Existing project materials stay in place. Reviewing old project context is optional and bounded: choose the relevant native conversations, or provide exports if those conversations are unavailable. Track every in-scope item with its status, source, and destination; preserve originals in place and write only durable decisions to their appropriate project files. When resuming a selected old conversation, say: “First read only this project’s current entry, then follow its routes to read the latest decisions and actual state needed in this turn. Do not substitute earlier conversation content for current files or consult personal memory. Reuse text already read in this turn, then continue working.”
 
-[Installation diagram](docs/flowchart.md#预览版安装流程) · [Full installation prompt](INSTALL.md) · [Optional advanced features](QUICKSTART.md) · [Test record](docs/onboarding-verification.md)
+[Installation diagram](docs/flowchart.md#预览版安装流程) · [Full installation prompt](INSTALL.md) · [Optional advanced features](QUICKSTART.md) · [Test record](docs/integration-verification.md)
 
 ## Why It Exists
 
@@ -32,7 +32,7 @@ AI coding agents often work inside projects where authority is scattered across 
 
 This project provides a small set of project-local files and reusable methods that let each project remain itself while still benefiting from a shared governance model.
 
-The system also includes a lightweight global agent bridge. The global bridge helps the agent recognize adopted projects and route into local project files, while the project-local files preserve each project's real context.
+The system offers an optional lightweight global agent bridge. It can help the agent recognize adopted projects and route into local project files, while project-local files preserve each project's real context.
 
 ## Design Principles
 
@@ -52,7 +52,7 @@ The system also includes a lightweight global agent bridge. The global bridge he
 
 See the [editable DOT source](docs/diagrams/system-architecture-en.dot) for this overview and [docs/flowchart.md](docs/flowchart.md) for additional diagrams.
 
-The overview includes optional global guidance and the structural Skill; basic adoption through the prompt below does not require installing either or any Hook.
+The overview includes optional global guidance and an optional structural Skill; basic adoption through the prompt below does not require installing either or any Hook.
 
 ## Repository Layout
 
@@ -82,7 +82,7 @@ examples/
 
 ## Delivery Form
 
-The documentation project remains the method authority. The public installation includes the `$project-governance` Codex Skill, local project templates, and an optional lightweight global agent bridge. The Windows transaction runner is optional.
+The documentation project remains the method authority. The release includes an optional `$project-governance` Codex Skill, local project templates, and an optional lightweight global agent bridge. The Windows transaction runner is optional.
 
 `project-governance` handles structural adoption, migration, source authority, synchronization, mechanism repair, explicitly activated layered diagnosis, and governance verification. A dedicated user command such as `启动分层诊断` is required to enter layered diagnosis; ordinary corrections and governance discussion do not activate it. The planning projection and its standalone Skill are discontinued. Historical diagrams or archived materials that still depict that feature do not describe current capability. A real target-project conversation is useful evidence of local activation, but the optional Windows transaction runner is not a default installation dependency.
 
@@ -96,13 +96,13 @@ See [docs/global-agent-integration.md](docs/global-agent-integration.md) for the
 
 This public version uses placeholders and sanitized examples. It should not contain local absolute paths, private project names, credentials, runtime logs, raw conversations, account data, or machine-specific state.
 
-## What we tested—and what we have not
+## What We Tested And What Remains Unproven
 
-This update makes it easier to download the project and ask Codex to adopt it in your own folders. We tested asking for a target and installing, preserving existing rules, repeated installation without duplicate changes, separate outcomes for writable and restricted folders, and ordinary work in a fresh conversation. Earlier failures are retained in the [test report](docs/onboarding-verification.md).
+This preview covers native Windows CLI and WSL adoption, selected existing material, resumed and fresh conversations, repeated operations, and safe handling of blocked targets. Separate Windows desktop checks exercised original content from two selected conversations, old-session refresh, fresh work, and bounded read-only tasks in three existing projects. Acceptance checks inspect actual files, calls and results rather than agent success claims.
 
-**These installation tests ran in Linux inside Windows (WSL). We have not run this new installation process end to end directly in ordinary Windows, or on a Mac.** Earlier Windows tests checked separate optional tools; they do not establish that this installation process works there.
+Testing exposed and corrected unnecessary reads, redundant draft backups, and a resumed conversation reusing stale configuration. The continuation instruction now explicitly requires current files. Optional transaction commits and recovery, manual diagnosis and scoped synchronization have separate evidence; basic installation does not require these tools. See the [current acceptance record](docs/integration-verification.md) and retained [earlier onboarding results](docs/onboarding-verification.md).
 
-The current release is `v0.1.0-preview.2`, a preview. Long-term reliability and lower token usage compared with using no governance system have not been established. When a folder cannot be safely adopted, the installer should preserve it and explain why.
+These are bounded preview results, not a guarantee for every folder, permission setup or model. Desktop runs retain host global instructions and plugins and are separate from isolated CLI tests. Real projects received basic adoption checks, not automatic access to their private conversations. macOS, long-term reliability, and comparative token or quality improvements remain unproven. No test uses Hooks.
 
 ## License
 

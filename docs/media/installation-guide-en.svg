@@ -1,2 +1,144 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-28 -39.75 357.68 696" width="357.68" height="696"><metadata id="workflow-provenance" data-generated-by="workflow-cli" data-backend="graphviz" data-backend-version="dot - graphviz version 15.1.0 (20260618.0150)" data-spec-sha256="cc22e0b7a0c07a063344d099023b243267046eb0a137bc1be13ab2013a14049d" data-layout-sha256="033649509e41e7236409e2994c34880140b21c06f752a579ef0428b061129d44" data-profile="general-flow" data-math-assets=""/><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#333333"/></marker></defs><rect x="-28" y="-39.75" width="357.68" height="696" fill="#FFFFFF"/><text x="150.84" y="-19.75" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="18" font-weight="700" fill="#202020">Installation steps</text><polyline id="edge-e-download-open" points="150.84,76.25 150.84,114.25" fill="none" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/><polyline id="edge-e-open-prompt" points="150.84,168.25 150.84,206.25" fill="none" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/><polyline id="edge-e-prompt-clarify" points="150.84,260.25 150.84,298.25" fill="none" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/><polyline id="edge-e-clarify-inspect" points="150.84,352.25 150.84,390.25" fill="none" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/><polyline id="edge-e-inspect-trial" points="150.84,444.25 150.84,482.25" fill="none" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/><polyline id="edge-e-trial-done" points="150.84,536.25 150.84,574.25" fill="none" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/><g id="node-download"><ellipse cx="150.84" cy="49.25" rx="150.84" ry="27" fill="#FFFFFF" stroke="#282828" stroke-width="1.5"/><text x="150.84" y="49.25" text-anchor="middle" dominant-baseline="middle" font-family="Microsoft YaHei, sans-serif" font-size="10" fill="#202020">Download and extract the preview ZIP</text></g><g id="node-open"><rect x="43.1388" y="114.25" width="215.4024" height="54" rx="6" ry="6" fill="#FFFFFF" stroke="#282828" stroke-width="1.5"/><text x="150.84" y="141.25" text-anchor="middle" dominant-baseline="middle" font-family="Microsoft YaHei, sans-serif" font-size="10" fill="#202020">Open your target project in Codex</text></g><g id="node-prompt"><rect x="31.539600000000007" y="206.25" width="238.6008" height="54" rx="6" ry="6" fill="#FFFFFF" stroke="#282828" stroke-width="1.5"/><text x="150.84" y="226.25" text-anchor="middle" dominant-baseline="middle" font-family="Microsoft YaHei, sans-serif" font-size="10" fill="#202020">Open INSTALL.md, copy its code block,</text><text x="150.84" y="240.25" text-anchor="middle" dominant-baseline="middle" font-family="Microsoft YaHei, sans-serif" font-size="10" fill="#202020">and send it to Codex</text></g><g id="node-clarify"><rect x="24.541200000000003" y="298.25" width="252.5976" height="54" rx="6" ry="6" fill="#FFFFFF" stroke="#282828" stroke-width="1.5"/><text x="150.84" y="318.25" text-anchor="middle" dominant-baseline="middle" font-family="Microsoft YaHei, sans-serif" font-size="10" fill="#202020">Provide target folders and preferences;</text><text x="150.84" y="332.25" text-anchor="middle" dominant-baseline="middle" font-family="Microsoft YaHei, sans-serif" font-size="10" fill="#202020">answer any questions</text></g><g id="node-inspect"><rect x="33.2388" y="390.25" width="235.2024" height="54" rx="6" ry="6" fill="#FFFFFF" stroke="#282828" stroke-width="1.5"/><text x="150.84" y="410.25" text-anchor="middle" dominant-baseline="middle" font-family="Microsoft YaHei, sans-serif" font-size="10" fill="#202020">Review Codex's report, file changes,</text><text x="150.84" y="424.25" text-anchor="middle" dominant-baseline="middle" font-family="Microsoft YaHei, sans-serif" font-size="10" fill="#202020">and remaining items</text></g><g id="node-trial"><rect x="33.94080000000001" y="482.25" width="233.7984" height="54" rx="6" ry="6" fill="#FFFFFF" stroke="#282828" stroke-width="1.5"/><text x="150.84" y="502.25" text-anchor="middle" dominant-baseline="middle" font-family="Microsoft YaHei, sans-serif" font-size="10" fill="#202020">Start a new chat in the same project,</text><text x="150.84" y="516.25" text-anchor="middle" dominant-baseline="middle" font-family="Microsoft YaHei, sans-serif" font-size="10" fill="#202020">then try a routine task</text></g><g id="node-done"><ellipse cx="150.84" cy="601.25" rx="145.3032" ry="27" fill="#FFFFFF" stroke="#282828" stroke-width="1.5"/><text x="150.84" y="601.25" text-anchor="middle" dominant-baseline="middle" font-family="Microsoft YaHei, sans-serif" font-size="10" fill="#202020">Confirm it works and start using it</text></g></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 15.1.0 (20260618.0150)
+ -->
+<!-- Title: installation&#45;guide&#45;en Pages: 1 -->
+<svg width="496pt" height="780pt"
+ viewBox="0.00 0.00 496.00 780.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(20.16 759.98)">
+<title>installation&#45;guide&#45;en</title>
+<polygon fill="#ffffff" stroke="none" points="-20.16,20.16 -20.16,-759.98 476.08,-759.98 476.08,20.16 -20.16,20.16"/>
+<text xml:space="preserve" text-anchor="middle" x="227.96" y="-725.37" font-family="Microsoft YaHei" font-size="11.00">Installation steps</text>
+<!-- download&#45;&gt;prompt -->
+<g id="edge1" class="edge">
+<title>download&#45;&gt;prompt</title>
+<path fill="none" stroke="#333333" stroke-width="1.05" d="M228.9,-668C228.9,-668 228.9,-647.03 228.9,-647.03"/>
+<polygon fill="#333333" stroke="#333333" stroke-width="1.05" points="231.35,-647.03 228.9,-640.03 226.45,-647.03 231.35,-647.03"/>
+</g>
+<!-- prompt&#45;&gt;choice -->
+<g id="edge2" class="edge">
+<title>prompt&#45;&gt;choice</title>
+<path fill="none" stroke="#333333" stroke-width="1.05" d="M228.9,-601.92C228.9,-601.92 228.9,-581.08 228.9,-581.08"/>
+<polygon fill="#333333" stroke="#333333" stroke-width="1.05" points="231.35,-581.08 228.9,-574.08 226.45,-581.08 231.35,-581.08"/>
+</g>
+<!-- choice&#45;&gt;basic -->
+<g id="edge3" class="edge">
+<title>choice&#45;&gt;basic</title>
+<path fill="none" stroke="#333333" stroke-width="1.05" d="M132.58,-513.04C132.58,-513.04 132.58,-471.18 132.58,-471.18"/>
+<polygon fill="#333333" stroke="#333333" stroke-width="1.05" points="135.04,-471.18 132.59,-464.18 130.14,-471.18 135.04,-471.18"/>
+<text xml:space="preserve" text-anchor="middle" x="121.33" y="-483.56" font-family="Microsoft YaHei" font-size="9.00">Basic</text>
+</g>
+<!-- choice&#45;&gt;scope -->
+<g id="edge4" class="edge">
+<title>choice&#45;&gt;scope</title>
+<path fill="none" stroke="#333333" stroke-width="1.05" d="M326.15,-513.5C326.15,-513.5 326.15,-471.06 326.15,-471.06"/>
+<polygon fill="#333333" stroke="#333333" stroke-width="1.05" points="328.6,-471.06 326.15,-464.06 323.7,-471.06 328.6,-471.06"/>
+<text xml:space="preserve" text-anchor="middle" x="306.65" y="-483.73" font-family="Microsoft YaHei" font-size="9.00">Organize</text>
+</g>
+<!-- basic&#45;&gt;files -->
+<g id="edge8" class="edge">
+<title>basic&#45;&gt;files</title>
+<path fill="none" stroke="#333333" stroke-width="1.05" d="M170.88,-412.98C170.88,-412.98 170.88,-235.22 170.88,-235.22"/>
+<polygon fill="#333333" stroke="#333333" stroke-width="1.05" points="173.33,-235.22 170.88,-228.22 168.43,-235.22 173.33,-235.22"/>
+</g>
+<!-- scope&#45;&gt;inventory -->
+<g id="edge5" class="edge">
+<title>scope&#45;&gt;inventory</title>
+<path fill="none" stroke="#333333" stroke-width="1.05" d="M335.65,-413.33C335.65,-413.33 335.65,-392.43 335.65,-392.43"/>
+<polygon fill="#333333" stroke="#333333" stroke-width="1.05" points="338.1,-392.43 335.65,-385.43 333.2,-392.43 338.1,-392.43"/>
+</g>
+<!-- inventory&#45;&gt;verify -->
+<g id="edge6" class="edge">
+<title>inventory&#45;&gt;verify</title>
+<path fill="none" stroke="#333333" stroke-width="1.05" d="M307.46,-334.67C307.46,-334.67 307.46,-313.77 307.46,-313.77"/>
+<polygon fill="#333333" stroke="#333333" stroke-width="1.05" points="309.91,-313.77 307.46,-306.77 305.01,-313.77 309.91,-313.77"/>
+</g>
+<!-- verify&#45;&gt;files -->
+<g id="edge7" class="edge">
+<title>verify&#45;&gt;files</title>
+<path fill="none" stroke="#333333" stroke-width="1.05" d="M263.27,-256.01C263.27,-256.01 263.27,-235.11 263.27,-235.11"/>
+<polygon fill="#333333" stroke="#333333" stroke-width="1.05" points="265.73,-235.11 263.28,-228.11 260.83,-235.11 265.73,-235.11"/>
+</g>
+<!-- files&#45;&gt;sessions -->
+<g id="edge9" class="edge">
+<title>files&#45;&gt;sessions</title>
+<path fill="none" stroke="#333333" stroke-width="1.05" d="M220.9,-177.35C220.9,-177.35 220.9,-156.45 220.9,-156.45"/>
+<polygon fill="#333333" stroke="#333333" stroke-width="1.05" points="223.35,-156.45 220.9,-149.45 218.45,-156.45 223.35,-156.45"/>
+</g>
+<!-- sessions&#45;&gt;report -->
+<g id="edge10" class="edge">
+<title>sessions&#45;&gt;report</title>
+<path fill="none" stroke="#333333" stroke-width="1.05" d="M220.9,-98.43C220.9,-98.43 220.9,-77.86 220.9,-77.86"/>
+<polygon fill="#333333" stroke="#333333" stroke-width="1.05" points="223.35,-77.86 220.9,-70.86 218.45,-77.86 223.35,-77.86"/>
+</g>
+<!-- download -->
+<g id="node1" class="node">
+<title>download</title>
+<ellipse fill="#ffffff" stroke="#282828" cx="228.9" cy="-692.49" rx="137.57" ry="24.33"/>
+<text xml:space="preserve" text-anchor="middle" x="228.9" y="-690.11" font-family="Microsoft YaHei" font-size="10.00" fill="#202020">Download and extract the preview</text>
+</g>
+<!-- prompt -->
+<g id="node2" class="node">
+<title>prompt</title>
+<path fill="#ffffff" stroke="#282828" d="M363.68,-638.16C363.68,-638.16 94.12,-638.16 94.12,-638.16 88.12,-638.16 82.12,-632.16 82.12,-626.16 82.12,-626.16 82.12,-614.16 82.12,-614.16 82.12,-608.16 88.12,-602.16 94.12,-602.16 94.12,-602.16 363.68,-602.16 363.68,-602.16 369.68,-602.16 375.68,-608.16 375.68,-614.16 375.68,-614.16 375.68,-626.16 375.68,-626.16 375.68,-632.16 369.68,-638.16 363.68,-638.16"/>
+<text xml:space="preserve" text-anchor="middle" x="228.9" y="-617.78" font-family="Microsoft YaHei" font-size="10.00" fill="#202020">Send the installation prompt; answer necessary choices</text>
+</g>
+<!-- choice -->
+<g id="node3" class="node">
+<title>choice</title>
+<polygon fill="#ffffff" stroke="#282828" points="228.9,-572.16 47.37,-532.14 228.9,-492.12 410.43,-532.14 228.9,-572.16"/>
+<text xml:space="preserve" text-anchor="middle" x="228.9" y="-536.89" font-family="Microsoft YaHei" font-size="10.00" fill="#202020">Choose basic adoption or optional</text>
+<text xml:space="preserve" text-anchor="middle" x="228.9" y="-522.64" font-family="Microsoft YaHei" font-size="10.00" fill="#202020">existing&#45;material review</text>
+</g>
+<!-- basic -->
+<g id="node4" class="node">
+<title>basic</title>
+<path fill="#ffffff" stroke="#282828" d="M205.8,-462.12C205.8,-462.12 12,-462.12 12,-462.12 6,-462.12 0,-456.12 0,-450.12 0,-450.12 0,-425.46 0,-425.46 0,-419.46 6,-413.46 12,-413.46 12,-413.46 205.8,-413.46 205.8,-413.46 211.8,-413.46 217.8,-419.46 217.8,-425.46 217.8,-425.46 217.8,-450.12 217.8,-450.12 217.8,-456.12 211.8,-462.12 205.8,-462.12"/>
+<text xml:space="preserve" text-anchor="middle" x="108.9" y="-442.54" font-family="Microsoft YaHei" font-size="10.00" fill="#202020">Basic: add or adapt the local entry only;</text>
+<text xml:space="preserve" text-anchor="middle" x="108.9" y="-428.29" font-family="Microsoft YaHei" font-size="10.00" fill="#202020">do not read past materials</text>
+</g>
+<!-- scope -->
+<g id="node5" class="node">
+<title>scope</title>
+<path fill="#ffffff" stroke="#282828" d="M443.92,-462.12C443.92,-462.12 253.87,-462.12 253.87,-462.12 247.87,-462.12 241.87,-456.12 241.87,-450.12 241.87,-450.12 241.87,-425.46 241.87,-425.46 241.87,-419.46 247.87,-413.46 253.87,-413.46 253.87,-413.46 443.92,-413.46 443.92,-413.46 449.92,-413.46 455.92,-419.46 455.92,-425.46 455.92,-425.46 455.92,-450.12 455.92,-450.12 455.92,-456.12 449.92,-462.12 443.92,-462.12"/>
+<text xml:space="preserve" text-anchor="middle" x="348.9" y="-442.54" font-family="Microsoft YaHei" font-size="10.00" fill="#202020">Optional review: select bounded chats</text>
+<text xml:space="preserve" text-anchor="middle" x="348.9" y="-428.29" font-family="Microsoft YaHei" font-size="10.00" fill="#202020">or exported materials</text>
+</g>
+<!-- inventory -->
+<g id="node6" class="node">
+<title>inventory</title>
+<path fill="#ffffff" stroke="#282828" d="M417.42,-383.46C417.42,-383.46 230.38,-383.46 230.38,-383.46 224.38,-383.46 218.38,-377.46 218.38,-371.46 218.38,-371.46 218.38,-346.8 218.38,-346.8 218.38,-340.8 224.38,-334.8 230.38,-334.8 230.38,-334.8 417.42,-334.8 417.42,-334.8 423.42,-334.8 429.42,-340.8 429.42,-346.8 429.42,-346.8 429.42,-371.46 429.42,-371.46 429.42,-377.46 423.42,-383.46 417.42,-383.46"/>
+<text xml:space="preserve" text-anchor="middle" x="323.9" y="-363.88" font-family="Microsoft YaHei" font-size="10.00" fill="#202020">List each selected item, its source,</text>
+<text xml:space="preserve" text-anchor="middle" x="323.9" y="-349.63" font-family="Microsoft YaHei" font-size="10.00" fill="#202020">status and destination; retain originals</text>
+</g>
+<!-- verify -->
+<g id="node7" class="node">
+<title>verify</title>
+<path fill="#ffffff" stroke="#282828" d="M384.55,-304.8C384.55,-304.8 225.25,-304.8 225.25,-304.8 219.25,-304.8 213.25,-298.8 213.25,-292.8 213.25,-292.8 213.25,-268.14 213.25,-268.14 213.25,-262.14 219.25,-256.14 225.25,-256.14 225.25,-256.14 384.55,-256.14 384.55,-256.14 390.55,-256.14 396.55,-262.14 396.55,-268.14 396.55,-268.14 396.55,-292.8 396.55,-292.8 396.55,-298.8 390.55,-304.8 384.55,-304.8"/>
+<text xml:space="preserve" text-anchor="middle" x="304.9" y="-285.22" font-family="Microsoft YaHei" font-size="10.00" fill="#202020">Verify coverage; build the index</text>
+<text xml:space="preserve" text-anchor="middle" x="304.9" y="-270.97" font-family="Microsoft YaHei" font-size="10.00" fill="#202020">and local&#45;entry routing</text>
+</g>
+<!-- files -->
+<g id="node8" class="node">
+<title>files</title>
+<path fill="#ffffff" stroke="#282828" d="M301.3,-226.14C301.3,-226.14 140.5,-226.14 140.5,-226.14 134.5,-226.14 128.5,-220.14 128.5,-214.14 128.5,-214.14 128.5,-189.48 128.5,-189.48 128.5,-183.48 134.5,-177.48 140.5,-177.48 140.5,-177.48 301.3,-177.48 301.3,-177.48 307.3,-177.48 313.3,-183.48 313.3,-189.48 313.3,-189.48 313.3,-214.14 313.3,-214.14 313.3,-220.14 307.3,-226.14 301.3,-226.14"/>
+<text xml:space="preserve" text-anchor="middle" x="220.9" y="-206.56" font-family="Microsoft YaHei" font-size="10.00" fill="#202020">Check local files; report conflicts</text>
+<text xml:space="preserve" text-anchor="middle" x="220.9" y="-192.31" font-family="Microsoft YaHei" font-size="10.00" fill="#202020">or incomplete targets</text>
+</g>
+<!-- sessions -->
+<g id="node9" class="node">
+<title>sessions</title>
+<path fill="#ffffff" stroke="#282828" d="M334.3,-147.48C334.3,-147.48 107.5,-147.48 107.5,-147.48 101.5,-147.48 95.5,-141.48 95.5,-135.48 95.5,-135.48 95.5,-110.82 95.5,-110.82 95.5,-104.82 101.5,-98.82 107.5,-98.82 107.5,-98.82 334.3,-98.82 334.3,-98.82 340.3,-98.82 346.3,-104.82 346.3,-110.82 346.3,-110.82 346.3,-135.48 346.3,-135.48 346.3,-141.48 340.3,-147.48 334.3,-147.48"/>
+<text xml:space="preserve" text-anchor="middle" x="220.9" y="-127.9" font-family="Microsoft YaHei" font-size="10.00" fill="#202020">Continue old chats with a current&#45;entry check;</text>
+<text xml:space="preserve" text-anchor="middle" x="220.9" y="-113.65" font-family="Microsoft YaHei" font-size="10.00" fill="#202020">start new chats from the local entry</text>
+</g>
+<!-- report -->
+<g id="node10" class="node">
+<title>report</title>
+<ellipse fill="#ffffff" stroke="#282828" cx="220.9" cy="-34.41" rx="123.78" ry="34.41"/>
+<text xml:space="preserve" text-anchor="middle" x="220.9" y="-39.16" font-family="Microsoft YaHei" font-size="10.00" fill="#202020">Report only what the available</text>
+<text xml:space="preserve" text-anchor="middle" x="220.9" y="-24.91" font-family="Microsoft YaHei" font-size="10.00" fill="#202020">evidence supports</text>
+</g>
+</g>
+</svg>

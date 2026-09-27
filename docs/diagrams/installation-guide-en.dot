@@ -2,47 +2,36 @@ digraph "installation-guide-en" {
   graph [
     rankdir=TB,
     splines=ortho,
-    newrank=true,
     ordering=out,
     outputorder=edgesfirst,
-    nodesep=0.208,
-    ranksep=0.528,
-    pad=0.30,
+    nodesep=0.34,
+    ranksep=0.42,
+    pad=0.28,
     bgcolor="#FFFFFF",
     fontname="Microsoft YaHei",
-    fontsize=10,
+    fontsize=11,
     label="Installation steps",
-    labelloc=t,
-    audit_notation="iso5807-flowchart",
-    audit_model="workflow-spec.v4",
-    audit_purpose="Help first-time users install the preview release in their project and try it in a new conversation.",
-    audit_reader_question="After downloading the preview, what do I need to do myself?",
-    audit_direction="top_to_bottom",
-    audit_palette_mode="grayscale",
-    audit_accent_strategy="none",
-    audit_accent_nodes="",
-    audit_mainline_placement="center",
-    audit_profile="general-flow",
-    audit_authority_ids="",
-    audit_return_marker_strategy="auto",
-    audit_geometry_mode="strict",
-    audit_route_continuity="strict"
+    labelloc=t
   ];
-  node [fontname="Microsoft YaHei", fontsize=10, color="#282828", fontcolor="#202020", margin="0.18,0.12"];
-  edge [color="#333333", arrowsize=0.66, penwidth=1.05];
+  node [fontname="Microsoft YaHei", fontsize=10, color="#282828", fontcolor="#202020", margin="0.20,0.14", style="rounded,filled", fillcolor="#FFFFFF"];
+  edge [fontname="Microsoft YaHei", fontsize=9, color="#333333", arrowsize=0.7, penwidth=1.05];
 
-  "download" [label="Download and extract the preview ZIP", shape="ellipse", style="filled", fillcolor="#FFFFFF", audit_stage="prepare", audit_order="00", audit_role="start", audit_size_group="none", audit_semantic_group="none", fixedsize="true", width="4.189999999999999", height="0.75", group="mainline"];
-  "open" [label="Open your target project in Codex", shape="box", style="rounded,filled", fillcolor="#FFFFFF", audit_stage="prepare", audit_order="01", audit_role="process", audit_size_group="none", audit_semantic_group="none", fixedsize="true", width="2.991666666666666", height="0.75", group="mainline"];
-  "prompt" [label="Open INSTALL.md, copy its code block,\nand send it to Codex", shape="box", style="rounded,filled", fillcolor="#FFFFFF", audit_stage="install", audit_order="02", audit_role="process", audit_size_group="none", audit_semantic_group="none", fixedsize="true", width="3.3138888888888873", height="0.75", group="mainline"];
-  "clarify" [label="Provide target folders and preferences;\nanswer any questions", shape="box", style="rounded,filled", fillcolor="#FFFFFF", audit_stage="install", audit_order="03", audit_role="process", audit_size_group="none", audit_semantic_group="none", fixedsize="true", width="3.508333333333331", height="0.75", group="mainline"];
-  "inspect" [label="Review Codex's report, file changes,\nand remaining items", shape="box", style="rounded,filled", fillcolor="#FFFFFF", audit_stage="verify", audit_order="04", audit_role="process", audit_size_group="none", audit_semantic_group="none", fixedsize="true", width="3.2666666666666653", height="0.75", group="mainline"];
-  "trial" [label="Start a new chat in the same project,\nthen try a routine task", shape="box", style="rounded,filled", fillcolor="#FFFFFF", audit_stage="verify", audit_order="05", audit_role="process", audit_size_group="none", audit_semantic_group="none", fixedsize="true", width="3.247222222222221", height="0.75", group="mainline"];
-  "done" [label="Confirm it works and start using it", shape="ellipse", style="filled", fillcolor="#FFFFFF", audit_stage="outcome", audit_order="end", audit_role="end", audit_size_group="none", audit_semantic_group="none", fixedsize="true", width="4.036249999999999", height="0.75"];
+  download [label="Download and extract the preview", shape=ellipse, style=filled];
+  prompt [label="Send the installation prompt; answer necessary choices", shape=box];
+  choice [label="Choose basic adoption or optional\nexisting-material review", shape=diamond, style=filled, margin="0.12,0.08"];
+  basic [label="Basic: add or adapt the local entry only;\ndo not read past materials", shape=box];
+  scope [label="Optional review: select bounded chats\nor exported materials", shape=box];
+  inventory [label="List each selected item, its source,\nstatus and destination; retain originals", shape=box];
+  verify [label="Verify coverage; build the index\nand local-entry routing", shape=box];
+  files [label="Check local files; report conflicts\nor incomplete targets", shape=box];
+  sessions [label="Continue old chats with a current-entry check;\nstart new chats from the local entry", shape=box];
+  report [label="Report only what the available\nevidence supports", shape=ellipse, style=filled];
 
-  "download" -> "open" [id="e-download-open", audit_edge_id="e-download-open", audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main", tailport="s", headport="n"];
-  "open" -> "prompt" [id="e-open-prompt", audit_edge_id="e-open-prompt", audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main", tailport="s", headport="n"];
-  "prompt" -> "clarify" [id="e-prompt-clarify", audit_edge_id="e-prompt-clarify", audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main", tailport="s", headport="n"];
-  "clarify" -> "inspect" [id="e-clarify-inspect", audit_edge_id="e-clarify-inspect", audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main", tailport="s", headport="n"];
-  "inspect" -> "trial" [id="e-inspect-trial", audit_edge_id="e-inspect-trial", audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main", tailport="s", headport="n"];
-  "trial" -> "done" [id="e-trial-done", audit_edge_id="e-trial-done", audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main", tailport="s", headport="n"];
+  { rank=same; basic; scope; }
+  download -> prompt -> choice;
+  choice -> basic [xlabel="Basic"];
+  choice -> scope [xlabel="Organize"];
+  scope -> inventory -> verify -> files;
+  basic -> files;
+  files -> sessions -> report;
 }

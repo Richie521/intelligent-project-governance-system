@@ -1,0 +1,68 @@
+{
+  "release": "v0.1.0-preview.3",
+  "behavioral_candidate": "continuation-v8",
+  "behavioral_archive_sha256": "4398e2607d63740129585d51705f010552e49450a62ec7e33056758c45ebc3ca",
+  "date": "2026-09-27",
+  "status": "accepted_for_documented_scope",
+  "models": [
+    {
+      "model": "gpt-6-astra",
+      "effort": "low",
+      "scope": "Main batch, including existing CLI/WSL and initial desktop runs"
+    },
+    {
+      "model": "gpt-6-sol",
+      "effort": "high",
+      "scope": "Final desktop continuation probe; user-selected default for subsequent validation"
+    }
+  ],
+  "cost": {
+    "model_attempts": 82,
+    "recorded_execution_seconds": 6783.844,
+    "scope": "Recorded CLI and desktop validation attempts, including retained failures; excludes coordinator implementation and review-agent usage; not a bill.",
+    "input_tokens": 5165557,
+    "cached_input_tokens": 3945344,
+    "output_tokens": 99359,
+    "reasoning_output_tokens": 2379
+  },
+  "cli_attempts": 70,
+  "desktop_turns": 12,
+  "capability_results": {
+    "basic_adoption": "passed within documented scope",
+    "selected_material_organization": "passed within documented scope",
+    "native_selected_conversations": "passed within documented scope",
+    "old_new_continuity": "passed within documented scope",
+    "incremental_organization": "passed within documented scope",
+    "optional_wording_and_records": "passed within documented scope",
+    "transaction_failure_recovery": "passed within documented scope",
+    "manual_diagnosis": "passed within documented scope",
+    "scoped_sync": "passed within documented scope",
+    "three_real_project_basic_adoption": "passed within documented scope"
+  },
+  "retained_failures": [
+    "Invalid Windows test permission parameters before harness correction",
+    "Cross-sandbox-identity write refusal; original identity succeeds",
+    "Mixed PowerShell module-path failure",
+    "Unnecessary authority pre-read; corrected and retested",
+    "Redundant newly-created draft backup; corrected and retested",
+    "Native conversation tool argument-range error; recovered with legal arguments",
+    "Desktop old-session memory lookup and duplicate source read",
+    "First continuation revision reused prior-turn configuration; second revision reads current files",
+    "WSL DNS reconnections, with eventual actual completion"
+  ],
+  "version_mapping": {
+    "v6_to_v8": "Only bilingual continuation instruction and its tutorial copies changed; affected continuation paths retested. New v8 Windows installation, resume and fresh task completed.",
+    "release_docs": "Final result summaries, download links and evidence metadata do not change prompt/executor behavior."
+  },
+  "privacy": "No raw conversations, private paths, credentials, work specification or machine logs included.",
+  "limits": [
+    "Finite tests, not universal or long-term reliability",
+    "No comparative token/quality claim",
+    "Desktop retains global instructions and available skills; clean CLI evidence is separate",
+    "Native source conversations each have one original turn; not every pagination combination tested",
+    "Windows directory junction tested; file symlink fixture unavailable",
+    "Transaction replacement does not promise multi-file atomicity",
+    "Real projects validated only for basic adoption; private history excluded",
+    "macOS untested"
+  ]
+}

@@ -102,13 +102,13 @@
     },
     {
       "path": ".agents/skills/project-governance/references/02-adoption-and-cleanup.md",
-      "bytes": 3576,
-      "sha256": "cefa14be1b37e89acc87ec40cd3d3cde70ce287516c30208147ad9204c09b2e1"
+      "bytes": 4104,
+      "sha256": "71adbfdaa5b16d006a040a4a5fdad56607ee66ad5faad94c50879cfbde248ba1"
     },
     {
       "path": ".agents/skills/project-governance/references/03-migration-and-handoff.md",
-      "bytes": 2258,
-      "sha256": "8206bb3898c9584597282d31ff9aa633df7370ef2b69229cfc78dbb48cefd532"
+      "bytes": 3187,
+      "sha256": "483150b811869282ea998ff4177dc83f82432650a9b613e9567270bcb3497c7a"
     },
     {
       "path": ".agents/skills/project-governance/references/04-layered-diagnosis.md",
@@ -157,13 +157,13 @@
     },
     {
       "path": "INSTALL.md",
-      "bytes": 7210,
-      "sha256": "9780fa05c87fb652fd112e1eb8695bfa8a84133489364c4009330cdfb6dab148"
+      "bytes": 11214,
+      "sha256": "f7bb833aa078436f260d612a5b3173c74a7d1c4942b0fc52ca7d030c35ae8ab5"
     },
     {
       "path": "INSTALL.zh-CN.md",
-      "bytes": 6078,
-      "sha256": "d62f058c663b26dbc7c41afc8792a6936e5c8d2e74fa116925b9b12a547c02fa"
+      "bytes": 9532,
+      "sha256": "1b2645b46d6eeb88604a8dfe1213e3a3ebef9696c2b11f65974913aab0947f9c"
     },
     {
       "path": "LICENSE",
@@ -172,23 +172,23 @@
     },
     {
       "path": "QUICKSTART.md",
-      "bytes": 8286,
-      "sha256": "2d3da9c141564ef1d8c0a64f8928d311c92cbdf1f91a3e95b7f2f8d1b69dd7d3"
+      "bytes": 10482,
+      "sha256": "6e978f44038315f7258f93760433b8b3ba37f5bc2ef3c634de703e3d430cd22d"
     },
     {
       "path": "QUICKSTART.zh-CN.md",
-      "bytes": 6872,
-      "sha256": "5d13e256f9388dc54be2327611c1b7ad5a61363b63923bb902953f4a2faa77d4"
+      "bytes": 9756,
+      "sha256": "fb9765f7c753c25ea0cc30cc1e13619a2b54b983411923865ef20db24bc75f7e"
     },
     {
       "path": "README.md",
-      "bytes": 7077,
-      "sha256": "7b40b67d1badd50cddb556e250e228806312ca317a53d47cb182474fb63f1025"
+      "bytes": 8381,
+      "sha256": "a770956614077d7f179ac249254a4d616789439667371a8274fc0813c9f7b62c"
     },
     {
       "path": "README.zh-CN.md",
-      "bytes": 6787,
-      "sha256": "f6a2b98d4d950a489312017fd7a8cfd65ba5be5f2e5cd43668835f7d2e12ad65"
+      "bytes": 8006,
+      "sha256": "1112e787dcbf4bed017adc6659193cadb35e71986bd028d5ed710f019b9ca86e"
     },
     {
       "path": "SECURITY.md",
@@ -219,6 +219,16 @@
       "path": "docs/diagrams/cross-project-learning-and-sync-zh-CN.dot",
       "bytes": 12999,
       "sha256": "a2d0671d581c87c4026ab37a3dd09e14360bdbc6cc52bd039272753998990260"
+    },
+    {
+      "path": "docs/diagrams/installation-guide-en.dot",
+      "bytes": 1778,
+      "sha256": "a6c1ef7d0b7512f0ce3fdaf9082908dc25a0c105225dd453b1ebd575e352c8af"
+    },
+    {
+      "path": "docs/diagrams/installation-guide-zh-CN.dot",
+      "bytes": 1724,
+      "sha256": "c103c150ad4a7b7d6cf1ec9d48ec3d0f7051cfa2de9976a6b24d011b9c62d4ab"
     },
     {
       "path": "docs/diagrams/layered-diagnosis-and-feedback-company-zh-CN.dot",
@@ -252,8 +262,8 @@
     },
     {
       "path": "docs/diagrams/system-architecture-en.dot",
-      "bytes": 15470,
-      "sha256": "783df67ee4e0ea83125ffdb6e90fc6a4002d1057921aed072934809589d367d7"
+      "bytes": 15492,
+      "sha256": "8ad174961dabfa68a6fa9eda7334d4788b78bfc51bcfd5256acc1e6a9039e029"
     },
     {
       "path": "docs/diagrams/system-architecture-zh-CN.dot",
@@ -267,13 +277,23 @@
     },
     {
       "path": "docs/flowchart.md",
-      "bytes": 14302,
-      "sha256": "3535752a566e1e0cbc979b4efc298e5663242ad62367ec78f20a47cd734d010a"
+      "bytes": 14505,
+      "sha256": "2b44b334df5c2d69aab05a4d7dd4aa8e213e54554ef2e50e958b6273d7b375b5"
     },
     {
       "path": "docs/global-agent-integration.md",
       "bytes": 3123,
       "sha256": "2cd171486f693655ad3e58498ba53a2af6fd45654460c013cecdbb57c0c6f064"
+    },
+    {
+      "path": "docs/integration-verification.md",
+      "bytes": 7138,
+      "sha256": "2cf8c5afbfa1b8c8fdd09e77d3aaefaf169756f92c25d5f2926676363cce9838"
+    },
+    {
+      "path": "docs/integration-verification.zh-CN.md",
+      "bytes": 6417,
+      "sha256": "cb99d7805ac4795fc561e6ce3a27aa4fe6e15e9b45dbe0d02166de8326cfc6f1"
     },
     {
       "path": "docs/logging-guide.md",
@@ -304,6 +324,16 @@
       "path": "docs/media/governance-flow-zh-CN.svg",
       "bytes": 6339,
       "sha256": "02edc37c59e6631bfa77eaca11f96e86ccb4abb41457368d1b0197b9866946c7"
+    },
+    {
+      "path": "docs/media/installation-guide-en.svg",
+      "bytes": 11680,
+      "sha256": "8ae4ca7b2a93e2e72c1ce0622dad54dc0b1eb19d9cd8c2e7b1cfc519f5c209bd"
+    },
+    {
+      "path": "docs/media/installation-guide-zh-CN.svg",
+      "bytes": 11550,
+      "sha256": "f2eea9545be300777e6101cafe7816521e6928f19780a2a048a51e19b9aecd1f"
     },
     {
       "path": "docs/media/layered-diagnosis-and-feedback-company-zh-CN.svg",
@@ -337,8 +367,8 @@
     },
     {
       "path": "docs/media/system-architecture-en.svg",
-      "bytes": 20042,
-      "sha256": "d30b25ef03ebedac00b96d5e8b293bbd4b6b2a53003b679f02f4244b52438983"
+      "bytes": 20396,
+      "sha256": "255511976c441198928ae23a2eda7ab33b3c084ba4e7f268879b3695b934e15d"
     },
     {
       "path": "docs/media/system-architecture-zh-CN.svg",
@@ -352,8 +382,8 @@
     },
     {
       "path": "docs/onboarding-verification.md",
-      "bytes": 4383,
-      "sha256": "d2695f4bc57e7e9f54365e0b513776770d962e2de929c953bcfecd4c0a4be9d2"
+      "bytes": 4658,
+      "sha256": "471564d9da00de74ed98bfd2056809399f6866167002c1375bd8f1614a31e4d6"
     },
     {
       "path": "docs/publication-checklist.md",
@@ -367,13 +397,18 @@
     },
     {
       "path": "docs/runtime-tools.md",
-      "bytes": 3705,
-      "sha256": "2d00ac8e9cba85e40524fceb88cd950812ccc0b367c2d08b94f3a93a5450efae"
+      "bytes": 5373,
+      "sha256": "b3276abe3b34cbb4d6f965a259da1c1172b02d86d2af9b5b0fc0ebb23f9abc20"
     },
     {
       "path": "docs/verification-guide.md",
-      "bytes": 7311,
-      "sha256": "48feb1c6466857155e16426c4ea833bf891184d97b7be90a311978834e99db45"
+      "bytes": 8880,
+      "sha256": "dd950f4cc36177be1eda788cba690ed4a66c47f90edb909356a6fe66a71044ea"
+    },
+    {
+      "path": "evidence/integration-validation.json",
+      "bytes": 3441,
+      "sha256": "9c85a9dd60281a7baa2e7e94fe3bcba4dc690a6903445719a6c0ef32ca1c453e"
     },
     {
       "path": "evidence/onboarding-validation.json",
@@ -392,13 +427,13 @@
     },
     {
       "path": "templates/AGENTS.md",
-      "bytes": 6373,
-      "sha256": "6cbb4c8a19c94051abbe3fe91b10bfd30b8d143a8eadac744ae8b7351041a2f9"
+      "bytes": 6492,
+      "sha256": "4408801037ced844fc56e014674389861f46476cd0d70bc62cea842154d16c79"
     },
     {
       "path": "templates/AGENTS.zh-CN.md",
-      "bytes": 4966,
-      "sha256": "7e9017c8831423df25942a86cba614ed01f1e5ca7e09d4fdfc0d0b91ff6e3401"
+      "bytes": 5077,
+      "sha256": "97f4c4429924ccebd60cc011544e75aa61f116c06fde46d9938a6137e89e5e27"
     },
     {
       "path": "templates/docs/00-topic-map.md",
@@ -511,9 +546,14 @@
       "sha256": "902c68efbd9d86b4e9fa5c38eaef551f07a0f7348bcf7df3c0dc6cdd7969441d"
     },
     {
+      "path": "tools/governance-transaction/README.en.md",
+      "bytes": 5470,
+      "sha256": "0e88cda8639541ace90142c8237601757c04c5321ee2db27053df52a969a2dca"
+    },
+    {
       "path": "tools/governance-transaction/README.md",
-      "bytes": 2283,
-      "sha256": "e9008b5cb3b795aa88df23891d4fda44dd69aa273619f771a2071c2f7395f4f2"
+      "bytes": 4940,
+      "sha256": "5120fd0ebc77e4417a14c93e7cc3ca56829880ea4cde39d9b1a74e5bbbac94fe"
     },
     {
       "path": "tools/governance-transaction/cli.py",

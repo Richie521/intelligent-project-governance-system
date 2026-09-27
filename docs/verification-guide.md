@@ -21,6 +21,14 @@ Use representative probes instead of checking whether files merely exist.
 | Manual activation | Do ordinary corrections, drift reports, file conflicts, and writeback discussion stay inactive, while a dedicated user command such as `启动分层诊断` reliably starts the governance workflow? |
 | Privacy | Do private data, logs, account material, and raw conversations stay out of shared method files? |
 
+## Existing-project integration
+
+Basic adoption requires no Hook, installed Skill or runtime. Optional organization is tested separately against an explicit inventory of authorized files and selected conversations or exports. Check every item's processing status, original preservation, provenance, unresolved discrepancies and destination. A truncated conversation or inaccessible source is incomplete, not verified. Native conversation access and reading an export are distinct claims.
+
+Resume a conversation created before adoption and start a separate fresh conversation. Both must use current relevant sources without relying on the evaluator's answer. Then run an unrelated ordinary task: no historical-library read, no optional feature activation, no diagnosis and no extra governance loop. Repeating unchanged organization must not duplicate rules, backups, records or full-content reads. An index should route reading, not require every task to load the entire project.
+
+Verify selected wording, durable decisions and important logs together, then the actual optional transaction path only where enabled. Check cross-project synchronization in authorized synthetic targets without sharing business facts. Dedicated manual diagnosis may be tested without any Hook; do not claim machine-enforced interception from an agent's compliance.
+
 ## Markdown Layout Probe
 
 Human-readable governance Markdown must keep ordinary paragraphs and list continuations on one physical line. It must not insert fixed-column hard wraps inside unfinished sentences or semantic phrases. Code blocks, math, tables, quoted blocks, explicit hard breaks, and blank-line paragraph boundaries remain unchanged.
@@ -54,7 +62,7 @@ Writeback:
 
 ## Preview And Full Acceptance
 
-A preview may publish the reviewed method, templates, and optional tools when setup, privacy, installation/restoration, and the specifically reported workflows pass. Publish the evidence and limitations together. An untested optional host guard remains experimental and is not installed by the basic quickstart. A preview does not claim the following full-acceptance probes have all passed.
+A preview may publish the reviewed method, templates, and optional tools when setup, privacy, installation/restoration, and the specifically reported workflows pass. Publish the evidence and limitations together. The Hook-based host guard is retained as historical implementation and is outside the current supported workflow; do not install or enable it for these probes. Manual diagnosis uses an explicit user command and an agent-followed scope agreement. A preview does not claim the following full-acceptance probes have all passed.
 
 Before claiming full acceptance across the supported operating scope, verify that the project:
 

@@ -2,47 +2,36 @@ digraph "installation-guide-zh-CN" {
   graph [
     rankdir=TB,
     splines=ortho,
-    newrank=true,
     ordering=out,
     outputorder=edgesfirst,
-    nodesep=0.208,
-    ranksep=0.528,
-    pad=0.30,
+    nodesep=0.34,
+    ranksep=0.42,
+    pad=0.28,
     bgcolor="#FFFFFF",
     fontname="Microsoft YaHei",
-    fontsize=10,
+    fontsize=11,
     label="安装流程",
-    labelloc=t,
-    audit_notation="iso5807-flowchart",
-    audit_model="workflow-spec.v4",
-    audit_purpose="让首次接触项目智能治理系统的访客按自己的操作顺序完成预览版接入与试用。",
-    audit_reader_question="我下载预览版后，接下来需要亲自做哪些事？",
-    audit_direction="top_to_bottom",
-    audit_palette_mode="grayscale",
-    audit_accent_strategy="none",
-    audit_accent_nodes="",
-    audit_mainline_placement="center",
-    audit_profile="general-flow",
-    audit_authority_ids="",
-    audit_return_marker_strategy="auto",
-    audit_geometry_mode="strict",
-    audit_route_continuity="strict"
+    labelloc=t
   ];
-  node [fontname="Microsoft YaHei", fontsize=10, color="#282828", fontcolor="#202020", margin="0.18,0.12"];
-  edge [color="#333333", arrowsize=0.66, penwidth=1.05];
+  node [fontname="Microsoft YaHei", fontsize=10, color="#282828", fontcolor="#202020", margin="0.20,0.14", style="rounded,filled", fillcolor="#FFFFFF"];
+  edge [fontname="Microsoft YaHei", fontsize=9, color="#333333", arrowsize=0.7, penwidth=1.05];
 
-  "download" [label="下载并解压预览版", shape="ellipse", style="filled", fillcolor="#FFFFFF", audit_stage="prepare", audit_order="00", audit_role="start", audit_size_group="none", audit_semantic_group="none", fixedsize="true", width="2.0833333333333335", height="0.75", group="mainline"];
-  "open" [label="在 Codex 中打开要接入的项目", shape="box", style="rounded,filled", fillcolor="#FFFFFF", audit_stage="prepare", audit_order="01", audit_role="process", audit_size_group="none", audit_semantic_group="none", fixedsize="true", width="2.5", height="0.75", group="mainline"];
-  "prompt" [label="打开包内安装说明，\n复制并发送中文提示词", shape="box", style="rounded,filled", fillcolor="#FFFFFF", audit_stage="install", audit_order="02", audit_role="process", audit_size_group="none", audit_semantic_group="none", fixedsize="true", width="2.5", height="0.75", group="mainline"];
-  "clarify" [label="回答必要的问题，确认改动范围", shape="box", style="rounded,filled", fillcolor="#FFFFFF", audit_stage="install", audit_order="03", audit_role="process", audit_size_group="none", audit_semantic_group="none", fixedsize="true", width="2.5", height="0.75", group="mainline"];
-  "inspect" [label="查看文件改动和未完成项", shape="box", style="rounded,filled", fillcolor="#FFFFFF", audit_stage="verify", audit_order="04", audit_role="process", audit_size_group="none", audit_semantic_group="none", fixedsize="true", width="2.5", height="0.75", group="mainline"];
-  "trial" [label="在同一项目新开对话，\n试做一项日常任务", shape="box", style="rounded,filled", fillcolor="#FFFFFF", audit_stage="verify", audit_order="05", audit_role="process", audit_size_group="none", audit_semantic_group="none", fixedsize="true", width="2.5", height="0.75", group="mainline"];
-  "done" [label="确认适用，开始使用", shape="ellipse", style="filled", fillcolor="#FFFFFF", audit_stage="outcome", audit_order="end", audit_role="end", audit_size_group="none", audit_semantic_group="none", fixedsize="true", width="2.1087499999999997", height="0.75"];
+  download [label="下载并解压预览版", shape=ellipse, style=filled];
+  prompt [label="发送安装提示词；回答必要选择", shape=box];
+  choice [label="选择基础接入或可选的\n旧资料整理", shape=diamond, style=filled, margin="0.12,0.08"];
+  basic [label="基础：仅增补或适配本地入口；\n不读取历史资料", shape=box];
+  scope [label="可选整理：选择有界的原生对话\n或导出材料", shape=box];
+  inventory [label="逐项列出资料、来源、状态和去向；\n原始资料留在原处", shape=box];
+  verify [label="核验资料覆盖；建立索引\n与本地入口路由", shape=box];
+  files [label="检查本地文件；冲突或未完成项\n如实报告", shape=box];
+  sessions [label="旧对话继续前核对当前入口；\n新对话从本地入口开始", shape=box];
+  report [label="仅报告现有证据\n能够支持的结论", shape=ellipse, style=filled];
 
-  "download" -> "open" [id="e-download-open", audit_edge_id="e-download-open", audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main", tailport="s", headport="n"];
-  "open" -> "prompt" [id="e-open-prompt", audit_edge_id="e-open-prompt", audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main", tailport="s", headport="n"];
-  "prompt" -> "clarify" [id="e-prompt-clarify", audit_edge_id="e-prompt-clarify", audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main", tailport="s", headport="n"];
-  "clarify" -> "inspect" [id="e-clarify-inspect", audit_edge_id="e-clarify-inspect", audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main", tailport="s", headport="n"];
-  "inspect" -> "trial" [id="e-inspect-trial", audit_edge_id="e-inspect-trial", audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main", tailport="s", headport="n"];
-  "trial" -> "done" [id="e-trial-done", audit_edge_id="e-trial-done", audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main", tailport="s", headport="n"];
+  { rank=same; basic; scope; }
+  download -> prompt -> choice;
+  choice -> basic [xlabel="基础接入"];
+  choice -> scope [xlabel="整理资料"];
+  scope -> inventory -> verify -> files;
+  basic -> files;
+  files -> sessions -> report;
 }

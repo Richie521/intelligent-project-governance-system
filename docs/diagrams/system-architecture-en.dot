@@ -63,7 +63,7 @@ digraph SystemOverview {
     audit_size_group="top_peer"
   ];
   global [
-    label="Global AGENTS.md",
+    label="Global AGENTS.md (optional)",
     group=entry_col,
     width=2.65,
     height=0.68,
@@ -74,7 +74,7 @@ digraph SystemOverview {
     audit_size_group="routing_peer"
   ];
   skill [
-    label="Project Governance Skill",
+    label="Project Governance Skill (optional)",
     group=landing_col,
     width=2.65,
     height=0.68,
