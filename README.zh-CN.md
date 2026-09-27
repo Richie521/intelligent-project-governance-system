@@ -20,9 +20,11 @@
 4. Codex 会检查现有规则，在目标文件夹建立或补充本地入口，并告诉你改了什么。已有规则足够时不会重复添加；没有写入权限或存在冲突时，会明确说明哪处没完成。**不要把“准备修改”当成已经安装成功。**
 5. 完成后，在同一个目标文件夹新开对话，交给 Codex 一个普通的小任务，就可以开始使用。文件夹里有入口文件，只说明规则已经放进去；新对话能按规则完成任务，才说明它实际用上了。
 
+<p align="center"><a href="docs/media/installation-guide-zh-CN.svg"><img src="docs/media/installation-guide-zh-CN.svg" alt="预览版安装流程" width="354"></a></p>
+
 基础接入不需要另装 Skill、Hook、Git、Python 或运行工具。需要的是能读写目标文件夹的 Codex，以及你对该文件夹的操作权限。不需要移动已有业务资料。通常只新增一个 `AGENTS.md`，已有入口时保留原文并先备份；撤回前须确认没有后续改动。
 
-[完整安装提示词](INSTALL.zh-CN.md) · [可选进阶功能](QUICKSTART.zh-CN.md) · [实际测试记录](docs/onboarding-verification.md)
+[安装流程图](docs/flowchart.md#预览版安装流程) · [完整安装提示词](INSTALL.zh-CN.md) · [可选进阶功能](QUICKSTART.zh-CN.md) · [实际测试记录](docs/onboarding-verification.md)
 
 ## 为什么需要它
 

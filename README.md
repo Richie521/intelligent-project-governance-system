@@ -20,9 +20,11 @@ It helps an agent inspect a project from local evidence, identify source boundar
 4. Codex checks existing rules, creates or extends the local entry, and reports exactly what changed. Adequate rules are reused. Permission problems or conflicts are reported for each affected folder. A proposal to edit is not a completed installation.
 5. Start a fresh conversation in the same target folder and give Codex a small ordinary task. An entry file shows that rules were saved; successful work in a fresh conversation shows that they were actually used.
 
+<p align="center"><a href="docs/media/installation-guide-en.svg"><img src="docs/media/installation-guide-en.svg" alt="Preview installation steps" width="520"></a></p>
+
 Basic adoption needs Codex with file access and permission to work in your target folder. It does not require installing a Skill, Hook, Git, Python, or runtime tools. Existing business files stay in place. Usually one `AGENTS.md` is created; existing entries are preserved and backed up before editing. Check for subsequent edits before rolling back.
 
-[Full installation prompt](INSTALL.md) · [Optional advanced features](QUICKSTART.md) · [Test record](docs/onboarding-verification.md)
+[Installation diagram](docs/flowchart.md#预览版安装流程) · [Full installation prompt](INSTALL.md) · [Optional advanced features](QUICKSTART.md) · [Test record](docs/onboarding-verification.md)
 
 ## Why It Exists
 
