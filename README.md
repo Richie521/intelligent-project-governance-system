@@ -8,23 +8,25 @@ It helps an agent inspect a project from local evidence, identify source boundar
 
 ## Install into your own folder
 
-1. Open the [release page](https://github.com/richie-liu512/intelligent-project-governance-system/releases/tag/v0.1.0-preview.3). Under **Assets**, download `governance-v0.1.0-preview.3.zip` and extract it. The download folder is not your project by default.
-2. Open Codex in your target project folder and start a conversation. Open [INSTALL.md](INSTALL.md), also included in the ZIP, copy the entire code block, and send it to Codex.
-3. Supply one or more target folders and your preferences. Choose basic adoption if unsure; Codex asks when something is unclear and continues after your answer. You can also add context or adjust your request as you go. For example:
+This preview includes all three paths. The [three-flow verification report](docs/three-flow-verification.md) states the tested conditions and remaining limits.
+
+1. Open the [release page](https://github.com/richie-liu512/intelligent-project-governance-system/releases/tag/v0.1.0-preview.4). Under **Assets**, download `governance-v0.1.0-preview.4.zip` and extract it. The download folder is not your project by default.
+2. Open Codex in the project folder and start a conversation; for a move, start from the old project and identify its proposed new folder. Open [INSTALL.md](INSTALL.md), copy the entire code block, and send it to Codex. The move path reads the bundled [migration guide](MIGRATE.md) only when selected.
+3. Say whether this is a new project, in-place adoption of an existing project, or a move to a separate new folder. Supply the folders and capabilities you have already chosen. If unsure, give what you know; Codex asks the remaining scope decisions together. You can adjust the request as you go. Basic-adoption example:
 
    ```text
    Target folder: D:\Projects\MyProject
    Use basic adoption without additional features.
    ```
 
-4. Codex checks existing rules, creates or extends the local entry, and reports exactly what changed. Adequate rules are reused. Permission problems or conflicts are reported for each affected folder. A proposal to edit is not a completed installation.
-5. When you start a new conversation in the target folder, begin with your normal task. If you choose to check adoption, report only what that task actually demonstrates; do not mark it passed while any required item remains unverified.
+4. A new project gets only the necessary entry. An existing project can use in-place basic adoption or bounded material organization. For a move, review the item choices, target structure, capabilities to retain and recovery plan before copying. Codex reports actual edits, gaps and conflicts; access denial or existing target content stops the affected step. A proposal to edit is not a completed installation.
+5. Inspect the resulting files and any explicitly authorized functional checks, then start ordinary work in a conversation attached to that folder. An old in-place conversation first refreshes its current entry. For a move, call an old conversation transferred only after the host actually switches and verifies its working directory; otherwise start a new conversation in the new folder. Before recovery or undo, check for later edits and remove only unchanged content created by this operation, preserving the source. Run project scripts or services only with the current user's explicit authorization. Report only demonstrated outcomes.
 
 <p align="center"><a href="docs/media/installation-guide-en.svg"><img src="docs/media/installation-guide-en.svg" alt="Preview installation steps" width="520"></a></p>
 
-Basic adoption needs Codex with file access and permission to work in your target folder. It does not require installing a Skill, Hook, Git, Python, or runtime tools. Existing project materials stay in place. Reviewing old project context is optional and bounded: choose the relevant native conversations, or provide exports if those conversations are unavailable. Track every in-scope item with its status, source, and destination; preserve originals in place and write only durable decisions to their appropriate project files. When resuming a selected old conversation, say: “First read only this project’s current entry, then follow its routes to read the latest decisions and actual state needed in this turn. Do not substitute earlier conversation content for current files or consult personal memory. Reuse text already read in this turn, then continue working.”
+Basic adoption needs Codex with file access and permission in the target folder. It does not require installing a Skill, Hook, Git, Python, or runtime tools. Existing-material review is optional and bounded. If selected native chats do not yield complete original user messages, use user-provided exports or record a gap. A move selectively copies into a separate new folder and preserves the old project. Historical citations may point back to old sources, while ordinary work must have its needed files and dependencies available from the new folder or explicitly declared. For an old in-place conversation, say: “First read only this project’s current entry, then follow its routes to read the latest decisions and actual state needed in this turn. Do not substitute earlier conversation content for current files or consult personal memory. Reuse text already read in this turn, then continue working.”
 
-[Installation diagram](docs/flowchart.md#预览版安装流程) · [Full installation prompt](INSTALL.md) · [Optional advanced features](QUICKSTART.md) · [Test record](docs/integration-verification.md)
+[Installation diagram](docs/flowchart.md#预览版安装流程) · [Full installation prompt](INSTALL.md) · [Migration guide](MIGRATE.md) · [Optional advanced features](QUICKSTART.md) · [Preview.4 three-flow verification](docs/three-flow-verification.md)
 
 ## Why It Exists
 

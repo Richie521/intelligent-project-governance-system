@@ -1,180 +1,46 @@
-digraph AdoptionFlow {
-  graph [
-    rankdir=TB,
-    bgcolor="#FFFFFF",
-    pad="0.38",
-    nodesep="0.42",
-    ranksep="0.60",
-    splines=ortho,
-    compound=true,
-    newrank=true,
-    ordering=out,
-    outputorder=edgesfirst,
-    fontname="Microsoft YaHei",
-    fontcolor="#111111",
-    fontsize=18,
-    label="安装与项目落地",
-    labelloc=t,
-    labeljust=c,
-    audit_purpose="说明从下载治理系统、安装 Skill 和事务执行器，到三类项目在真实对话中生效的完整落地流程",
-    audit_reader_question="怎样安装并接入三类项目，运行清单怎样落地，怎样处理硬失败和记录真实状态",
-    audit_direction="top_to_bottom",
-    audit_route_continuity="strict"
-  ];
+digraph "adoption-flow-zh-CN" {
+  graph [rankdir=TB, splines=ortho, ordering=out, outputorder=edgesfirst, nodesep=0.46, ranksep=0.62, pad=0.36, bgcolor="#FFFFFF", fontname="Microsoft YaHei", fontsize=24, label=<<B>系统安装与落地</B>>, labelloc=t];
+  node [shape=box, style="rounded,filled", fillcolor="#FFFFFF", color="#333333", fontcolor="#111111", fontname="Microsoft YaHei", fontsize=10, margin="0.22,0.15"];
+  edge [color="#444444", fontname="Microsoft YaHei", fontsize=9, arrowsize=0.72, penwidth=1.1];
 
-  node [
-    shape=box,
-    style="rounded,filled",
-    color="#333333",
-    fillcolor="#FFFFFF",
-    fontcolor="#111111",
-    fontname="Microsoft YaHei",
-    fontsize=10.5,
-    margin="0.22,0.14",
-    penwidth=1.2
-  ];
-
-  edge [
-    color="#444444",
-    arrowsize=0.75,
-    penwidth=1.2
-  ];
-
-  download [shape=oval, style="filled", label="1 从下载或克隆 GitHub 仓库开始", group=main, audit_stage="install", audit_order="01", audit_role="download", audit_size_group="none"];
-  install [label="2 安装治理 Skill 和事务执行器", group=main, audit_stage="install", audit_order="02", audit_role="install_skill", audit_size_group="none"];
-  install_note [shape=note, label="Skill 放用户目录；执行器放系统本地目录", style="filled,dashed", fillcolor="#F7F7F7", color="#777777", fontsize=9.5, audit_stage="note", audit_order="note", audit_role="install_note", audit_size_group="none"];
-  bridge [label="3 添加轻量全局 AGENTS 桥接", group=main, audit_stage="install", audit_order="03", audit_role="global_bridge", audit_size_group="none"];
-  bridge_note [shape=note, label="全局桥接只负责识别和路由，不保存项目隐私", style="filled,dashed", fillcolor="#F7F7F7", color="#777777", fontsize=9.5, audit_stage="note", audit_order="note", audit_role="bridge_note", audit_size_group="none"];
-  target [label="4 确认真正要治理的项目文件夹", group=main, audit_stage="target", audit_order="04", audit_role="target_project", audit_size_group="none"];
-  registered [shape=diamond, style="filled", label="目标文件夹已在 Codex 中打开或注册？", group=main, fillcolor="#FFFFFF", audit_stage="target", audit_order="05", audit_role="decision", audit_size_group="none"];
-  add_project [label="未打开：在 Codex 中添加或打开目标项目", group=add_project_side, fillcolor="#F2F2F2", audit_stage="target", audit_order="side", audit_role="open_project", audit_size_group="none"];
-  conversation [label="已打开：5 在目标项目开启新对话并先只读", group=main, penwidth=1.4, audit_stage="target", audit_order="06", audit_role="conversation", audit_size_group="none"];
-  type [shape=diamond, style="filled", label="目标项目属于哪一类？", group=main, fillcolor="#FFFFFF", audit_stage="classification", audit_order="07", audit_role="classification", audit_fanout_reason="新项目、已有项目和迁移项目是稳定互斥的三类入口，读者需要在同一层直接比较", audit_size_group="none"];
-
-  download -> install [audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
-  install -> bridge [audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
-  bridge -> target [audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
-  target -> registered [audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
-  install -> install_note [style=dotted, arrowhead=none, constraint=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="install_note"];
-  bridge -> bridge_note [style=dotted, arrowhead=none, constraint=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="bridge_note"];
-  registered -> add_project [xlabel="未打开", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, tailclip=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="project_open_branch", audit_reason="正交线路从填充菱形内部穿出右侧真实边界，保证箭头起点无可见空隙"];
-  registered -> conversation [xlabel="已打开", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
-  node [shape=point, width=0.02, height=0.02, fixedsize=true, label="", style=invis];
-  add_project_turn [group=add_project_side, audit_anchor="turn", audit_corridor="project_open_return"];
-  node [shape=box, fixedsize=false, style="rounded,filled", color="#333333", fillcolor="#FFFFFF"];
-  add_project -> add_project_turn [arrowhead=none, weight=1000, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="branch", audit_corridor="project_open_return", audit_reason="未打开项目从框体下边中点进入回接线路"];
-  add_project_turn -> conversation [constraint=false, audit_tail_side="left", audit_head_side="right", audit_route_kind="branch", audit_corridor="project_open_return", audit_reason="打开项目后沿外侧短折线从新对话框右边中点汇入"];
-  conversation -> type [audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
-  { rank=same; install; install_note; }
-  { rank=same; bridge; bridge_note; }
-  { rank=same; registered; add_project; }
-  { rank=same; conversation; add_project_turn; }
+  start [label="下载候选包；在实际项目目录开启对话", shape=ellipse];
+  entry [label="发送安装提示词；采用已知目录和选择"];
+  intent [label="新项目、原地接入，还是迁入新目录？", shape=diamond, style=filled];
 
   subgraph cluster_new {
-    graph [audit_size_group="project_type_containers", audit_size_axis="height"];
-    label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="2" CELLPADDING="0"><TR><TD WIDTH="36" ALIGN="RIGHT">新</TD><TD WIDTH="4"></TD><TD WIDTH="36" ALIGN="LEFT">项目</TD></TR></TABLE>>;
-    color="#555555";
-    fillcolor="#F7F7F7";
-    style="rounded,filled";
-    fontname="Microsoft YaHei";
-    margin=18;
-
-    new_read [label="明确目标、边界和需求", group=newcol, audit_stage="project_type", audit_order="08.1", audit_role="new_scope", audit_size_group="none"];
-    new_design [label="提出最小本地治理层", group=newcol, fillcolor="#F2F2F2", audit_stage="project_type", audit_order="08.2", audit_role="new_governance", audit_size_group="none"];
-    new_read -> new_design [audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="new_project"];
+    label="新项目"; color="#888888"; style="rounded";
+    new_entry [label="只建必要的本地入口"];
+    new_work [label="新会话执行普通任务；核对入口已采用"];
+    new_entry -> new_work;
   }
-
   subgraph cluster_existing {
-    graph [audit_size_group="project_type_containers", audit_size_axis="height"];
-    label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="2" CELLPADDING="0"><TR><TD>已</TD><TD>有</TD><TD>项</TD><TD>目</TD></TR></TABLE>>;
-    color="#555555";
-    fillcolor="#FAFAFA";
-    style="rounded,filled";
-    fontname="Microsoft YaHei";
-    margin=18;
-
-    old_audit [label="只读审计已有代码、数据、文档和运行状态", group=oldcol, audit_stage="project_type", audit_order="08.1", audit_role="existing_audit", audit_size_group="none"];
-    old_merge [label="保留有效做法并合并重复职责", group=oldcol, fillcolor="#F2F2F2", audit_stage="project_type", audit_order="08.2", audit_role="existing_merge", audit_size_group="none"];
-    old_chat [label="文件证据不足时才读取相关旧对话", group=oldcol, audit_stage="project_type", audit_order="08.3", audit_role="existing_history", audit_size_group="none"];
-    old_audit -> old_merge [audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="existing_project"];
-    old_merge -> old_chat [audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="existing_project"];
+    label="旧项目原地"; color="#888888"; style="rounded";
+    existing_entry [label="原地基础接入；旧资料整理按需选择"];
+    existing_history [label="有界资料逐项核验；缺原文则导出或记缺口"];
+    existing_work [label="旧会话刷新当前入口；新会话普通工作"];
+    existing_entry -> existing_history -> existing_work;
+  }
+  subgraph cluster_move {
+    label="迁入新目录"; color="#888888"; style="rounded";
+    move_guide [label="按需读取迁移说明；核实源、目标和依赖"];
+    move_plan [label="逐项方案：保留能力、排除内容、恢复方式"];
+    move_confirm [label="必要取舍确认；首次非空目标先停写"];
+    move_copy [label="选择性复制并核对哈希；保留旧项目"];
+    move_work [label="旧目录不可用时验证新目录功能；从新目录开会话"];
+    move_guide -> move_plan -> move_confirm -> move_copy -> move_work;
   }
 
-  subgraph cluster_migrate {
-    graph [audit_size_group="project_type_containers", audit_size_axis="height"];
-    label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="2" CELLPADDING="0"><TR><TD>迁</TD><TD>移</TD><TD>项</TD><TD>目</TD></TR></TABLE>>;
-    color="#555555";
-    fillcolor="#F2F2F2";
-    style="rounded,filled";
-    fontname="Microsoft YaHei";
-    margin=18;
+  inspect [label="查看实际文件、来源覆盖、冲突与工作结果"];
+  recovery [label="失败或撤回：仅处理本轮创建且未变的内容", style="rounded,filled,dashed"];
+  done [label="按实际证据报告完成、部分完成或阻断", shape=ellipse];
 
-    migration_map [label="整理源目录、目标目录、文件和对话资产", group=migratecol, audit_stage="project_type", audit_order="08.1", audit_role="migration_inventory", audit_size_group="none"];
-    migration_chat [label="给旧对话和旧文件分类", group=migratecol, fillcolor="#FFFFFF", audit_stage="project_type", audit_order="08.2", audit_role="migration_classify", audit_size_group="none"];
-    migration_copy [label="只迁移已经确认的资产", group=migratecol, audit_stage="project_type", audit_order="08.3", audit_role="migration_apply", audit_size_group="none"];
-    migration_map -> migration_chat [audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="migration_project"];
-    migration_chat -> migration_copy [audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="migration_project"];
-  }
-
-  node [shape=point, width=0.02, height=0.02, fixedsize=true, label="", style=invis];
-  new_entry_turn [group=newcol, audit_anchor="turn", audit_corridor="outer_left_project_entry"];
-  migration_entry_turn [group=migratecol, audit_anchor="turn", audit_corridor="outer_right_project_entry"];
-  new_exit_turn [group=newcol, audit_anchor="turn", audit_corridor="outer_left_project_exit"];
-  migration_exit_turn [group=migratecol, audit_anchor="turn", audit_corridor="outer_right_project_exit"];
-
-  node [shape=box, fixedsize=false, style="rounded,filled", color="#333333", fillcolor="#FFFFFF"];
-  new_entry_turn -> type [arrowhead=none, tailclip=false, headclip=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="outer_left_project_entry", audit_first_direction="right", audit_last_direction="right", audit_reason="无箭头支撑段固定菱形左中点到新项目列中心的水平线路，流程箭头位于随后向下的线路"];
-  new_entry_turn -> new_read [weight=1000, tailclip=false, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="branch", audit_corridor="outer_left_project_entry", audit_first_direction="down", audit_last_direction="down", audit_reason="外侧转角后沿新项目列中心线进入首节点"];
-  type -> old_audit [weight=1000, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="branch", audit_corridor="existing_project_entry", audit_reason="已有项目分支沿中列中心线穿过标题字间通道"];
-  type -> migration_entry_turn [arrowhead=none, tailclip=false, headclip=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="outer_right_project_entry", audit_first_direction="right", audit_last_direction="right", audit_reason="无箭头支撑段固定菱形右中点到迁移项目列中心的水平线路，流程箭头位于随后向下的线路"];
-  migration_entry_turn -> migration_map [weight=1000, tailclip=false, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="branch", audit_corridor="outer_right_project_entry", audit_first_direction="down", audit_last_direction="down", audit_reason="外侧转角后沿迁移项目列中心线进入首节点"];
-  { rank=same; new_entry_turn; type; migration_entry_turn; }
-  { rank=same; new_read; old_audit; migration_map; }
-
-  local_chain [label="6 接通入口、路由、来源权威和运行清单", group=main, fillcolor="#F2F2F2", audit_stage="local_governance", audit_order="09", audit_role="local_chain", audit_size_group="none"];
-  impact [shape=diamond, style="filled", label="涉及高影响结构、来源边界、删除合并或隐私？", group=main, fillcolor="#FFFFFF", audit_stage="local_governance", audit_order="10", audit_role="decision", audit_size_group="none"];
-  confirm [label="涉及高影响：说明影响、风险和恢复方式，等待用户确认", fillcolor="#F2F2F2", audit_stage="local_governance", audit_order="side", audit_role="confirm", audit_size_group="none"];
-  direct [label="不涉及高影响：可以直接实施", audit_stage="local_governance", audit_order="side", audit_role="direct", audit_size_group="none"];
-  apply [label="7 按项目现实实施并登记治理投影职责", group=main, audit_stage="local_governance", audit_order="11", audit_role="apply", audit_size_group="none"];
-
-  new_design -> new_exit_turn [weight=1000, arrowhead=none, headclip=false, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="branch", audit_corridor="outer_left_project_exit", audit_first_direction="down", audit_last_direction="down", audit_reason="新项目末端先沿本列中心线垂直向下到分组外侧"];
-  new_exit_turn -> local_chain [constraint=false, tailclip=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="outer_left_project_exit", audit_first_direction="right", audit_last_direction="right", audit_reason="离开分组后水平向内进入共同第 6 步左边中点"];
-  old_chat -> local_chain [weight=1000, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main", audit_reason="已有项目沿中列中心线汇入共同第 6 步"];
-  migration_copy -> migration_exit_turn [weight=1000, arrowhead=none, headclip=false, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="branch", audit_corridor="outer_right_project_exit", audit_first_direction="down", audit_last_direction="down", audit_reason="迁移项目末端先沿本列中心线垂直向下到分组外侧"];
-  migration_exit_turn -> local_chain [constraint=false, tailclip=false, audit_tail_side="left", audit_head_side="right", audit_route_kind="branch", audit_corridor="outer_right_project_exit", audit_first_direction="left", audit_last_direction="left", audit_reason="离开分组后水平向内进入共同第 6 步右边中点"];
-  { rank=same; new_exit_turn; local_chain; migration_exit_turn; }
-  local_chain -> impact [audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
-  impact -> confirm [xlabel="涉及", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", audit_tail_side="bottom", audit_head_side="top", audit_route_kind="branch", audit_corridor="impact_confirm", audit_reason="两个互斥结果从判断框下半部对称分开，避免共用同一箭头"];
-  impact -> direct [xlabel="不涉及", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", audit_tail_side="bottom", audit_head_side="top", audit_route_kind="branch", audit_corridor="impact_direct", audit_reason="两个互斥结果从判断框下半部对称分开，避免共用同一箭头"];
-  confirm -> apply [audit_tail_side="bottom", audit_head_side="top", audit_route_kind="branch", audit_corridor="impact_confirm", audit_reason="确认完成后沿短折线汇入本地修改"];
-  direct -> apply [audit_tail_side="bottom", audit_head_side="top", audit_route_kind="branch", audit_corridor="impact_direct", audit_reason="两条许可路径在共同实施动作上边对称汇入"];
-  { rank=same; confirm; direct; }
-
-  probes [label="8 在目标项目运行真实激活探针", group=main, penwidth=1.4, audit_stage="verification", audit_order="12", audit_role="probe", audit_size_group="none"];
-  hard_fail [shape=diamond, style="filled", label="存在硬失败？", group=main, fillcolor="#FFFFFF", penwidth=1.4, audit_stage="verification", audit_order="13", audit_role="decision", audit_size_group="none"];
-  diagnose [label="有硬失败：定位失败责任层", group=main, fillcolor="#F2F2F2", audit_stage="verification", audit_order="14", audit_role="diagnose", audit_size_group="none"];
-  repair [label="修正最小责任面并重跑同一个探针", group=main, fillcolor="#F2F2F2", audit_stage="verification", audit_order="15", audit_role="repair", audit_size_group="none"];
-  risk_status [label="无硬失败：一次事务记录风险、事件和真实状态", fillcolor="#F2F2F2", audit_stage="verification", audit_order="side", audit_role="risk_status", audit_size_group="none"];
-  done [shape=oval, style="filled", label="9 项目治理在真实对话中生效", fillcolor="#E8E8E8", penwidth=1.6, audit_stage="completion", audit_order="end", audit_role="end", audit_size_group="none"];
-  completion_note [shape=note, label="完成标准：文件和运行清单有效 + 真实对话生效 + 无硬失败\n+ 风险、治理事件和采用状态已由事务准确记录", style="filled,dashed", fillcolor="#F7F7F7", color="#777777", fontsize=9.5, audit_stage="note", audit_order="note", audit_role="completion_note", audit_size_group="none"];
-
-  node [shape=point, width=0.06, height=0.06, fixedsize=true, label="", style=filled, color="#555555", fillcolor="#555555"];
-  retry_top [group=retry, audit_anchor="turn", audit_corridor="outer_left_retry"];
-  retry_bottom [group=retry, audit_anchor="turn", audit_corridor="outer_left_retry"];
-
-  apply -> probes [weight=1000, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
-  probes -> hard_fail [weight=1000, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
-  hard_fail -> diagnose [xlabel="有", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", weight=1000, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
-  diagnose -> repair [weight=1000, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="main"];
-  hard_fail -> risk_status [xlabel="无", fontname="Microsoft YaHei", fontsize=9, fontcolor="#333333", constraint=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="branch", audit_corridor="success_branch"];
-  risk_status -> done [audit_tail_side="bottom", audit_head_side="top", audit_route_kind="normal", audit_corridor="success"];
-  done -> completion_note [style=invis, weight=20];
-  retry_bottom -> repair [style=dashed, constraint=true, weight=100, arrowhead=none, penwidth=1.5, tailclip=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="return", audit_corridor="outer_left_retry", audit_reason="无箭头线路段从修正框左边中点进入失败重试外圈"];
-  retry_top -> retry_bottom [style=dashed, constraint=true, weight=1000, arrowhead=none, penwidth=1.5, tailclip=false, headclip=false, audit_tail_side="bottom", audit_head_side="top", audit_route_kind="return", audit_corridor="outer_left_retry", audit_reason="沿左侧外圈返回探针高度"];
-  retry_top -> probes [style=dashed, constraint=true, weight=100, penwidth=1.5, tailclip=false, audit_tail_side="right", audit_head_side="left", audit_route_kind="return", audit_corridor="outer_left_retry", audit_reason="重试线路从左侧中点返回同一个真实激活探针"];
-
-  { rank=same; retry_top; probes; }
-  { rank=same; hard_fail; risk_status; }
-  { rank=same; diagnose; done; }
-  { rank=same; retry_bottom; repair; }
+  start -> entry -> intent;
+  intent -> new_entry [xlabel="新"];
+  intent -> existing_entry [xlabel="原地"];
+  intent -> move_guide [xlabel="迁移"];
+  new_work -> inspect;
+  existing_work -> inspect;
+  move_work -> inspect;
+  inspect -> done;
+  inspect -> recovery [constraint=false, style=dashed, xlabel="失败或撤回"];
 }

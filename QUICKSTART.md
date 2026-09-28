@@ -1,6 +1,6 @@
 # Quick Start
 
-Start with the [interactive installation prompt](INSTALL.md) in Codex. Supply target paths or let it ask for necessary choices. Basic adoption preserves existing content and adds only the needed local entry; no Hook, Skill, Git, Python, or runtime installation is required.
+Start with the [interactive installation prompt](INSTALL.md) in Codex. Say whether this is a new project, in-place adoption of an existing one, or a move to a separate new folder; provide known paths and choices or let it ask for missing scope decisions together. A new project gets only the needed entry, and an existing project may select bounded material review. A move reads the [migration guide](MIGRATE.md) only when selected. Basic adoption needs no Hook, Skill, Git, Python or runtime installation. The preview.4 package includes the migration guide; running a project script or starting a service still requires the current user's explicit authorization.
 
 File-adoption checks and actual use in a fresh session are separate outcomes. Unsupported or conflicting targets must be reported incomplete.
 
@@ -8,7 +8,13 @@ File-adoption checks and actual use in a fresh session are separate outcomes. Un
 
 With the installation prompt, choose organization of existing material and provide selected folders and conversation links or exports. Basic adoption remains available on its own. Codex clarifies missing scope, indexes sources and destinations, preserves originals and distills stable decisions. Unavailable conversations remain explicit gaps.
 
-Start ordinary work directly in a fresh conversation. To continue an old one, send: "First read only this project’s current entry, then follow its routes to read the latest decisions and actual state needed in this turn. Do not substitute earlier conversation content for current files or consult personal memory. Reuse text already read in this turn, then continue working." This does not reinstall or reload all history. Distinguish saved material from actual resumed-session and fresh-session adoption, which require task evidence.
+Start ordinary work directly in a fresh conversation. To continue an old one, send: "First read only this project’s current entry, then follow its routes to read the latest decisions and actual state needed in this turn. Do not substitute earlier conversation content for current files or consult personal memory. Reuse text already read in this turn, then continue working." This does not reinstall or reload all history. Even if every native page was read, missing original user messages require an export or an explicit gap. Distinguish saved material from actual resumed-session and fresh-session adoption, which require task evidence.
+
+## Existing projects: move into a separate new folder
+
+Start the move from the old project or downloaded package folder, giving the installation prompt the old folder, proposed new folder, material scope and working capabilities to retain. The target need not be opened in Codex first, since the host may create placeholder content there. Codex first presents an item-by-item selection and recovery plan. It copies only after unresolved choices that affect material or capabilities are confirmed. Existing content in a first-run target, including hidden content, stops the write; do not delete or silently merge it, and choose another separate empty folder when appropriate. Inspect the inventory, source and target hashes, separately recorded path edits, and functional checks in the new folder. Preserve the old project. Historical citations can point back to old sources, while ordinary work must not depend on an undeclared old-folder path.
+
+Start future work in a new conversation attached to the new folder. Call an old conversation transferred only after the host actually switches its working directory and verifies the new entry; where the current desktop host cannot choose that folder, use a new conversation in it to carry selected context. The target's source index records created items and final file hashes for this move. On recovery or undo, a new conversation checks that receipt and later edits before removing only unchanged ordinary files created in this operation; preserve the index as evidence by default. If permissions prevent the host from entering the target, report copying and conversation availability separately, do not alter permissions on your own or claim completion; the user may create another separate empty folder and continue after rechecking it. Preserve conflicts for review. See the [migration guide](MIGRATE.md).
 
 ## Advanced adoption (optional)
 
@@ -67,7 +73,7 @@ An authority-source change invalidates the manifest. Refresh its records only as
 
 For an existing project, do not overwrite its working files. Basic adoption can add the needed local entry without a Skill. If reviewing old project context would help, make it optional and bounded: you choose the relevant native conversations, or provide exports when those conversations are unavailable. Record every in-scope item, its review status, source, and destination. Keep original files and conversations in place; write durable decisions into the project file that owns them.
 
-For a project migration or long-conversation handoff, first agree on a bounded source scope. You may choose native conversations or provide exports as a fallback. Keep a complete coverage list for that scope with each item's status, source, and destination; leave originals in place and write selected durable decisions to the proper project owner.
+For a project move, use the separate-folder path and migration guide above. For a long-conversation handoff, distill only necessary decisions from selected, obtainable material; an old chat or summary is not a working entry for the new folder.
 
 When resuming a selected old conversation, use this one-line instruction: “First read only this project’s current entry, then follow its routes to read the latest decisions and actual state needed in this turn. Do not substitute earlier conversation content for current files or consult personal memory. Reuse text already read in this turn, then continue working.” Leave original materials in place and keep any selected conclusions traceable to their source.
 

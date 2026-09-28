@@ -1,37 +1,29 @@
 digraph "installation-guide-zh-CN" {
-  graph [
-    rankdir=TB,
-    splines=ortho,
-    ordering=out,
-    outputorder=edgesfirst,
-    nodesep=0.34,
-    ranksep=0.42,
-    pad=0.28,
-    bgcolor="#FFFFFF",
-    fontname="Microsoft YaHei",
-    fontsize=11,
-    label="安装流程",
-    labelloc=t
-  ];
+  graph [rankdir=TB, splines=ortho, ordering=out, outputorder=edgesfirst, nodesep=0.38, ranksep=0.48, pad=0.28, bgcolor="#FFFFFF", fontname="Microsoft YaHei", fontsize=11, label="安装与三条落地流程", labelloc=t];
   node [fontname="Microsoft YaHei", fontsize=10, color="#282828", fontcolor="#202020", margin="0.20,0.14", style="rounded,filled", fillcolor="#FFFFFF"];
   edge [fontname="Microsoft YaHei", fontsize=9, color="#333333", arrowsize=0.7, penwidth=1.05];
 
-  download [label="下载并解压预览版", shape=ellipse, style=filled];
+  download [label="下载并解压；打开项目目录", shape=ellipse, style=filled];
   prompt [label="发送安装提示词；回答必要选择", shape=box];
-  choice [label="选择基础接入或可选的\n旧资料整理", shape=diamond, style=filled, margin="0.12,0.08"];
-  basic [label="基础：仅增补或适配本地入口；\n不读取历史资料", shape=box];
-  scope [label="可选整理：选择有界的原生对话\n或导出材料", shape=box];
-  inventory [label="逐项列出资料、来源、状态和去向；\n原始资料留在原处", shape=box];
-  verify [label="核验资料覆盖；建立索引\n与本地入口路由", shape=box];
-  files [label="检查本地文件；冲突或未完成项\n如实报告", shape=box];
-  sessions [label="旧对话继续前核对当前入口；\n新对话从本地入口开始", shape=box];
-  report [label="仅报告现有证据\n能够支持的结论", shape=ellipse, style=filled];
+  intent [label="本次要落地哪种项目？", shape=diamond, style=filled, margin="0.12,0.08"];
+  new [label="新项目：建立必要入口\n不读取旧资料", shape=box];
+  in_place [label="旧项目原地：基础接入\n按需整理有界资料", shape=box];
+  migrate [label="迁入新目录：按需读迁移说明\n核实资料与保留能力", shape=box];
+  plan [label="查看取舍、目标结构与恢复方案\n确认影响资料或能力的选择", shape=box];
+  copy [label="选择性复制；保留旧目录\n核对原件、路径改动和功能", shape=box];
+  inspect [label="查看实际文件、缺口和冲突", shape=box];
+  sessions [label="从实际工作目录开展后续任务\n旧会话只在真实切换后算迁移", shape=box];
+  recover [label="失败或撤回：先核对后续编辑\n仅处理本次创建且未变的内容", shape=box];
+  report [label="只报告证据支持的完成范围", shape=ellipse, style=filled];
 
-  { rank=same; basic; scope; }
-  download -> prompt -> choice;
-  choice -> basic [xlabel="基础接入"];
-  choice -> scope [xlabel="整理资料"];
-  scope -> inventory -> verify -> files;
-  basic -> files;
-  files -> sessions -> report;
+  { rank=same; new; in_place; migrate; }
+  download -> prompt -> intent;
+  intent -> new [xlabel="新项目"];
+  intent -> in_place [xlabel="原地"];
+  intent -> migrate [xlabel="迁移"];
+  migrate -> plan -> copy -> inspect;
+  new -> inspect;
+  in_place -> inspect;
+  inspect -> sessions -> report;
+  inspect -> recover [style=dashed, xlabel="失败或撤回", constraint=false];
 }

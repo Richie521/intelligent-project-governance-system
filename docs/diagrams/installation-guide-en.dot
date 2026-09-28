@@ -1,37 +1,29 @@
 digraph "installation-guide-en" {
-  graph [
-    rankdir=TB,
-    splines=ortho,
-    ordering=out,
-    outputorder=edgesfirst,
-    nodesep=0.34,
-    ranksep=0.42,
-    pad=0.28,
-    bgcolor="#FFFFFF",
-    fontname="Microsoft YaHei",
-    fontsize=11,
-    label="Installation steps",
-    labelloc=t
-  ];
+  graph [rankdir=TB, splines=ortho, ordering=out, outputorder=edgesfirst, nodesep=0.38, ranksep=0.48, pad=0.28, bgcolor="#FFFFFF", fontname="Microsoft YaHei", fontsize=11, label="Installation and three landing paths", labelloc=t];
   node [fontname="Microsoft YaHei", fontsize=10, color="#282828", fontcolor="#202020", margin="0.20,0.14", style="rounded,filled", fillcolor="#FFFFFF"];
   edge [fontname="Microsoft YaHei", fontsize=9, color="#333333", arrowsize=0.7, penwidth=1.05];
 
-  download [label="Download and extract the preview", shape=ellipse, style=filled];
+  download [label="Download and extract; open the project folder", shape=ellipse, style=filled];
   prompt [label="Send the installation prompt; answer necessary choices", shape=box];
-  choice [label="Choose basic adoption or optional\nexisting-material review", shape=diamond, style=filled, margin="0.12,0.08"];
-  basic [label="Basic: add or adapt the local entry only;\ndo not read past materials", shape=box];
-  scope [label="Optional review: select bounded chats\nor exported materials", shape=box];
-  inventory [label="List each selected item, its source,\nstatus and destination; retain originals", shape=box];
-  verify [label="Verify coverage; build the index\nand local-entry routing", shape=box];
-  files [label="Check local files; report conflicts\nor incomplete targets", shape=box];
-  sessions [label="Continue old chats with a current-entry check;\nstart new chats from the local entry", shape=box];
-  report [label="Report only what the available\nevidence supports", shape=ellipse, style=filled];
+  intent [label="Which project path applies?", shape=diamond, style=filled, margin="0.12,0.08"];
+  new [label="New: create only the needed entry;\ndo not read old material", shape=box];
+  in_place [label="Existing in place: basic adoption;\norganize bounded material if selected", shape=box];
+  migrate [label="Move: read the guide on demand;\ncheck material and retained capabilities", shape=box];
+  plan [label="Review selection, target layout and recovery;\nconfirm material choices", shape=box];
+  copy [label="Copy selectively; retain the old folder;\ncheck originals, path edits and function", shape=box];
+  inspect [label="Inspect actual files, gaps and conflicts", shape=box];
+  sessions [label="Work from the actual target folder;\nold chat moves only after a verified switch", shape=box];
+  recover [label="On failure or undo, check later edits;\nremove only unchanged content created this run", shape=box];
+  report [label="Report only the supported completion scope", shape=ellipse, style=filled];
 
-  { rank=same; basic; scope; }
-  download -> prompt -> choice;
-  choice -> basic [xlabel="Basic"];
-  choice -> scope [xlabel="Organize"];
-  scope -> inventory -> verify -> files;
-  basic -> files;
-  files -> sessions -> report;
+  { rank=same; new; in_place; migrate; }
+  download -> prompt -> intent;
+  intent -> new [xlabel="New"];
+  intent -> in_place [xlabel="In place"];
+  intent -> migrate [xlabel="Move"];
+  migrate -> plan -> copy -> inspect;
+  new -> inspect;
+  in_place -> inspect;
+  inspect -> sessions -> report;
+  inspect -> recover [style=dashed, xlabel="Failure or undo", constraint=false];
 }

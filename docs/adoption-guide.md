@@ -1,6 +1,8 @@
 # Adoption Guide
 
-Adoption starts from one self-contained prompt that explains the target folder, the minimal host-entry change, the default exclusions, and how to report the result. Use that prompt in the target project; do not require a separate Skill, global bridge, runtime, or gate for ordinary adoption.
+Adoption starts from one installation prompt that explains the target folder, the minimal host-entry change, the default exclusions, and how to report the result. It is self-contained for new-project and in-place adoption. A move to a separate new folder reads the bundled migration guide on demand. Use the prompt in the target project; do not require a separate Skill, global bridge, runtime, or gate for ordinary adoption.
+
+The three landing intents are a new project, an existing project in place, and an existing project moved to a separate new folder. Basic adoption, bounded material organization, unified wording and logs are optional capabilities within those intents. An unclear intent calls for a grouped question only about choices that change scope; a new project does not read the migration guide or old history.
 
 ## Adoption Outcomes
 
@@ -25,5 +27,7 @@ Unified wording is optional and requires user approval. Do not add a wording dec
 The default change is limited to the target folder's minimum host entry. Do not add a global bridge, Skill, runtime, automated gate, or broad file set by default. Preserve existing rules and avoid rewriting unrelated project material. If the requested target or operation cannot be safely or technically handled, stop that part, preserve the observed state, and report it as incomplete with the specific reason.
 
 Minimal file adoption can be complete after the authorized entry change is reviewed. Host adoption requires a real representative task in a fresh conversation attached to that folder. Optional full verification can add probes through available tools when requested; it must not be implied by either of the other outcomes.
+
+For a move, use [MIGRATE.md](../MIGRATE.md) or [MIGRATE.zh-CN.md](../MIGRATE.zh-CN.md), matching the chosen installation entry. Preserve the source and make the new folder independently usable; report selection, byte-preserved copies, separately edited paths, functional checks and conversation handoff as distinct outcomes. An old conversation counts as moved only when its host working directory actually switches and is verified. Otherwise continue in a new conversation attached to the new folder.
 
 When project-specific verification is requested, use the applicable guidance in [Governance Verification](../.agents/skills/project-governance/references/06-governance-verification.md). For human-readable governance Markdown, keep paragraphs and list continuations on one physical line; preserve code, tables, quoted blocks, and blank-line boundaries. Run the repository's Markdown check when available and report its actual result.

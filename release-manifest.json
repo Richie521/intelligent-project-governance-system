@@ -107,8 +107,8 @@
     },
     {
       "path": ".agents/skills/project-governance/references/03-migration-and-handoff.md",
-      "bytes": 3187,
-      "sha256": "483150b811869282ea998ff4177dc83f82432650a9b613e9567270bcb3497c7a"
+      "bytes": 5756,
+      "sha256": "4d432db296175257752a733350db6e424445b7e540e3c3d60483568d0604f71f"
     },
     {
       "path": ".agents/skills/project-governance/references/04-layered-diagnosis.md",
@@ -157,13 +157,13 @@
     },
     {
       "path": "INSTALL.md",
-      "bytes": 11214,
-      "sha256": "f7bb833aa078436f260d612a5b3173c74a7d1c4942b0fc52ca7d030c35ae8ab5"
+      "bytes": 12729,
+      "sha256": "7dbc28104798fe3f134c6bb16bc8282eecf6be464d001591076ffa79bb26ba9c"
     },
     {
       "path": "INSTALL.zh-CN.md",
-      "bytes": 9532,
-      "sha256": "1b2645b46d6eeb88604a8dfe1213e3a3ebef9696c2b11f65974913aab0947f9c"
+      "bytes": 10797,
+      "sha256": "c8933a49a71358f4992b3cbe993d7a52447e3135acf1e44e2866b3c7adb44bd4"
     },
     {
       "path": "LICENSE",
@@ -171,24 +171,34 @@
       "sha256": "ac60e3f8bbe9c0626e770e64b60500a7a1fb004891fdf741fcf24b1ab1ee45c6"
     },
     {
+      "path": "MIGRATE.md",
+      "bytes": 10417,
+      "sha256": "4f1f85947bc22ff05adab75810cbf2796595ccf6ef1daaf2360191c49bd4a421"
+    },
+    {
+      "path": "MIGRATE.zh-CN.md",
+      "bytes": 8731,
+      "sha256": "2568f5c8ea3699846235a83cf92f8c5f4ebc9d17aea9faa8d2a3f79cfd474c92"
+    },
+    {
       "path": "QUICKSTART.md",
-      "bytes": 10482,
-      "sha256": "6e978f44038315f7258f93760433b8b3ba37f5bc2ef3c634de703e3d430cd22d"
+      "bytes": 12730,
+      "sha256": "26ed53999015639ece4d05fc9462bb7c5c237ab4dc28291cbf32c55bcf90d096"
     },
     {
       "path": "QUICKSTART.zh-CN.md",
-      "bytes": 9756,
-      "sha256": "fb9765f7c753c25ea0cc30cc1e13619a2b54b983411923865ef20db24bc75f7e"
+      "bytes": 11415,
+      "sha256": "698b4c39faa5cb9a1ad748044d35b68f7626dec381d7d2fb5c19641845677d56"
     },
     {
       "path": "README.md",
-      "bytes": 8381,
-      "sha256": "a770956614077d7f179ac249254a4d616789439667371a8274fc0813c9f7b62c"
+      "bytes": 9398,
+      "sha256": "038d80cd1d32bab11559e225dd030013a73a53a0f9a7ba8722d8fa1bd947213b"
     },
     {
       "path": "README.zh-CN.md",
-      "bytes": 8006,
-      "sha256": "1112e787dcbf4bed017adc6659193cadb35e71986bd028d5ed710f019b9ca86e"
+      "bytes": 8603,
+      "sha256": "43f8bb3cdc73eea3cb3fa56978c9c7f6a91f15b6b790aa905754fb49fad84ed1"
     },
     {
       "path": "SECURITY.md",
@@ -197,8 +207,8 @@
     },
     {
       "path": "docs/adoption-guide.md",
-      "bytes": 3996,
-      "sha256": "acabc816519321b52775b2af21c530ac8ef842cf8b9ff898cb1b31ad634274f1"
+      "bytes": 5034,
+      "sha256": "9b48d87d4dedd947fafaa2d9a091803a5e8b266a0224419f68f0cefd06fb6754"
     },
     {
       "path": "docs/core-model.md",
@@ -212,8 +222,8 @@
     },
     {
       "path": "docs/diagrams/adoption-flow-zh-CN.dot",
-      "bytes": 19239,
-      "sha256": "5ec0f512c1fdde0eb7d94be450ac32e00fe87439530148671556f0ca07e2447d"
+      "bytes": 2601,
+      "sha256": "088574a7a2ad3e9533c9a3bb2654b0f37cd46337222f5e3816a08e25a458dab7"
     },
     {
       "path": "docs/diagrams/cross-project-learning-and-sync-zh-CN.dot",
@@ -222,13 +232,13 @@
     },
     {
       "path": "docs/diagrams/installation-guide-en.dot",
-      "bytes": 1778,
-      "sha256": "a6c1ef7d0b7512f0ce3fdaf9082908dc25a0c105225dd453b1ebd575e352c8af"
+      "bytes": 2088,
+      "sha256": "08b7a1f577ed7dbff3ce8a23cb83f4652b8efffe816246db1c2a175944f0c2c1"
     },
     {
       "path": "docs/diagrams/installation-guide-zh-CN.dot",
-      "bytes": 1724,
-      "sha256": "c103c150ad4a7b7d6cf1ec9d48ec3d0f7051cfa2de9976a6b24d011b9c62d4ab"
+      "bytes": 2020,
+      "sha256": "f481b87934faa26ff49ecd8498ac8022253bf2959e5893a33eb65117d5297015"
     },
     {
       "path": "docs/diagrams/layered-diagnosis-and-feedback-company-zh-CN.dot",
@@ -277,8 +287,8 @@
     },
     {
       "path": "docs/flowchart.md",
-      "bytes": 14505,
-      "sha256": "2b44b334df5c2d69aab05a4d7dd4aa8e213e54554ef2e50e958b6273d7b375b5"
+      "bytes": 14700,
+      "sha256": "4d26a9723e8f0cb365951098fe142ab9f868051022e5279102818d49e0d3c77d"
     },
     {
       "path": "docs/global-agent-integration.md",
@@ -307,8 +317,8 @@
     },
     {
       "path": "docs/media/adoption-flow-zh-CN.svg",
-      "bytes": 37675,
-      "sha256": "36b9ab0e651761c8da44906a15a522e2c588f3ef72bb66a01b4abff42cce9828"
+      "bytes": 18878,
+      "sha256": "8e90888915bdefe8dbbf92e655d72c3f58f21c6f08171c88d74c1895d02664ab"
     },
     {
       "path": "docs/media/cross-project-learning-and-sync-zh-CN.svg",
@@ -327,13 +337,13 @@
     },
     {
       "path": "docs/media/installation-guide-en.svg",
-      "bytes": 11680,
-      "sha256": "8ae4ca7b2a93e2e72c1ce0622dad54dc0b1eb19d9cd8c2e7b1cfc519f5c209bd"
+      "bytes": 14220,
+      "sha256": "67802bd7563a60a3cbd0ac29c704e98c30f453b293e22dcd2b14776438c177f6"
     },
     {
       "path": "docs/media/installation-guide-zh-CN.svg",
-      "bytes": 11550,
-      "sha256": "f2eea9545be300777e6101cafe7816521e6928f19780a2a048a51e19b9aecd1f"
+      "bytes": 14099,
+      "sha256": "3b5d6e617e9b276987071006258f1b05466be0c2e068173ad253cb7ef2038db4"
     },
     {
       "path": "docs/media/layered-diagnosis-and-feedback-company-zh-CN.svg",
@@ -399,6 +409,16 @@
       "path": "docs/runtime-tools.md",
       "bytes": 5373,
       "sha256": "b3276abe3b34cbb4d6f965a259da1c1172b02d86d2af9b5b0fc0ebb23f9abc20"
+    },
+    {
+      "path": "docs/three-flow-verification.md",
+      "bytes": 5460,
+      "sha256": "0e8595ac5e4e11a6d7e858197e00fca9e40a37485e5d59c579681be4ec8d791e"
+    },
+    {
+      "path": "docs/three-flow-verification.zh-CN.md",
+      "bytes": 4347,
+      "sha256": "8bec9ecfc89c6e3b67fd3a8bd4ff7b54e689c5aecc5c5575bc74cd072ef94882"
     },
     {
       "path": "docs/verification-guide.md",
@@ -605,5 +625,5 @@
     "templates/docs/task.en.md",
     "templates/docs/task.zh-CN.md"
   ],
-  "scope": "reviewed release files; bounded interactive adoption acceptance"
+  "scope": "three-flow synthetic acceptance release candidate"
 }
