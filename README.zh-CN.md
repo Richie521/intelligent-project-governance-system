@@ -8,9 +8,9 @@
 
 ## 如何下载安装到自己的文件夹
 
-本预览版包含以下三条路径。已验证的条件和支持限制见[三条流程验收报告](docs/three-flow-verification.zh-CN.md)。
+本预览版包含以下三条路径。[preview.5 日常资料保护报告](docs/file-preservation-verification.zh-CN.md)说明当前行为证据；[preview.4 三条流程报告](docs/three-flow-verification.zh-CN.md)保留历史范围。
 
-1. 打开[下载页面](https://github.com/richie-liu512/intelligent-project-governance-system/releases/tag/v0.1.0-preview.4)，在 **Assets（资源）** 中下载 `governance-v0.1.0-preview.4.zip`，解压到方便找到的位置。不要把下载包目录误当成自己的项目。
+1. 打开[下载页面](https://github.com/richie-liu512/intelligent-project-governance-system/releases/tag/v0.1.0-preview.5)，在 **Assets（资源）** 中下载 `governance-v0.1.0-preview.5.zip`，解压到方便找到的位置。不要把下载包目录误当成自己的项目。
 2. 打开 Codex，在要接入的项目文件夹中新建对话；迁移时先从旧项目说明源和拟建的新目录。打开[中文安装提示词](INSTALL.zh-CN.md)，复制其中整个代码框的文字，粘贴到对话中发送。迁移分支会按需使用同包的[迁移说明](MIGRATE.zh-CN.md)。
 3. 告诉 Codex 是新项目、旧项目原地接入，还是要迁入独立新目录，并提供已确定的文件夹与能力选择。不确定时只说明已知内容；Codex 会集中询问影响范围的必要选择。过程中也可以补充或调整需求。基础接入示例：
 

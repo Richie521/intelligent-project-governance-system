@@ -1,43 +1,18 @@
 # Diagnosis Report
 
-## Trigger
+Use only after the user explicitly starts layered diagnosis. This is an optional concise outline, not a required status table for every layer. Merge or omit sections to match the causal evidence.
 
-- User correction or failure:
-- Why governance diagnosis applies:
+## Failure And Causes
 
-## Governance Language
+State the concrete mistake, its evidence, and whether a continuing rule or program path can reproduce it. Explain necessary interacting causes. Do not assign responsibility to unexamined layers.
 
-- Authoritative language declaration:
-- Language used by this report:
-- Conflict or mismatch found:
+## Concrete Repair
 
-## Precise Layer Selection
+Name the existing file or program entry to change, the exact change, and how it breaks recurrence. Choose the repair surface by the recurrence mechanism; it may differ from where this instance failed. For an isolated error, correct and verify the current task without inventing a durable rule. When authorization is pending, present the concrete change and impact for review.
 
-- Rule application order: global guidance -> project mechanism -> current task
-- Primary root-cause layer:
-- Inspection stop:
-- Current task: status; finding; causal connection only when contributing
-- Project mechanism: status; finding; causal connection only when contributing
-- Global guidance / Skill / tooling: status; finding; causal connection only when contributing
+## Verification
 
-Use exactly one `primary`. Non-responsible layers record only exclusion or stop reasons and do not receive repair recommendations.
-
-## Minimal Repair
-
-- Repair target:
-- Proposed correction:
-- Requires confirmation:
-
-## Recurrence Prevention
-
-- Failure mechanism:
-- Recurrence conditions:
-- Repair layer:
-- Durable change:
-- How the recurrence chain is blocked:
-- Same-class regression probe:
-
-Use one prevention plan. Its repair layer must equal the primary root-cause layer.
+State the same-class probe run or proposed, observed result, and limits. Check build or publication paths under their real conditions when relevant. Never present an unrun probe as passed.
 
 ## Writeback
 

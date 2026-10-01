@@ -1,6 +1,6 @@
 # Quick Start
 
-Start with the [interactive installation prompt](INSTALL.md) in Codex. Say whether this is a new project, in-place adoption of an existing one, or a move to a separate new folder; provide known paths and choices or let it ask for missing scope decisions together. A new project gets only the needed entry, and an existing project may select bounded material review. A move reads the [migration guide](MIGRATE.md) only when selected. Basic adoption needs no Hook, Skill, Git, Python or runtime installation. The preview.4 package includes the migration guide; running a project script or starting a service still requires the current user's explicit authorization.
+Start with the [interactive installation prompt](INSTALL.md) in Codex. Say whether this is a new project, in-place adoption of an existing one, or a move to a separate new folder; provide known paths and choices or let it ask for missing scope decisions together. A new project gets only the needed entry, and an existing project may select bounded material review. A move reads the [migration guide](MIGRATE.md) only when selected. Basic adoption needs no Hook, Skill, Git, Python or runtime installation. The preview.5 package includes the migration guide; running a project script or starting a service still requires the current user's explicit authorization.
 
 File-adoption checks and actual use in a fresh session are separate outcomes. Unsupported or conflicting targets must be reported incomplete.
 
@@ -76,6 +76,8 @@ For an existing project, do not overwrite its working files. Basic adoption can 
 For a project move, use the separate-folder path and migration guide above. For a long-conversation handoff, distill only necessary decisions from selected, obtainable material; an old chat or summary is not a working entry for the new folder.
 
 When resuming a selected old conversation, use this one-line instruction: “First read only this project’s current entry, then follow its routes to read the latest decisions and actual state needed in this turn. Do not substitute earlier conversation content for current files or consult personal memory. Reuse text already read in this turn, then continue working.” Leave original materials in place and keep any selected conclusions traceable to their source.
+
+After adoption, start ordinary work directly. When maintaining later important files, the agent protects the needed pre-task state under the local entry; you need not register files or issue a separate backup command.
 
 ## 4. Start With Read-Only Intake
 

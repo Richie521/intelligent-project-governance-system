@@ -14,6 +14,14 @@ Verify host behavior only through a fresh conversation actually attached to the 
 
 If the environment or task is unsafe or unsupported, stop the affected probe, preserve the observed condition, and mark host verification incomplete. Name the missing evidence or prerequisite without implying that minimal file adoption also failed.
 
+## Daily File Protection Verification
+
+For host verification, use ordinary maintenance of important material introduced after adoption, without naming backup in the request. Check the actual pre-task bytes, tool actions, modification and recoverable content; the model's success claim is not evidence. Separate independent tasks and a fresh session must preserve required states without replacing earlier recovery points. Test reuse of exact saved history and separate handling of uncommitted or untracked content, including a project without Git. Restore an earlier version from a fresh session into a separate inspection file and compare bytes, encoding and line endings while preserving later work. Check same-named files in different directories.
+
+Verify new-project, in-place and moved-project entries carry the principle, reuse sufficient existing protection and cover later material. Adoption must not create empty backup folders. Read-only, no-change and reliably reproducible temporary work should produce no unnecessary copy, unrelated scan, governance log, diagnosis, transaction or Skill activation. Independently establish a real access denial or out-of-scope link before testing a blocked protection path: the agent must stop the affected overwrite, leave originals unchanged and report actual failure. A summary or index without retained complete content fails. These are behavior checks of agent instructions, not proof of machine-enforced atomic protection.
+
+Freeze inputs, original hashes and standards before the candidate package. Read prompts only from a fresh extraction; do not expose expected answers or previous runs to tested sessions. Record actual model, entry, configuration, memory, Skills, plugins and Hooks. Preserve first failures and distinguish product, facility and host causes; recheck only affected paths after a minimal correction. Changed behavior files need new-version evidence.
+
 ## Optional Full Verification
 
 Run broader probes or optional governance tools only when explicitly requested and available. Select checks that match the target's actual mechanisms, such as source boundaries, language handling, logs, migration behavior, or an explicitly activated diagnostic workflow. Do not impose the full probe suite on every adoption, and do not claim checks that were not run. A dedicated user command is required to activate layered diagnosis; ordinary corrections, reminders, file conflicts, and governance discussion remain inactive.
