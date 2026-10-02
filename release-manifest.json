@@ -357,13 +357,13 @@
     },
     {
       "path": "docs/media/installation-guide-en.svg",
-      "bytes": 14220,
-      "sha256": "67802bd7563a60a3cbd0ac29c704e98c30f453b293e22dcd2b14776438c177f6"
+      "bytes": 4856,
+      "sha256": "7d0ed662e34c3b49edaa31367ea448483c9017bdd36c844185b810a4561d9da4"
     },
     {
       "path": "docs/media/installation-guide-zh-CN.svg",
-      "bytes": 14099,
-      "sha256": "3b5d6e617e9b276987071006258f1b05466be0c2e068173ad253cb7ef2038db4"
+      "bytes": 4297,
+      "sha256": "048dd2e8802ac638c7f2c0bd630cce7f3b64ada8a56dbd8ec4f9f66c5dc02d24"
     },
     {
       "path": "docs/media/layered-diagnosis-and-feedback-company-zh-CN.svg",
