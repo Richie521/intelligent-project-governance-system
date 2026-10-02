@@ -8,9 +8,9 @@ It helps an agent inspect a project from local evidence, identify source boundar
 
 ## Install into your own folder
 
-This preview includes all three paths. The [preview.5 daily file-protection report](docs/file-preservation-verification.md) states current behavior evidence; the [preview.4 three-flow report](docs/three-flow-verification.md) retains its historical scope.
+This preview includes all three paths. The [preview.6 governance-correction report](docs/governance-correction-verification.md) covers the current rule update. The [preview.5 daily file-protection report](docs/file-preservation-verification.md) and [preview.4 three-flow report](docs/three-flow-verification.md) retain their historical scopes.
 
-1. Open the [release page](https://github.com/richie-liu512/intelligent-project-governance-system/releases/tag/v0.1.0-preview.5). Under **Assets**, download `governance-v0.1.0-preview.5.zip` and extract it. The download folder is not your project by default.
+1. Open the [release page](https://github.com/Richie521/intelligent-project-governance-system/releases/tag/v0.1.0-preview.6). Under **Assets**, download `governance-v0.1.0-preview.6.zip` and extract it. The download folder is not your project by default.
 2. Open Codex in the project folder and start a conversation; for a move, start from the old project and identify its proposed new folder. Open [INSTALL.md](INSTALL.md), copy the entire code block, and send it to Codex. The move path reads the bundled [migration guide](MIGRATE.md) only when selected.
 3. Say whether this is a new project, in-place adoption of an existing project, or a move to a separate new folder. Supply the folders and capabilities you have already chosen. If unsure, give what you know; Codex asks the remaining scope decisions together. You can adjust the request as you go. Basic-adoption example:
 

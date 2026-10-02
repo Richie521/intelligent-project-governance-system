@@ -2,14 +2,14 @@
 
 Governance files are useful only if they change agent behavior.
 
-Use representative probes instead of checking whether files merely exist.
+Use representative probes instead of checking whether files merely exist. The [preview.6 governance-correction report](governance-correction-verification.md) records the bounded behavior evidence for source authority, maintenance baselines, and diagnosis.
 
 ## Probe Types
 
 | Probe | Question |
 | --- | --- |
 | Entry routing | Can a new conversation start from the local entry file and find the smallest useful context? |
-| Source boundary | When files disagree, can the agent identify the current authority? |
+| Source boundary | When files disagree, can the agent identify fact authority while preserving the result the user chose to maintain? |
 | Historical material | Are old notes and handoff drafts treated as evidence rather than active rules? |
 | Writeback | Does the task close with a clear writeback result? |
 | Durable destination | Does the agent reuse a fitting owner, create and route a clear low-impact topic during authorized work, confirm high-impact boundaries, defer discussion-only writes, and avoid files for one-off content? |
@@ -37,7 +37,7 @@ Run `tools/governance-markdown/reflow_markdown.py check --project-root <project>
 
 For durable destinations, treat a parallel owner, silent authority or privacy change, file creation during discussion-only work, a new topic without a topic-map route, or a long-term file created for one-off content as hard failures.
 
-For layered diagnosis, verify both directions: rules apply from global guidance to the project mechanism and current task; diagnosis starts with the current task, then the project mechanism, and reaches global guidance or tooling only for a potentially cross-project defect. The investigation must select exactly one primary root cause and one inspection stop. It must not skip layers, keep assigning responsibility above the stop, or turn the inspection order into one recommendation per layer. Non-responsible layers record only exclusion or stop reasons; an evidence-backed contributing layer records its causal connection. The result has one prevention plan whose repair layer matches the primary root.
+For layered diagnosis, verify both directions: rules apply from global guidance to the project mechanism and current task; diagnosis starts with the current task, then the project mechanism, and reaches global guidance or tooling only for a potentially cross-project defect. The investigation explains every necessary cause supported by evidence and stops broadening when the failure and recurrence path are clear. It must not skip a needed layer, assign responsibility without evidence, or turn the inspection order into one recommendation per layer. An isolated error is corrected and verified in the current task; a continuing cause needs the smallest authorized durable repair and a same-class probe.
 
 After manual activation, if the same class of failure recurs after a claimed repair, continuing domain writes, closing at the current-task layer again, or claiming that an unread or unusable Skill was active are hard failures. The probe must reconstruct the sequence, inspect the project mechanism and any reusable global or tool layer, state the work-plan and writeback consequences, and make an explicit continue-or-stop decision.
 

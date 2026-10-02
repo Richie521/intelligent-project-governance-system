@@ -11,7 +11,7 @@ Use this reference when starting governance adoption, cleanup, migration, handof
 5. Use the router, manifest, file inventory, targeted search, or an approved retrieval tool to locate candidate evidence before opening broad corpora.
 6. Identify likely authority sources, private material, runtime state, generated outputs, reports, caches, old handoff drafts, raw sessions, and relevant conversation or thread sources.
 7. Retrieve only the smallest working set that can change the current answer. Preserve source paths or equivalent provenance for later verification.
-8. Verify material claims against the current authority. If the first evidence is missing, incomplete, stale, or conflicting, state why and expand by the smallest relevant layer. Distinguish not found from not yet checked.
+8. Verify material claims against the current authority. Separately identify the existing result the user chose to maintain; calling it generated does not authorize replacing it from an older source. If the first evidence is missing, incomplete, stale, or conflicting, state why and expand by the smallest relevant layer. Distinguish not found from not yet checked.
 9. Do not edit, rename, delete, or reorganize during intake.
 
 ## Routing Signals

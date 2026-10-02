@@ -2,7 +2,7 @@
 
 The core model is: central method, local reality.
 
-The shared method helps an agent distinguish current authority from notes, generated output, runtime state, and history, then read and update only what the task needs. A single self-contained prompt can carry the adoption instructions. In the target folder, create or merge only a minimal host entry when durable local instructions are needed; if existing rules already suffice, do not duplicate them.
+The shared method helps an agent distinguish current authority from notes, generated output, runtime state, and history, then read and update only what the task needs. Fact authority and the user's chosen maintenance baseline answer different questions: classifying an artifact as generated does not change which existing result the user asked to preserve. Check the authorized change and retained content; a passing build alone does not prove either retention or live behavior. A single self-contained prompt can carry the adoption instructions. In the target folder, create or merge only a minimal host entry when durable local instructions are needed; if existing rules already suffice, do not duplicate them.
 
 ## Center, Local System, And Adjacent Work
 
@@ -28,7 +28,7 @@ Reuse a fitting local file before creating another one. During authorized work, 
 
 Handle ordinary corrections and current-task scope changes within the current task. They do not activate a governance gate or a full layered diagnosis. Enter manual layered diagnosis only after a dedicated user command such as `启动分层诊断` or `请启动治理门禁：检查……`.
 
-After explicit activation, examine the current task first, then the project mechanism, then global guidance or tools only when the failure may recur across unrelated projects. Stop at the first layer that explains the failure, identify one primary cause, and verify the durable repair with a representative probe. This diagnostic workflow is separate from ordinary adoption and is not a default adoption prerequisite.
+After explicit activation, examine the current task first, then the project mechanism, then global guidance or tools only when the failure may recur across unrelated projects. Stop broadening the investigation once evidence explains the failure and shows where recurrence must be blocked. Explain every necessary cause supported by evidence without forcing a single primary cause. Repair and verify an isolated error in the current task; when a continuing cause exists, make the smallest authorized durable repair and run a representative same-class probe. This diagnostic workflow is separate from ordinary adoption and is not a default adoption prerequisite.
 
 Ordinary writeback stays within the project's fitting local owner, or produces no file change for a one-off result. Promoting a reusable pattern to the center is a separate, explicit synchronization decision.
 

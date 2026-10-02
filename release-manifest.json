@@ -97,8 +97,8 @@
     },
     {
       "path": ".agents/skills/project-governance/references/01-intake-and-routing.md",
-      "bytes": 2580,
-      "sha256": "893ad9f67887f431e639667ef7772f853ef429ff27735dc7c07ed42fd98c6cbb"
+      "bytes": 2723,
+      "sha256": "0c8f7d12fa94cc6169625c9e5f2b3b21b3abeb4a80f8657cf3e1efe00b6d3787"
     },
     {
       "path": ".agents/skills/project-governance/references/02-adoption-and-cleanup.md",
@@ -122,8 +122,8 @@
     },
     {
       "path": ".agents/skills/project-governance/references/06-governance-verification.md",
-      "bytes": 4871,
-      "sha256": "cffb34c46dc04bad5c158ae6ae55b5441b9d9343b411e0179cad5a07e977d821"
+      "bytes": 5017,
+      "sha256": "7648503b6f620851d9e99b1df74a7bf97910f36410d90bb8e21934510a3a4eea"
     },
     {
       "path": ".agents/skills/project-governance/references/07-task-and-user-authority.md",
@@ -157,13 +157,13 @@
     },
     {
       "path": "INSTALL.md",
-      "bytes": 14573,
-      "sha256": "06bda12d29ef1cdead0d57b0fe45eb756cc437430ebc0815c00b25eb2ac82455"
+      "bytes": 14835,
+      "sha256": "07db992bff0c50df3eed282e20912b3c46005f1200d7e0f2de723281bf845481"
     },
     {
       "path": "INSTALL.zh-CN.md",
-      "bytes": 12270,
-      "sha256": "21c99c1acb4df85760d0e15fd3be96452740b0ea33db50ba93e85fff59619bfe"
+      "bytes": 12489,
+      "sha256": "10766901bf3b9a37182dcb15dd9fe9e3cf4fc5f97f3c16e591f0fa7069fdb0cf"
     },
     {
       "path": "LICENSE",
@@ -192,13 +192,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 9493,
-      "sha256": "c2a1343c1ae1f4398ee71af1a92bf95fb34296062ebb1191de3d25eace56b45b"
+      "bytes": 9578,
+      "sha256": "d939847390bed78610414802b2200624c058880093523a2f454beb9a1895c888"
     },
     {
       "path": "README.zh-CN.md",
-      "bytes": 8698,
-      "sha256": "eb190649dba35d1c1e9ffc68ae5e9c095a904d19196bfad2b69f57fae66e1b00"
+      "bytes": 8786,
+      "sha256": "faa9147943ce6629eecafa4347e36d3cef464b884ea6ad2faed99d14ebb31d25"
     },
     {
       "path": "SECURITY.md",
@@ -212,8 +212,8 @@
     },
     {
       "path": "docs/core-model.md",
-      "bytes": 4357,
-      "sha256": "14068764c39a7be0a895bd9e281211284c4e90fcd52704b2719e5db0245ed214"
+      "bytes": 4911,
+      "sha256": "4527cf8a87e600be1266e40d3d38a6186103af67699f0713b19a34572eb0248f"
     },
     {
       "path": "docs/desensitization-map.md",
@@ -304,6 +304,16 @@
       "path": "docs/global-agent-integration.md",
       "bytes": 3123,
       "sha256": "2cd171486f693655ad3e58498ba53a2af6fd45654460c013cecdbb57c0c6f064"
+    },
+    {
+      "path": "docs/governance-correction-verification.md",
+      "bytes": 2359,
+      "sha256": "56da331e60560668d49930cbd37f00f87ad54f87c3a9b0062b9aacaa7bb6d737"
+    },
+    {
+      "path": "docs/governance-correction-verification.zh-CN.md",
+      "bytes": 1894,
+      "sha256": "b5e71ca8f4957762c9a617dc877ccae9ef0ca44938ab44a938ce6d8b2b49a40b"
     },
     {
       "path": "docs/integration-verification.md",
@@ -412,13 +422,13 @@
     },
     {
       "path": "docs/release-notes.md",
-      "bytes": 1593,
-      "sha256": "7431c22a4dfa2e6d7b07eded3b704eebdf32c6f1be0135645a847a1bfecd5080"
+      "bytes": 3005,
+      "sha256": "e3ed7637d38f1dc07fed15af1b93ab013b16ffefe167a1183b8aec75a97cb78d"
     },
     {
       "path": "docs/release-notes.zh-CN.md",
-      "bytes": 1481,
-      "sha256": "9374e99e7652bebebc376417fad3ffa1b795f02ae93a1471d1648b0a666d200a"
+      "bytes": 2745,
+      "sha256": "74586ef1b495a4c4b70246eefac121317ae1199bec34b74d31b72f8cfe75d970"
     },
     {
       "path": "docs/release-verification.md",
@@ -442,8 +452,8 @@
     },
     {
       "path": "docs/verification-guide.md",
-      "bytes": 8880,
-      "sha256": "dd950f4cc36177be1eda788cba690ed4a66c47f90edb909356a6fe66a71044ea"
+      "bytes": 9108,
+      "sha256": "fb4028eefe023ec013fc15fdbff9e62868c455900ab0a2821014f5c8e147a897"
     },
     {
       "path": "evidence/integration-validation.json",
@@ -467,13 +477,13 @@
     },
     {
       "path": "templates/AGENTS.md",
-      "bytes": 8361,
-      "sha256": "02d33604b1edc751dfd69ff78f3e77ef67b1b7c0aafd0fcf42e5576889a8cc36"
+      "bytes": 8613,
+      "sha256": "fe1257d7f2cd2a22144552d5850acdc92d00736ab1ab243f37a032c3781594da"
     },
     {
       "path": "templates/AGENTS.zh-CN.md",
-      "bytes": 6571,
-      "sha256": "c8b2c32a3a9bc1d23c2e3822f6157f8cd786488305e83cb61d1258d4022c9961"
+      "bytes": 6778,
+      "sha256": "d6666d6e03067891997629822d23911ddee387804c25cd341a4628e2e0fe8529"
     },
     {
       "path": "templates/docs/00-topic-map.md",
@@ -487,13 +497,13 @@
     },
     {
       "path": "templates/docs/01-source-of-truth.md",
-      "bytes": 1654,
-      "sha256": "473f224beee89b14a7e6b153fe324efefb1cf39d369474c8612fb1a3a142f554"
+      "bytes": 1839,
+      "sha256": "ba48f3659666adff5ef049335ceb439821465b980cab35f3f908d89ad369d088"
     },
     {
       "path": "templates/docs/01-来源权威.md",
-      "bytes": 1291,
-      "sha256": "7a03213dc4cf93193b73d07198470de5297aaeddea3d24e7069c83fb6649cf2c"
+      "bytes": 1453,
+      "sha256": "76c4fd380e4af10a7051bdd734dccb03d2cc1cd04c656835424a40c2c383d51d"
     },
     {
       "path": "templates/docs/02-context-management.md",
@@ -645,6 +655,6 @@
     "templates/docs/task.en.md",
     "templates/docs/task.zh-CN.md"
   ],
-  "scope": "daily-file-preservation synthetic acceptance release candidate",
-  "version": "v0.1.0-preview.5"
+  "scope": "source-authority, maintenance-baseline and diagnosis correction preview",
+  "version": "v0.1.0-preview.6"
 }

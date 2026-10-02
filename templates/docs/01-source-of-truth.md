@@ -19,6 +19,6 @@ Define which files or systems are authoritative for this project.
 
 ## Conflict Rule
 
-When materials disagree, state which layer is authoritative and why. Keep uncertainty visible until verified.
+When materials disagree, state which layer is authoritative and why. Keep uncertainty visible until verified. Fact authority does not select the maintenance baseline: retain the existing result chosen by the user, even if generated, and compare authorized changes with content that must remain.
 
 The user's latest instruction determines the current work. Historical plans and handoff notes are evidence only and cannot override it.

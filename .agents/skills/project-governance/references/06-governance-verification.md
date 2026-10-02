@@ -10,7 +10,7 @@ The `00–05` numbers remain reserved, but there is no requirement to create fil
 
 ## Host Adoption Verification
 
-Verify host behavior only through a fresh conversation actually attached to the target folder. Use one representative real task to confirm that the host entry is loaded, relevant context is selected from local authority, and the task remains within its privacy and write boundaries. Report the observed action and result. Static review, simulations, or a conversation attached elsewhere do not prove host adoption.
+Verify host behavior only through a fresh conversation actually attached to the target folder. Use one representative real task to confirm that the host entry is loaded, relevant context is selected from local authority, the user's selected maintenance result is preserved even when generated, and the task remains within its privacy and write boundaries. Report the observed action and result. Static review, simulations, or a conversation attached elsewhere do not prove host adoption.
 
 If the environment or task is unsafe or unsupported, stop the affected probe, preserve the observed condition, and mark host verification incomplete. Name the missing evidence or prerequisite without implying that minimal file adoption also failed.
 
@@ -28,7 +28,7 @@ Run broader probes or optional governance tools only when explicitly requested a
 
 ## Hard Failures
 
-- An example, generated, cached, historical, or public copy silently replaces current local authority.
+- An example, generated, cached, historical, or public copy silently replaces current local authority, or source classification silently changes the user's maintenance target.
 - A change exceeds the authorized target folder or adds optional infrastructure without authorization.
 - Governance files are added when existing local rules already suffice and no new durable instruction is needed.
 - Static files or a simulated task are presented as proof of live host adoption.
